@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace !important;
+}
+.app-header {
+  background-color: #212121;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+.navigation-bar {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.navigation__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 0;
+  border-right: 0;
+}
+.navigation__link {
+  display: block;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #fff !important;
+  text-transform: uppercase;
+}
+.margin {
+  margin-top: 100px;
+}
+.search-container {
+  padding: 30px;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  background-color: #c62828;
+}
+.stylish-input-group .input-group-addon {
+  background: white !important;
+}
+.stylish-input-group .form-control {
+  border-right: 0;
+  box-shadow: 0 0 0;
+  border-color: #ccc;
+}
+.stylish-input-group button {
+  border: 0;
+  background: transparent;
+}
+.main-container,
+.darker-background {
+  background-color: #e0e0e0;
+}
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #c62828 !important;
+}
