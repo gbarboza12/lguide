@@ -2,17 +2,23 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
+    <div className="container-fluid content">
+      <div className="form-group search-content">
+        <input type="search" class="form-control" id="search" placeholder="Search" />
+        <span className="icon"><FontAwesomeIcon icon={faSearch} /></span>
+      </div>
+      <div className="topics-content">
+        <h3>Topics</h3> 
+        <br />
+        <Link to="/page-2/">Go to page 2</Link>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+
   </Layout>
 )
 

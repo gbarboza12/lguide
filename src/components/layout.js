@@ -2,11 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header'
 import './layout.css'
-
-
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -30,21 +28,12 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
+
         <Header siteTitle={data.site.siteMetadata.title} />
-        
-        <div className="margin">  
-        <div className="search-container container">
-          <div className="input-group stylish-input-group">
-            <input type="text" className="form-control" placeholder="Search" />
-            <span className="input-group-addon">
-              <button type="submit" className="searchButton">
-                <span className="fa fa-search"></span>
-              </button>
-            </span>
-          </div>
-        </div>
-        </div>
-        
+
+        {children}
+
+
       </>
     )}
   />
