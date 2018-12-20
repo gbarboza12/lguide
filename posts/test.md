@@ -1,9 +1,8 @@
 ---
-path: test
-date: 2018-12-20T20:47:20.099Z
+date: 2018-12-20T21:00:50.027Z
 title: test
-category: book
+category: test
 tags:
   - book
 ---
-hi
+test
