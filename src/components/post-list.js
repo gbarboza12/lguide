@@ -1,46 +1,54 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { graphql } from "gatsby"
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
-import Layout from './layout'
+import Post from '../templates/post';
 
-const PostList = ({ data }) => {
-  return (
-    <Layout>
-      <div className="container-fluid content">
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h3>
-              {node.frontmatter.title}
-            </h3>
-            <p dangerouslySetInnerHTML={{ __html: node.html }} />
-          </div>
+export default class PostList extends Component {
+  getPosts() {
+    const posts = [];
+    this.props.postEdges.forEach(postEdge => {
+      posts.push({
+        title: postEdge.node.frontmatter.title,
+        category: postEdge.node.frontmatter.category,
+        tags: postEdge.node.frontmatter.tags,
+        html: postEdge.node.html,
+        id: postEdge.node.id
+      });
+    });
+    return posts;
+  }
+
+  render() {
+    const posts = this.getPosts();
+    return (
+      <div className="">
+        {posts.map(post => (
+          <Post post={post} />
         ))}
-      <Link to="/">Go back to the homepage</Link>
+        <Link to="/">Go back to the homepage</Link>
       </div>
-    </Layout>
-  )
-}
-
-export default PostList
-
-export const query = graphql`
-query {
-  allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-    totalCount
-    edges {
-      node {
-        id
-        frontmatter {
-          title
-          date(formatString: "DD MMMM, YYYY")
-          category
-          tags
-        }
-        excerpt
-        html
-      }
-    }
+    )
   }
 }
-  `
+
+
+// export const query = graphql`
+// query {
+//   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+//     totalCount
+//     edges {
+//       node {
+//         id
+//         frontmatter {
+//           title
+//           date(formatString: "DD MMMM, YYYY")
+//           category
+//           tags
+//         }
+//         excerpt
+//         html
+//       }
+//     }
+//   }
+// }
+//   `

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ data }) => (
   <div className="app-header" >
     <nav className="navigation-bar">
-      <div>
+      <div id="nav-div">
         <ul className="navigation__list">
           <li>
             <Link className="navigation__link" to="/">
@@ -12,7 +12,10 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
           <li>
-            <Link className="navigation__link" to="/">
+            <Link
+              className="navigation__link"
+              to={`/categories/books`}
+            >
               Books
             </Link>
           </li>

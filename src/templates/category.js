@@ -1,37 +1,39 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { graphql } from "gatsby"
+import React, { Component } from 'react';
+import { graphql } from "gatsby";
 
-import Layout from '../components/layout'
-import PostList from '../components/post-list'
+import Layout from '../components/layout';
+import PostList from '../components/post-list';
 
-export default class Category extends React.Component {
-    render() {
-      const { category } = this.props.pageContext;
-      const postEdges = this.props.data.allMarkdownRemark.edges;
+export default class Category extends Component {
+  render() {
+    const { category } = this.props.pageContext;
+    const postEdges = this.props.data.allMarkdownRemark.edges;
 
-      return (
-        <Layout>
-          <div className="container-fluid content">
+    return (
+      <Layout>
+        <div className="container-fluid main-container">
+          <div className="main-content">
             <PostList postEdges={postEdges} />
           </div>
-        </Layout>
-      )
-    }
+        </div>
+      </Layout>
+    )
+  }
 }
 
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
     allMarkdownRemark(
-      limit: 1000
       filter: { frontmatter: { category: { eq: $category } } }
     ) {
+      totalCount
       edges {
         node {
           fields {
             slug
           }
           html
+          id
           frontmatter {
             title
             category
