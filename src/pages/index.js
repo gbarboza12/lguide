@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import _ from "lodash";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Search from '../components/search';
+import Search from './search';
 
 import Layout from '../components/layout';
 
