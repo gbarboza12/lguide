@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import _ from "lodash";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Search from '../components/search';
 
 import Layout from '../components/layout';
 
@@ -24,8 +25,9 @@ export default class IndexPage extends Component {
       <Layout>
         <div className="container-fluid main-container">
           <div className="form-group search-content">
-            <input type="search" className="form-control" id="search" placeholder="Search" />
-            <span className="icon"><FontAwesomeIcon icon={faSearch} /></span>
+            {/* <input type="search" className="form-control" id="search" placeholder="Search" />
+            <span className="icon"><FontAwesomeIcon icon={faSearch} /></span> */}
+            <Search />
           </div>
           <div className="topics-content">
             <h3>Topics</h3>
