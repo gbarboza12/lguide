@@ -15,7 +15,7 @@ export default class Search extends Component {
   getOrCreateIndex = () =>
     this.index
       ? this.index
-      : // Create an elastic lunr index and hydrate with graphql query results
+      :
       Index.load(this.props.searchData);
 
   search = evt => {
@@ -48,7 +48,7 @@ export default class Search extends Component {
         <ul>
           {this.state.results.map(page => (
             <li key={page.id}>
-              <Link to={"/" + page.path}>{page.title}</Link>
+              <Link to={page.slug}>{page.title}</Link>
               {": " + page.tags.join(`,`)}
             </li>
           ))}

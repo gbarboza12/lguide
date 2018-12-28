@@ -40,7 +40,6 @@ exports.createPages = ({ graphql, actions }) => {
           }
         `
       ).then(result => {
-
         const tagSet = new Set();
         const categorySet = new Set();
 

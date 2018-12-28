@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import Post from '../templates/post';
+import PostNode from '../components/post-node';
 
 export default class PostList extends Component {
   getPosts() {
@@ -23,32 +23,10 @@ export default class PostList extends Component {
     return (
       <div className="">
         {posts.map(post => (
-          <Post post={post} />
+          <PostNode post={post} />
         ))}
         <Link to="/">Go back to the homepage</Link>
       </div>
     )
   }
 }
-
-
-// export const query = graphql`
-// query {
-//   allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-//     totalCount
-//     edges {
-//       node {
-//         id
-//         frontmatter {
-//           title
-//           date(formatString: "DD MMMM, YYYY")
-//           category
-//           tags
-//         }
-//         excerpt
-//         html
-//       }
-//     }
-//   }
-// }
-//   `
