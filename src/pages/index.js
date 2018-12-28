@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import _ from "lodash";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import Search from './search';
-
+import Search from '../components/search';
 import Layout from '../components/layout';
 
 export default class IndexPage extends Component {
@@ -25,9 +22,7 @@ export default class IndexPage extends Component {
       <Layout>
         <div className="container-fluid main-container">
           <div className="form-group search-content">
-            {/* <input type="search" className="form-control" id="search" placeholder="Search" />
-            <span className="icon"><FontAwesomeIcon icon={faSearch} /></span> */}
-            <Search />
+            <Search searchData={this.props.data.siteSearchIndex.index}/>
           </div>
           <div className="topics-content">
             <h3>Topics</h3>
@@ -43,15 +38,16 @@ export default class IndexPage extends Component {
             <br />
           </div>
         </div>
-
       </Layout>
-    )
+    );
   }
 }
 
-
 export const query = graphql`
   query {
+    siteSearchIndex {
+      index
+    }
     allMarkdownRemark {
       group(field: frontmatter___tags) {
         fieldValue
