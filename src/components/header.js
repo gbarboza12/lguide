@@ -25,8 +25,10 @@ const Header = ({ data }) => (
             </Link>
           </li>
           <li>
-            <Link className="navigation__link" to="/">
-              Film
+            <Link
+              className="navigation__link"
+              to={`/categories/films`}>
+              Films
             </Link>
           </li>
           <li>

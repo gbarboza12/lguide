@@ -15,6 +15,7 @@ collections:
     fields:
       - {name: date, label: Date, widget: date }
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Category", name: "category", widget: "select", 
+          options: ["Books", "Films", "Social Media", "Podcasts"]}
+      - {label: "Tags (separate each tag with a comma)", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
