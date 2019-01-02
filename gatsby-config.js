@@ -21,6 +21,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     'gatsby-transformer-sharp',
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
@@ -35,7 +36,7 @@ module.exports = {
                   slug: node => node.fields.slug
               }
           }
-      }
+      },
   }
     
     // this (optional) plugin enables Progressive Web App + Offline functionality

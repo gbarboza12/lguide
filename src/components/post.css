@@ -1,10 +1,24 @@
 hr.post-divider {
-    height: 4px;
-    background-image: linear-gradient(90deg, transparent, transparent 50%, 
-    #fff 50%, #fff 100%), linear-gradient(to left, #333333, #dd1818);
-    background-size: 20px 3px, 100% 3px;
-    border: none;
+  height: 4px;
+  background-image: linear-gradient(90deg, transparent, transparent 50%, 
+  #fff 50%, #fff 100%), linear-gradient(to left, #333333, #dd1818);
+  background-size: 20px 3px, 100% 3px;
+  border: none;
 }
-.post-div{
-    margin-bottom: 40px;
+.post-div {
+  margin-bottom: 40px;
+}
+.tag-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+.tag-button {
+  background-color: #bdc3c7;
+  border-radius: 12px;
+  color: #ec644b;
+  text-align: center;
+  display: inline-block;
 }
