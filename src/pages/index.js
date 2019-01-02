@@ -21,9 +21,7 @@ export default class IndexPage extends Component {
     return (
       <Layout>
         <div className="container-fluid main-container">
-          <div className="form-group search-content">
-            <Search searchData={this.props.data.siteSearchIndex.index}/>
-          </div>
+          <Search searchData={this.props.data.siteSearchIndex.index}/>
           <div className="topics-content">
             <h3>Topics</h3>
             {

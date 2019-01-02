@@ -14,45 +14,52 @@ export default class Search extends Component {
   }
   getOrCreateIndex = () =>
     this.index
-      ? this.index
-      :
-      Index.load(this.props.searchData);
+      ? this.index : Index.load(this.props.searchData);
 
   search = evt => {
     const query = evt.target.value;
     this.index = this.getOrCreateIndex();
     this.setState({
       query,
-      // Query the index with search string to get an [] of IDs
       results: this.index
         .search(query, { expand: true }) // Accept partial matches
-        // Map over each ID and return the full document
         .map(({ ref }) => this.index.documentStore.getDoc(ref))
     });
   };
 
   render() {
     return (
-      <div>
-        <div className="form-group search-content">
+      
+      <div className="form-row justify-content-center search-content">
+        <div className="form-group col-md-3">
+        <div className="input-group mx-auto mb-3">
           <input
-            type="text"
+            type="search"
             id="search"
-            className="form-control"
+            className="form-control py-2 border-right-0"
             value={this.state.query}
             placeholder="Search"
             onChange={this.search}
           />
-          <span className="icon"><FontAwesomeIcon icon={faSearch} /></span>
+          <span className="input-group-append">
+            <button id="search-icon " className="btn border-left-0" type="button">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </span>
+          </div>
         </div>
-        <ul>
-          {this.state.results.map(page => (
-            <li key={page.id}>
-              <Link to={page.slug}>{page.title}</Link>
-              {": " + page.tags.join(`,`)}
-            </li>
-          ))}
-        </ul>
+        {
+          this.state.results.length > 0 ?
+            <ul>
+              {this.state.results.map(page => (
+                <li key={page.id}>
+                  <Link to={page.slug}>{page.title}</Link>
+                  {": " + page.tags.join(`,`)}
+                </li>
+              ))}
+            </ul>
+            : null
+        }
       </div>
     );
   }
