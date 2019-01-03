@@ -30,9 +30,9 @@ export default class Search extends Component {
   render() {
     return (
       
-      <div className="form-row justify-content-center search-content">
-        <div className="form-group col-md-3">
-        <div className="input-group mx-auto mb-3">
+      <div className="search-content">
+      
+        <div className="input-group">
           <input
             type="search"
             id="search"
@@ -46,7 +46,7 @@ export default class Search extends Component {
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </span>
-          </div>
+          
         </div>
         {
           this.state.results.length > 0 ?

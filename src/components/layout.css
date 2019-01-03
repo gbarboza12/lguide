@@ -9,20 +9,19 @@ body {
   font-family: 'Inconsolata', monospace !important;
 }
 .app-header {
-  padding: 40px;
-  text-align: center;
-  vertical-align: middle;
+  height: 100px;
   width: 100%;
   background-color: #212121;
   position: fixed;
   overflow: hidden;
+  z-index: 1;
 }
 #nav-div a:link, #nav-div a:visited, #nav-div a:active {
   color: #fff ;
 }
 #nav-div a:hover {
   text-decoration: underline;
-  color: #c62828;
+  color: #ec644b;
 }
 .navigation-bar {
   width: 100%;
@@ -30,13 +29,13 @@ body {
 }
 .navbar-nav {
   float:none;
-  margin:0 auto;
   display: block;
-  text-align: center;
+}
+.navbar-brand {
+  margin-left: 15px;
 }
 .navbar-nav > a {
   display: inline-block;
-  float:none;
   padding: 0 20px !important;
   font-size: 20px;
   text-transform: uppercase;
@@ -45,19 +44,23 @@ body {
   .navbar-nav > a {
     padding: 0 15px !important;
     font-size: 18px;
-
   }
+}
+.navbar-toggler {
+  color: #fff; 
+}
+.navigation-bar button:hover, .navigation-bar a:hover {
+  color: #ec644b;
 }
 .overlay {
   position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color:rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
-    z-index:9999;
-    color:white;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#212121;
+  z-index:9999;
+  color:white;
 }
 .overlay-content {
   position: relative;
@@ -102,7 +105,12 @@ body {
   background-color: #c62828;
 }
 .search-content {
-  position: relative;
+  margin-bottom: 10px;
+  /* display: table;  Instead of display:block */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 500px;
 }
 .search-content input#search{
   height: 50px;
@@ -127,7 +135,7 @@ body {
 }
 .form-control:focus {
   outline: 0 !important;
-  border-color: initial;
+  border-color: transparent;
   box-shadow: none;
 }
 .btn{
@@ -135,9 +143,10 @@ body {
 }
 .btn:focus {
   outline: 0 !important;
-  border-color: initial;
+  border-color: transparent;
   box-shadow: none;
 }
+
 .topics-content {
   padding: 20px;
   background: #fff;

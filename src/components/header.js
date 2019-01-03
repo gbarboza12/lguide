@@ -20,8 +20,7 @@ export default class Header extends Component {
     const links = [];
     const collapsed = this.state.collapsed;
     const linkStyle = collapsed ? 'nav-item nav-link' : 'overlay-link';
-    const divStyle = collapsed ? 'navbar-nav mr-auto' : "overlay-content"
-    links.push(<Link className={`${linkStyle}`} to="/">Home</Link>);
+    const divStyle = collapsed ? 'navbar-nav ml-auto' : "overlay-content"
     links.push(<Link className={`${linkStyle}`} to={`/categories/books`}>Books</Link>);
     links.push(<Link className={`${linkStyle}`} to={`/categories/films`}>Films</Link>);
     links.push(<Link className={`${linkStyle}`} to={`/`}>Podcasts</Link>);
@@ -31,31 +30,35 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <div className="app-header" >
-        <nav className="navigation-bar navbar navbar-expand-sm">
-          <button
-            className="navbar-toggler ml-auto hidden-sm-up float-xs-right"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={this.toggleNavbar}
-          >
-            <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
-          </button>
-          <div className="collapse navbar-collapse" id="nav-div">
+      <div>
+        {!this.state.collapsed ?
+          <div className="overlay">
+            <a href="javascript:void(0)" className="closebtn" onClick={this.toggleNavbar}>&times;</a>
             {this.getLinks()}
           </div>
-          {!this.state.collapsed ?
-            <div className="overlay">
-              {console.log("div overlay")}
-              <a href="javascript:void(0)" className="closebtn" onClick={this.toggleNavbar}>&times;</a>
-              {this.getLinks()}
-            </div>
-            : null}
-        </nav>
+          : 
+          <div className="app-header" >
+            <nav className="navigation-bar navbar navbar-expand-sm">
+            <Link className="navbar-brand" to="/">Navbar</Link>
+              <button
+                className="navbar-toggler ml-auto hidden-sm-up float-xs-right"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                onClick={this.toggleNavbar}
+              >
+                <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
+              </button>
+              
+              <div className="collapse navbar-collapse" id="nav-div">
+                {this.getLinks()}
+              </div>
+            </nav>
+          </div>
+        }
       </div>
     );
   }
