@@ -9,11 +9,12 @@ body {
   font-family: 'Inconsolata', monospace !important;
 }
 .app-header {
-  background-color: #212121;
-  height: 100px;
+  padding: 40px;
+  text-align: center;
+  vertical-align: middle;
   width: 100%;
+  background-color: #212121;
   position: fixed;
-  top: 0;
   overflow: hidden;
 }
 #nav-div a:link, #nav-div a:visited, #nav-div a:active {
@@ -33,7 +34,7 @@ body {
   display: block;
   text-align: center;
 }
-.navbar-nav > li {
+.navbar-nav > a {
   display: inline-block;
   float:none;
   padding: 0 20px !important;
@@ -41,10 +42,53 @@ body {
   text-transform: uppercase;
 }
 @media (min-width: 576px) and (max-width: 768px) {
-  .navbar-nav > li {
+  .navbar-nav > a {
     padding: 0 15px !important;
     font-size: 18px;
 
+  }
+}
+.overlay {
+  position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0, 0, 0, 0.85);
+    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9; /* ie fallback png background image */
+    z-index:9999;
+    color:white;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
   }
 }
 .main-container {

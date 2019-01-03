@@ -3,13 +3,12 @@ import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-class Header extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       collapsed: true,
     };
-
     this.toggleNavbar = this.toggleNavbar.bind(this);
   }
   toggleNavbar() {
@@ -19,15 +18,15 @@ class Header extends Component {
   }
   getLinks() {
     const links = [];
-    links.push(<Link className="nav-link" to="/">Home</Link>);
-    links.push(<Link className="nav-link" to={`/categories/books`}>Books</Link>);
-    links.push(<Link className="nav-link" to={`/categories/films`}>Films</Link>);
-    links.push(<Link className="nav-link" to={`/`}>Podcasts</Link>);
-    const listItems = links.map((link) =>
-      <li className="nav-item ">{link}</li>
-    );
+    const collapsed = this.state.collapsed;
+    const linkStyle = collapsed ? 'nav-item nav-link' : 'overlay-link';
+    const divStyle = collapsed ? 'navbar-nav mr-auto' : "overlay-content"
+    links.push(<Link className={`${linkStyle}`} to="/">Home</Link>);
+    links.push(<Link className={`${linkStyle}`} to={`/categories/books`}>Books</Link>);
+    links.push(<Link className={`${linkStyle}`} to={`/categories/films`}>Films</Link>);
+    links.push(<Link className={`${linkStyle}`} to={`/`}>Podcasts</Link>);
     return (
-    <ul className="navbar-nav mr-auto">{listItems}I</ul>
+      <div className={`${divStyle}`}>{links}</div>
     );
   }
   render() {
@@ -47,18 +46,17 @@ class Header extends Component {
             <span className="navbar-toggler-icon"><FontAwesomeIcon icon={faBars} /></span>
           </button>
           <div className="collapse navbar-collapse" id="nav-div">
+            {this.getLinks()}
+          </div>
+          {!this.state.collapsed ?
+            <div className="overlay">
+              {console.log("div overlay")}
+              <a href="javascript:void(0)" className="closebtn" onClick={this.toggleNavbar}>&times;</a>
               {this.getLinks()}
-          </div>
-          {!this.state.collapsed ? 
-          <div className="overlay">
-            <a href="javascript:void(0)" className="closebtn" onclick={this.toggleNavbar()}>&times;</a>
-            {this.getLinks()} 
-          </div>
+            </div>
             : null}
         </nav>
       </div>
     );
   }
 }
-
-export default Header
