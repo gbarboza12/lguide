@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import _ from 'lodash'
-import Search from '../components/search'
-import Layout from '../components/layout'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import _ from 'lodash';
+import Search from '../components/search';
+import Layout from '../components/layout';
 
 export default class IndexPage extends Component {
   getTags() {
@@ -14,11 +14,11 @@ export default class IndexPage extends Component {
         count: tag.totalCount,
       })
     })
-    return tags
+    return tags;
   }
 
   render() {
-    const tagsList = this.getTags()
+    const tagsList = this.getTags();
     return (
       <Layout>
         <div className="container-fluid main-container">
@@ -38,7 +38,7 @@ export default class IndexPage extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
