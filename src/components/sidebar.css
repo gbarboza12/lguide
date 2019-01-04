@@ -1,0 +1,36 @@
+.sidebar {
+   width: 200px;
+   height: 100%;
+   position: absolute;
+   z-index: 2;
+   top: 6px;
+   left: 0;
+   background-color:#505757;
+   color:white;
+   overflow-x: hidden;
+   transition: 0.5s;
+   padding-top: 60px;
+   padding-left: 20px;
+}
+.sidebar a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #e2bbb4;
+   display: block;
+   transition: 0.3s;
+ }
+ .sidebar a:hover {
+   color: #f1f1f1;
+ }
+ .sidebar .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+ }
+ @media screen and (max-height: 450px) {
+   .sidebar {padding-top: 15px;}
+   .sidebar a {font-size: 18px;}
+ }

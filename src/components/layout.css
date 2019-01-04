@@ -9,7 +9,6 @@ body {
   font-family: 'Inconsolata', monospace !important;
 }
 .app-header {
-  height: 100px;
   width: 100%;
   background-color: #212121;
   position: fixed;
@@ -96,7 +95,7 @@ body {
 }
 .main-container {
   position:absolute;
-  top: 100px;
+  top: 50px;
   left:0px;
   right:0px;
   bottom:0px;

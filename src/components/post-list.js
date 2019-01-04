@@ -21,7 +21,7 @@ export default class PostList extends Component {
   render() {
     const posts = this.getPosts();
     return (
-      <div className="">
+      <div>
         {posts.map(post => (
           <PostNode post={post} />
         ))}
