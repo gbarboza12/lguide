@@ -17,7 +17,8 @@ const StyledLink = styled(Link)`
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   &:hover {
-    background-color: #6c7a89;
+    background-color: #000;
+    color: #ec644b;
     text-decoration: none;
   }
 `;
@@ -46,9 +47,7 @@ export default class Post extends Component {
                           key={tag}
                           to={`/tags/${_.kebabCase(tag)}`}
                         >
-
                           {tag}
-
                         </StyledLink>
                       </li>
                     )) : null}
