@@ -1,25 +1,38 @@
-import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
-import PostNode from '../components/post-node';
+import PostNode from '../components/post-node'
 
 export default class PostList extends Component {
   getPosts() {
-    const posts = [];
+    const tagFilterList = this.props.checkedTags
+    const categoryFilterList = this.props.checkedCategories
+    const posts = []
     this.props.postEdges.forEach(postEdge => {
+      // if tag filters are set and category node does not contain specified tags, skip
+      if (tagFilterList && tagFilterList.length > 0 && !postEdge.node.frontmatter.tags.some(item =>
+          tagFilterList.includes(item))) {
+          return
+      }
+      // if category filters are set and tag node does not belong in specified category,
+      // skip. NOTE: first letter of category is capitalized
+      if (categoryFilterList && categoryFilterList.length > 0 && 
+        !categoryFilterList.includes(postEdge.node.frontmatter.category)) {
+          return
+      }
       posts.push({
         title: postEdge.node.frontmatter.title,
         category: postEdge.node.frontmatter.category,
         tags: postEdge.node.frontmatter.tags,
         html: postEdge.node.html,
-        id: postEdge.node.id
-      });
-    });
-    return posts;
+        id: postEdge.node.id,
+      })
+    })
+    return posts
   }
 
   render() {
-    const posts = this.getPosts();
+    const posts = this.getPosts()
     return (
       <div>
         {posts.map(post => (

@@ -7,7 +7,7 @@ export default class Sidebar extends Component {
     this.state = {
       checkedItems: [],
     }
-    
+
     this.close = this.close.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
@@ -19,7 +19,7 @@ export default class Sidebar extends Component {
   }
   getFilters() {
     const filters = []
-    this.props.filterItems.forEach(filter => {
+    this.props.filterOptions.forEach(filter => {
       filters.push({
         filterName:
           filter.fieldValue.charAt(0).toUpperCase() +
@@ -41,7 +41,7 @@ export default class Sidebar extends Component {
         <a href="javascript:void(0)" className="closebtn" onClick={this.close}>
           &times;
         </a>
-        <h5>{`Filter ${pageContext}`}</h5>
+        <h5>{`Filter By...`}</h5>
         {filterList.map(filter => (
           <div className="form-check">
             <input
@@ -51,8 +51,8 @@ export default class Sidebar extends Component {
               name={filter.filterName}
               onChange={this.handleChange}
             />
-            <label className="form-check-label" for="filterCheck">
-              {filter.filterName}
+            <label className="form-check-label" htmlFor="filterCheck">
+              {filter.filterName}({filter.count})
             </label>
             <br />
           </div>

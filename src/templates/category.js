@@ -23,7 +23,6 @@ export default class Category extends Component {
     })
   }
   updateCheckedItems(item) {
-    console.log("received " + item)
     const tempList = this.state.checkedItems
     // delete item if already in list
     if (tempList.includes(item)) {
@@ -32,7 +31,7 @@ export default class Category extends Component {
           return listItem !== item
         }),
       })
-    } 
+    }
     //add item to list
     else {
       this.setState(prevState => ({
@@ -43,7 +42,10 @@ export default class Category extends Component {
   render() {
     const { category } = this.props.pageContext
     const postEdges = this.props.data.categories.edges
-    const filterItems = this.props.data.filters.group
+    const filterOptions = this.props.data.filters.group
+    const checkedItems = this.state.checkedItems.map(item => {
+      return item.toLowerCase()
+    })
     return (
       <Layout>
         <div className="container-fluid main-container">
@@ -63,12 +65,12 @@ export default class Category extends Component {
               pageContext={category}
               close={this.toggleSidebar}
               update={this.updateCheckedItems}
-              filterItems={filterItems}
+              filterOptions={filterOptions}
             />
           ) : null}
 
           <div className="main-content">
-            <PostList postEdges={postEdges} />
+            <PostList postEdges={postEdges} checkedTags={checkedItems} />
           </div>
         </div>
       </Layout>
