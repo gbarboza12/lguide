@@ -50,17 +50,16 @@ export default class Tag extends React.Component {
           <button
             className=""
             type="button"
-            aria-label="Toggle filter panel"
+            aria-label="Filter topics by category"
             onClick={this.toggleSidebar}
           >
             <span className="">
-              <FontAwesomeIcon icon={faFilter} /> Filter by Category
+              <FontAwesomeIcon icon={faFilter} /> Filter
             </span>
           </button>
           {this.state.showSidebar ? (
             <Sidebar
-              pageType={'tag'}
-              pageContext={tag}
+              filterType={'Category'}
               close={this.toggleSidebar}
               update={this.updateCheckedItems}
               filterOptions={filterOptions}

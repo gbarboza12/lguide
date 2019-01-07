@@ -4,19 +4,36 @@ import './sidebar.css'
 export default class Sidebar extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      checkedItems: [],
-    }
-
     this.close = this.close.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
+  componentWillMount() {
+    document.addEventListener('mousedown', this.handleClick, false)
+  }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClick, false)
+  }
+  // closes panel
   close() {
     this.props.close()
   }
+  // updates list of checked filters
   update(filterItem) {
     this.props.update(filterItem)
   }
+  // clicking inside panel does nothing, clicking outside prompts panel to close
+  handleClick = e => {
+    if (this.node.contains(e.target)) {
+      return
+    }
+    this.close()
+  }
+  // handles changes when selecting checkbox
+  handleChange(e) {
+    const filterItem = e.target.name
+    this.update(filterItem)
+  }
+  // returns a list of filter options
   getFilters() {
     const filters = []
     this.props.filterOptions.forEach(filter => {
@@ -27,36 +44,33 @@ export default class Sidebar extends Component {
         count: filter.totalCount,
       })
     })
-    return filters;
-  }
-  handleChange(e) {
-    const filterItem = e.target.name
-    this.update(filterItem)
+    return filters
   }
   render() {
-    const { pageType, pageContext } = this.props
+    const { filterType, resetFilters } = this.props
     const filterList = this.getFilters()
     return (
-      <div className="sidebar">
-        <a href="javascript:void(0)" className="closebtn" onClick={this.close}>
+      <div className="sidebar" ref={node => (this.node = node)}>
+        <a href="javascript:void(0)" aria-label="Close" className="closebtn" onClick={this.close}>
           &times;
         </a>
-        <h5>{`Filter By...`}</h5>
+        <h5>{`Filter by ${filterType}`}</h5>
         {filterList.map(filter => (
           <div className="form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="filterCheck"
-              name={filter.filterName}
-              onChange={this.handleChange}
-            />
-            <label className="form-check-label" htmlFor="filterCheck">
+            <label className="form-check-label">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="filterCheck"
+                name={filter.filterName}
+                onChange={this.handleChange}
+              />
               {filter.filterName}({filter.count})
             </label>
             <br />
           </div>
         ))}
+        {resetFilters ? <button type="button" class="btn btn-outline-danger" onClick={this.reset} >Reset Filters</button>  : null}
       </div>
     )
   }
