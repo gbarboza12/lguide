@@ -44,19 +44,26 @@ export default class Tag extends React.Component {
     const postEdges = this.props.data.tags.edges
     const filterOptions = this.props.data.filters.group
     const checkedItems = this.state.checkedItems
+    const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1)
     return (
       <Layout>
         <div className="container-fluid main-container">
-          <button
-            className=""
-            type="button"
-            aria-label="Filter topics by category"
-            onClick={this.toggleSidebar}
-          >
-            <span className="">
+          <div className="filterbtn-div">
+            <button
+              className="btn btn-outline-danger"
+              type="button"
+              aria-label="Filter topics by category"
+              onClick={this.toggleSidebar}
+            >
               <FontAwesomeIcon icon={faFilter} /> Filter
-            </span>
-          </button>
+            </button>
+          </div>
+          <div className="main-content">
+            <div className="text-center">
+              <h1>Topic: {formattedTag}</h1>
+            </div>
+            <PostList postEdges={postEdges} checkedCategories={checkedItems} />
+          </div>
           {this.state.showSidebar ? (
             <Sidebar
               filterType={'Category'}
@@ -65,10 +72,6 @@ export default class Tag extends React.Component {
               filterOptions={filterOptions}
             />
           ) : null}
-
-          <div className="main-content">
-            <PostList postEdges={postEdges} checkedCategories={checkedItems}/>
-          </div>
         </div>
       </Layout>
     )
@@ -77,9 +80,7 @@ export default class Tag extends React.Component {
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
-    tags: allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$tag] } } }
-    ) {
+    tags: allMarkdownRemark(filter: { frontmatter: { tags: { in: [$tag] } } }) {
       totalCount
       edges {
         node {
@@ -103,6 +104,6 @@ export const pageQuery = graphql`
         fieldValue
         totalCount
       }
-    }  
+    }
   }
 `

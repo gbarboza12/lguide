@@ -8,6 +8,10 @@ hr.post-divider {
 .post-div {
   margin-bottom: 40px;
 }
+.post-title {
+  font-size: 24px;
+  font-weight: 700;
+}
 .tag-list {
   display: inline-flex;
   flex-wrap: wrap;

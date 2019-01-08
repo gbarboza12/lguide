@@ -2,7 +2,6 @@
    width: 200px;
    height: 100%;
    position: absolute;
-   z-index: 2;
    top: 6px;
    left: 0;
    background-color:#505757;
@@ -10,7 +9,7 @@
    overflow-x: hidden;
    transition: 0.5s;
    padding-top: 60px;
-   padding-left: 20px;
+   padding-left: 10px;
 }
 .sidebar a {
    text-decoration: none;
@@ -32,4 +31,7 @@
  @media screen and (max-height: 450px) {
    .sidebar {padding-top: 15px;}
    .sidebar a {font-size: 18px;}
+ }
+ .filterbtn-div {
+   padding-bottom: 15px;
  }

@@ -7,7 +7,7 @@ export default class Sidebar extends Component {
     this.close = this.close.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-  componentWillMount() {
+  componentDidMount() {
     document.addEventListener('mousedown', this.handleClick, false)
   }
   componentWillUnmount() {
@@ -54,7 +54,7 @@ export default class Sidebar extends Component {
         <a href="javascript:void(0)" aria-label="Close" className="closebtn" onClick={this.close}>
           &times;
         </a>
-        <h5>{`Filter by ${filterType}`}</h5>
+        {`Filter by ${filterType}`}
         {filterList.map(filter => (
           <div className="form-check">
             <label className="form-check-label">

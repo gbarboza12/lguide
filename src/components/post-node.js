@@ -27,9 +27,9 @@ export default class PostNode extends Component {
     const { post } = this.props;
     return (
       <div key={post.id} className="post-div">
-        <h3>
+        <h2 className="post-title">
           {post.title}
-        </h3>
+        </h2>
         <p dangerouslySetInnerHTML={{ __html: post.html }} />
         <div className="text-right">
           <ul className="tag-list">
@@ -40,9 +40,7 @@ export default class PostNode extends Component {
                     key={tag}
                     to={`/tags/${_.kebabCase(tag)}`}
                   >
-
                     {tag}
-
                   </StyledLink>
                 </li>
               )) : null}

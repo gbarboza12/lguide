@@ -34,9 +34,9 @@ export default class Post extends Component {
         <div className="container-fluid main-container">
           <div className="main-content">
             <div key={post.id} className="post-div">
-              <h3>
+              <h2 className="post-title">
                 {post.title}
-              </h3>
+              </h2>
               <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
               <div className="text-right">
                 <ul className="tag-list">
