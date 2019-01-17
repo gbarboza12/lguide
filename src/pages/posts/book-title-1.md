@@ -5,5 +5,6 @@ category: Books
 tags:
   - fantasy
   - horror
+image: /img/stock.jpg
 ---
 A t**est post** to see how it [looks](https://www.google.com)
