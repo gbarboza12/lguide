@@ -5,6 +5,6 @@ category: Books
 tags:
   - mystery
   - horror
-thumbnail: /assets/stock.jpg
+image: /img/stock.jpg
 ---
 Testing a post with an image.
