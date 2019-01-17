@@ -93,6 +93,13 @@ export const pageQuery = graphql`
             title
             category
             tags
+            image {
+              childImageSharp {
+                sizes(maxWidth: 200) {
+                  src
+                }
+              }
+            }
           }
         }
       }

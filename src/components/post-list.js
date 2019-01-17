@@ -26,6 +26,7 @@ export default class PostList extends Component {
         tags: postEdge.node.frontmatter.tags,
         html: postEdge.node.html,
         id: postEdge.node.id,
+        image: postEdge.node.frontmatter.image
       })
     })
     return posts

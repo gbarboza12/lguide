@@ -31,6 +31,9 @@ export default class PostNode extends Component {
           {post.title}
         </h2>
         <p dangerouslySetInnerHTML={{ __html: post.html }} />
+        {post.image ? 
+        <img src={post.image.childImageSharp.sizes.src}></img>
+          : null}
         <div className="text-right">
           <ul className="tag-list">
             {post.tags ?

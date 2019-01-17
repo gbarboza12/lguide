@@ -3,8 +3,8 @@ backend:
   branch: master # Branch to update
   repo: gbarboza12/lguide # Repo for pushing new commits. Make sure to replace with your repo!
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/img
+public_folder: /img
 
 collections:
   - name: "posts"
@@ -19,3 +19,4 @@ collections:
           options: ["Books", "Films", "Social Media", "Podcasts"]}
       - {label: "Tags (separate each tag with a comma)", name: "tags", widget: "list"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Featured image", name: "image", widget: "image", required: false}
