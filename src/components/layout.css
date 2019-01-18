@@ -7,6 +7,7 @@ html, body {
 body {
   margin: 0;
   font-family: 'Inconsolata', monospace !important;
+  font-size: 20px;
 }
 a:link, a:visited, a:active {
   text-decoration: none;
@@ -15,6 +16,17 @@ a:link, a:visited, a:active {
 a:hover {
   text-decoration: underline;
   color: #212121;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: .9rem;
+  }
+  h1 {
+    font-size: 1.9rem ;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
 }
 .app-header {
   width: 100%;
@@ -161,4 +173,7 @@ a:hover {
 .main-content {
   padding: 20px;
   background: #fff;
+}
+.page-title-div {
+ padding-bottom: 30px;
 }

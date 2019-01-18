@@ -60,7 +60,7 @@ export default class Category extends Component {
             </button>
           </div>
           <div className="main-content">
-            <div className="text-center">
+            <div className="text-center page-title-div">
               <h1>Category: {category}</h1>
             </div>
             <PostList postEdges={postEdges} checkedTags={checkedItems} />

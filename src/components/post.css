@@ -1,16 +1,19 @@
-hr.post-divider {
-  height: 4px;
-  background-image: linear-gradient(90deg, transparent, transparent 50%, 
-  #fff 50%, #fff 100%), linear-gradient(to left, #333333, #dd1818);
-  background-size: 20px 3px, 100% 3px;
-  border: none;
-}
 .post-div {
   margin-bottom: 40px;
 }
+.post-cover {
+  margin-top: 4px;
+}
+.post-cover img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .post-cover img {
+    width: 70px;
+  }
+}
 .post-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .tag-list {
   display: inline-flex;
@@ -25,4 +28,11 @@ hr.post-divider {
   color: #e9c8c2;
   text-align: center;
   display: inline-block;
+}
+hr.post-divider {
+  height: 4px;
+  background-image: linear-gradient(90deg, transparent, transparent 50%, 
+  #fff 50%, #fff 100%), linear-gradient(to left, #333333, #dd1818);
+  background-size: 20px 3px, 100% 3px;
+  border: none;
 }
