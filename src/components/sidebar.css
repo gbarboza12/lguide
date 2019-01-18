@@ -1,11 +1,12 @@
 .sidebar {
    width: 200px;
-   height: 100%;
+   min-height: 100vh;
    position: absolute;
-   top: 6px;
+   top: 20px;
    left: 0;
    background-color:#505757;
    color:white;
+   font-size: 18px;
    overflow-x: hidden;
    transition: 0.5s;
    padding-top: 60px;

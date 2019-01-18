@@ -12,8 +12,11 @@ export default class Header extends Component {
     this.toggleNavbar = this.toggleNavbar.bind(this)
   }
   toggleNavbar() {
+    console.log()
     this.setState({
       collapsed: !this.state.collapsed,
+    }, () => {
+      this.props.hideContent(this.state.collapsed)
     })
   }
   getLinks() {
@@ -22,17 +25,17 @@ export default class Header extends Component {
     const linkStyle = collapsed ? 'nav-item nav-link' : 'overlay-link'
     const divStyle = collapsed ? 'navbar-nav ml-auto' : 'overlay-content'
     links.push(
-      <Link className={`${linkStyle}`} to={`/categories/books`}>
+      <Link  activeClassName="activeLink" to={`/categories/books`}>
         Books
       </Link>
     )
     links.push(
-      <Link className={`${linkStyle}`} to={`/categories/films`}>
+      <Link activeClassName="activeLink" to={`/categories/films`}>
         Films
       </Link>
     )
     links.push(
-      <Link className={`${linkStyle}`} to={`/`}>
+      <Link activeClassName="activeLink" to={`/`}>
         Podcasts
       </Link>
     )
@@ -53,7 +56,7 @@ export default class Header extends Component {
             {this.getLinks()}
           </div>
         ) : (
-          <nav className="navbar navbar-expand-sm app-header">
+          <nav className="navbar navbar-expand-sm app-header" id="navbar-brand">
             <Link className="navbar-brand" to="/">
               Navbar
             </Link>
@@ -72,7 +75,7 @@ export default class Header extends Component {
               </span>
             </button>
 
-            <div className="collapse navbar-collapse" id="nav-div">
+            <div className="collapse navbar-collapse" id="navlinks-div">
               {this.getLinks()}
             </div>
           </nav>

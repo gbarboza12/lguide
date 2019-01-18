@@ -32,7 +32,7 @@ export default class PostNode extends Component {
         <div className="row">
           {post.image ? (
             <div className="col-3 col-sm-2 post-cover">
-              <img className="" src={post.image.childImageSharp.sizes.src} />
+              <img src={post.image.childImageSharp.sizes.src} alt={post.title} />
             </div>
           ) : null}
 

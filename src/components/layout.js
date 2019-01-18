@@ -1,42 +1,50 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from './header'
+import Footer from './footer'
 import './layout.css'
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+export default class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hideContent: false,
+    }
+    this.hideContent = this.hideContent.bind(this)
+  }
+  hideContent(collapsed) {
+    // if overlay is collapsed, don't hide contente
+    if(collapsed) {
+      this.setState({
+        hideContent: false
+      })
+    } else {
+      this.setState({
+        hideContent: true
+      })
+    }
+  }
+  render() {
+    const { children } = this.props;
+    return (
+      <div>
+      <Header hideContent={this.hideContent} />
+      {this.state.hideContent ? null :
+      <React.Fragment>
         {children}
-      </>
-    )}
-  />
-)
+        <Footer />
+      </React.Fragment>
+       }
+        
+      </div>
+    )
+
+  }
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout

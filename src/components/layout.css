@@ -3,9 +3,9 @@
 }
 html, body {
   height: 100%;
+  margin: 0;
 }
 body {
-  margin: 0;
   font-family: 'Inconsolata', monospace !important;
   font-size: 20px;
 }
@@ -29,18 +29,12 @@ a:hover {
   }
 }
 .app-header {
-  width: 100%;
-  background-color: #212121;
   position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #212121;
   overflow: hidden;
   z-index: 1;
-}
-#nav-div a:link, #nav-div a:visited, #nav-div a:active {
-  color: #fff ;
-}
-#nav-div a:hover {
-  text-decoration: underline;
-  color: #ec644b;
 }
 .navigation-bar {
   width: 100%;
@@ -52,12 +46,23 @@ a:hover {
 }
 .navbar-brand {
   margin-left: 15px;
+  font-size: 30px;
+}
+#navbar-brand a:link, #navbar-brand a:visited, #navbar-brand a:active, #navbar-brand a:hover {
+  color: #fff;
 }
 .navbar-nav > a {
   display: inline-block;
   padding: 0 20px !important;
   font-size: 20px;
   text-transform: uppercase;
+}
+#navlinks-div a:link, #navlinks-div a:visited, #navlinks-div a:active {
+  color: #ec644b ;
+}
+#navlinks-div a:hover {
+  text-decoration: none !important;
+  color: #fff;
 }
 @media (min-width: 576px) and (max-width: 768px) {
   .navbar-nav > a {
@@ -68,18 +73,23 @@ a:hover {
 .navbar-toggler {
   color: #fff; 
 }
-.navigation-bar button:hover, .navigation-bar a:hover {
+.navbar-toggler a:hover{
   color: #ec644b;
 }
+.activeLink {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  color: #7ea1b9 !important;
+  text-decoration: none !important;
+}
 .overlay {
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color:#212121;
   z-index:9999;
-  color:white;
 }
 .overlay-content {
   position: relative;
@@ -92,12 +102,11 @@ a:hover {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
-  color: #818181;
   display: block;
   transition: 0.3s;
 }
 .overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+  color: #f1f1f1 !important;
 }
 .overlay .closebtn {
   position: absolute;
@@ -105,23 +114,13 @@ a:hover {
   right: 45px;
   font-size: 60px;
 }
-@media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-  }
-}
+
 .main-container {
-  position:absolute;
+  position: relative;
   top: 50px;
-  left:0px;
-  right:0px;
-  bottom:0px;
-  overflow-y: hidden; 
   padding: 30px;
   background-color: #c62828;
+  min-height: 100vh;
 }
 .search-content {
   margin-bottom: 10px;
@@ -176,4 +175,15 @@ a:hover {
 }
 .page-title-div {
  padding-bottom: 30px;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #212121;
+  color: white;
+  text-align: center;
+  height: 70px;
+  margin-top: 50px;
 }
