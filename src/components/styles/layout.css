@@ -68,10 +68,10 @@ a:hover {
   border-color: transparent;
   box-shadow: none;
 }
-.btn{
+.search-btn {
   background: #2b303b;
 }
-.btn:focus {
+.search-btn:focus {
   outline: 0 !important;
   border-color: transparent;
   box-shadow: none;
@@ -83,7 +83,7 @@ a:hover {
   text-align: center
 }
 .main-content {
-  padding: 20px;
+  padding: 50px 30px;
   background: #fff;
 }
 .page-title-div {
@@ -95,7 +95,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .page-text-div  {
-    padding-bottom: 30px;
+    padding-bottom: 25px;
    }
 }
 

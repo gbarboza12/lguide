@@ -29,7 +29,6 @@ export default class Search extends Component {
 
   render() {
     return (
-      
       <div className="search-content">
       
         <div className="input-group">
@@ -42,7 +41,7 @@ export default class Search extends Component {
             onChange={this.search}
           />
           <span className="input-group-append">
-            <button id="search-icon " className="btn border-left-0" type="button">
+            <button id="search-icon " className="btn border-left-0 search-btn" type="button">
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </span>

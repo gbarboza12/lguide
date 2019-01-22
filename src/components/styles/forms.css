@@ -1,3 +1,18 @@
 .contact-form {
    font-weight: bold;
 }
+.contact-form .form-control-lg {
+   border-radius: 0rem;
+   border-color: #c62828; 
+   border-width: 2px;
+}
+.contact-form-btn {
+   background-color: #bdc3c7;
+   color: #c62828;
+   padding: 10px;
+   border-radius: 0rem;
+}
+.contact-form-btn:hover {
+   background-color: #000;
+    color: #c62828;
+}

@@ -5,6 +5,12 @@ import Layout from '../components/layout'
 export default class Sidebar extends Component {
   constructor(props) {
     super(props)
+
+    this.submitForm = this.submitForm.bind(this)
+  }
+
+  submitForm() {
+    console.log("submit")
   }
 
   render() {
@@ -33,6 +39,7 @@ export default class Sidebar extends Component {
                       type="text"
                       className="form-control form-control-lg"
                       name="name"
+                      required
                     />
                   </div>
                   <div class="form-group contact-form">
@@ -41,6 +48,7 @@ export default class Sidebar extends Component {
                       type="email"
                       className="form-control form-control-lg"
                       name="email"
+                      required
                     />
                   </div>
                   <div class="form-group contact-form">
@@ -49,9 +57,17 @@ export default class Sidebar extends Component {
                       name="message"
                       className="form-control form-control-lg"
                       rows="6"
+                      required
                     />
                   </div>
-                  <button type="submit">Submit</button>
+                  <button
+                    className="btn btn-block contact-form-btn"
+                    type="submit"
+                    aria-label="Submit form"
+                    onClick={this.submitForm}
+                  >
+                    Submit
+                  </button>
                 </form>
               </div>
             </div>
