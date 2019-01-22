@@ -59,12 +59,6 @@ export default class Category extends Component {
               <FontAwesomeIcon icon={faFilter} /> Filter
             </button>
           </div>
-          <div className="main-content">
-            <div className="text-center page-title-div">
-              <h1>Category: {category}</h1>
-            </div>
-            <PostList postEdges={postEdges} checkedTags={checkedItems} />
-          </div>
           {this.state.showSidebar ? (
             <Sidebar
               filterType={'Topic'}
@@ -73,6 +67,12 @@ export default class Category extends Component {
               filterOptions={filterOptions}
             />
           ) : null}
+          <div className="main-content">
+            <div className="text-center page-title-div">
+              <h1>{category}</h1>
+            </div>
+            <PostList postEdges={postEdges} checkedTags={checkedItems} />
+          </div>
         </div>
       </Layout>
     )

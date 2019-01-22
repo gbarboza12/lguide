@@ -4,7 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './header'
 import Footer from './footer'
-import './layout.css'
+import './styles/layout.css'
+import './styles/forms.css'
+import './styles/post.css'
+import './styles/sidebar.css'
 
 export default class Layout extends Component {
   constructor(props) {
@@ -15,7 +18,7 @@ export default class Layout extends Component {
     this.hideContent = this.hideContent.bind(this)
   }
   hideContent(collapsed) {
-    // if overlay is collapsed, don't hide contente
+    // if overlay is collapsed, don't hide content
     if(collapsed) {
       this.setState({
         hideContent: false
@@ -40,10 +43,8 @@ export default class Layout extends Component {
         
       </div>
     )
-
   }
 }
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

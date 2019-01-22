@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import './header.css'
+import './styles/header.css'
 
 export default class Header extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ export default class Header extends Component {
   }
   render() {
     return (
-      <div>
+      <header>
         {!this.state.collapsed ? (
           <div className="overlay">
             <a
@@ -81,7 +81,7 @@ export default class Header extends Component {
             </div>
           </nav>
         )}
-      </div>
+      </header>
     )
   }
 }

@@ -3,8 +3,6 @@ import { Link } from 'gatsby'
 import _ from 'lodash'
 import styled from 'styled-components'
 
-import './post.css'
-
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
   color: #ec644b;

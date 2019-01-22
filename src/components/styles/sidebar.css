@@ -11,6 +11,7 @@
    transition: 0.5s;
    padding-top: 60px;
    padding-left: 10px;
+   z-index: 2;
 }
 .sidebar a {
    text-decoration: none;
@@ -29,9 +30,10 @@
    font-size: 36px;
    margin-left: 50px;
  }
- @media screen and (max-height: 450px) {
-   .sidebar {padding-top: 15px;}
-   .sidebar a {font-size: 18px;}
+ @media screen and (max-width: 450px) {
+   .sidebar {
+     font-size: 16px;
+    }
  }
  .filterbtn-div {
    padding-bottom: 15px;

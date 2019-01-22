@@ -22,13 +22,6 @@
   margin: 0;
   padding: 10px;
 }
-.tag-button {
-  background-color: #bdc3c7;
-  border-radius: 12px;
-  color: #e9c8c2;
-  text-align: center;
-  display: inline-block;
-}
 hr.post-divider {
   height: 4px;
   background-image: linear-gradient(90deg, transparent, transparent 50%, 
