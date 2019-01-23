@@ -50,7 +50,7 @@ export default class Sidebar extends Component {
     const filterItem =
       filterType === 'Topic' ? filterName.toLowerCase() : filterName
     const checkedItems = this.props.checkedItems
-    
+
     if (checkedItems.includes(filterItem)) return true
     else return false
   }
@@ -67,7 +67,7 @@ export default class Sidebar extends Component {
         >
           &times;
         </a>
-        {`Filter by ${filterType}`}
+        <h5>{`Filter by ${filterType}`}</h5>
         {filterList.map(filter => (
           <div className="form-check">
             <label className="form-check-label">

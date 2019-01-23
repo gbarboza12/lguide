@@ -10,7 +10,7 @@ body {
   font-size: 20px;
 }
 a:link, a:visited, a:active {
-  text-decoration: none;
+  text-decoration: underline;
   color: #ec644b;
 }
 a:hover {
@@ -25,7 +25,10 @@ a:hover {
     font-size: 1.9rem ;
   }
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1.0rem;
   }
 }
 .main-container {
@@ -88,7 +91,6 @@ a:hover {
 }
 .page-title-div {
  padding-bottom: 30px;
- text-decoration: underline;
 }
 .page-text-div {
   padding-bottom: 40px;

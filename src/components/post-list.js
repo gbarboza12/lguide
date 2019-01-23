@@ -39,7 +39,6 @@ export default class PostList extends Component {
         {posts.map(post => (
           <PostNode post={post} />
         ))}
-        <Link to="/">Go back to the homepage</Link>
       </div>
     )
   }

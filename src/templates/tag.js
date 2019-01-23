@@ -71,7 +71,7 @@ export default class Tag extends React.Component {
             </div>
 
             <div className="text-center page-title-div">
-              <h1>Topic: {formattedTag}</h1>
+              <h1>{formattedTag}</h1>
             </div>
             <PostList postEdges={postEdges} checkedCategories={checkedItems} />
           </div>

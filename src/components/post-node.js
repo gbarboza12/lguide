@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
-  color: #ec644b;
+  color: #d1381c;
   padding: 1px 8px;
   display: inline-block;
   margin: 2px 3px;
@@ -15,8 +15,11 @@ const StyledLink = styled(Link)`
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
   }
+  &:link {
+    text-decoration: none;
+  }
   &:hover {
-    background-color: #000;
+    background-color: #404142;
     color: #ec644b;
     text-decoration: none;
   }

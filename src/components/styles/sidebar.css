@@ -35,8 +35,14 @@
    margin-top: -30px;
  }
  .filter-btn {
-   background-color: transparent;
-   border-color: #c62828;
+   background-color: #bdc3c7;
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
+   color: #d1381c;
+ }
+ .filter-btn:hover {
+  background-color: #404142;
+  color: #ec644b;
  }
  @media screen and (max-width: 450px) {
   .sidebar {
@@ -45,5 +51,9 @@
    .filterbtn-div {
      padding-bottom: 20px;
      margin-left: -10px;
+   }
+   .filter-btn {
+    padding: .15rem .5rem;
+    font-size: 14px;
    }
 }
