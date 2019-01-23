@@ -37,7 +37,7 @@ export default class Post extends Component {
               <h2 className="post-title">{post.title}</h2>
               <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
               {post.image ? (
-                <img src={post.image.childImageSharp.sizes.src} />
+                <img src={post.image.childImageSharp.sizes.src} alt={post.title} />
               ) : null}
               <div className="text-right">
                 <ul className="tag-list">

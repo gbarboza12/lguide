@@ -48,30 +48,33 @@ export default class Tag extends React.Component {
     return (
       <Layout>
         <div className="container-fluid main-container">
-          <div className="filterbtn-div">
-            <button
-              className="btn btn-outline-danger"
-              type="button"
-              aria-label="Filter topics by category"
-              onClick={this.toggleSidebar}
-            >
-              <FontAwesomeIcon icon={faFilter} /> Filter
-            </button>
-          </div>
-          <div className="main-content">
-            <div className="text-center page-title-div">
-              <h1>Topic: {formattedTag}</h1>
-            </div>
-            <PostList postEdges={postEdges} checkedCategories={checkedItems} />
-          </div>
           {this.state.showSidebar ? (
             <Sidebar
               filterType={'Category'}
               close={this.toggleSidebar}
               update={this.updateCheckedItems}
               filterOptions={filterOptions}
+              checkedItems={checkedItems}
             />
           ) : null}
+
+          <div className="main-content">
+            <div className="filterbtn-div">
+              <button
+                className="btn filter-btn"
+                type="button"
+                aria-label="Filter topics by category"
+                onClick={this.toggleSidebar}
+              >
+                <FontAwesomeIcon icon={faFilter} /> Filter
+              </button>
+            </div>
+
+            <div className="text-center page-title-div">
+              <h1>Topic: {formattedTag}</h1>
+            </div>
+            <PostList postEdges={postEdges} checkedCategories={checkedItems} />
+          </div>
         </div>
       </Layout>
     )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import _ from 'lodash'
 import Search from '../components/search'
 import Layout from '../components/layout'

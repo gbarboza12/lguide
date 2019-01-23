@@ -49,25 +49,28 @@ export default class Category extends Component {
     return (
       <Layout>
         <div className="container-fluid main-container h-100">
-          <div className="filterbtn-div">
-            <button
-              className="btn btn-outline-danger"
-              type="button"
-              aria-label="Filter category by topics"
-              onClick={this.toggleSidebar}
-            >
-              <FontAwesomeIcon icon={faFilter} /> Filter
-            </button>
-          </div>
           {this.state.showSidebar ? (
             <Sidebar
               filterType={'Topic'}
               close={this.toggleSidebar}
               update={this.updateCheckedItems}
               filterOptions={filterOptions}
+              checkedItems={checkedItems}
             />
           ) : null}
+
           <div className="main-content">
+            <div className="filterbtn-div">
+              <button
+                className="btn filter-btn"
+                type="button"
+                aria-label="Filter category by topics"
+                onClick={this.toggleSidebar}
+              >
+                <FontAwesomeIcon icon={faFilter} /> Filter
+              </button>
+            </div>
+            
             <div className="text-center page-title-div">
               <h1>{category}</h1>
             </div>

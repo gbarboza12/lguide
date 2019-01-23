@@ -45,12 +45,26 @@ export default class Sidebar extends Component {
     })
     return filters
   }
+  isChecked(filterName) {
+    const filterType = this.props.filterType
+    const filterItem =
+      filterType === 'Topic' ? filterName.toLowerCase() : filterName
+    const checkedItems = this.props.checkedItems
+    
+    if (checkedItems.includes(filterItem)) return true
+    else return false
+  }
   render() {
     const { filterType, resetFilters } = this.props
     const filterList = this.getFilters()
     return (
       <div className="sidebar" ref={node => (this.node = node)}>
-        <a href="javascript:void(0)" aria-label="Close" className="closebtn" onClick={this.close}>
+        <a
+          href="javascript:void(0)"
+          aria-label="Close"
+          className="closebtn"
+          onClick={this.close}
+        >
           &times;
         </a>
         {`Filter by ${filterType}`}
@@ -62,6 +76,7 @@ export default class Sidebar extends Component {
                 className="form-check-input"
                 id="filterCheck"
                 name={filter.filterName}
+                checked={this.isChecked(filter.filterName)}
                 onChange={this.handleChange}
               />
               {filter.filterName}({filter.count})
@@ -69,7 +84,7 @@ export default class Sidebar extends Component {
             <br />
           </div>
         ))}
-        {resetFilters ? <button type="button" class="btn btn-outline-danger" onClick={this.reset} >Reset Filters</button>  : null}
+        {/* {resetFilters ? <button type="button" class="btn btn-outline-danger" onClick={this.reset} >Reset Filters</button>  : null} */}
       </div>
     )
   }
