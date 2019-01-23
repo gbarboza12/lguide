@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Layout from '../components/layout'
 
-export default class Contact extends Component {
+export default class Credits extends Component {
   constructor(props) {
     super(props)
 
@@ -10,7 +10,7 @@ export default class Contact extends Component {
   }
 
   submitForm() {
-    console.log("submit")
+    console.log('submit')
   }
 
   render() {
@@ -20,13 +20,23 @@ export default class Contact extends Component {
           <div className="main-content row justify-content-center align-items-center h-100">
             <div className="col col-sm-6 col-md-6 ">
               <div className="page-title-div text-center">
-                <h1>Contact</h1>
+                <h1>Credits</h1>
               </div>
 
               <div className="page-text-div">
-                Please reach out via email or fill out the form below for any
-                comments, questions, etc.
+                Since we are not omniscient, we are likely to have missed a thing or two (or hundreds). 
+                Help us make this guide better with your recommendations of stuff that you think should be on here. 
+                Email us or fill out the form below.
+                We understand people's desire for privacy, so let us know if you wish to use a different name when credited.
               </div>
+
+              <div>
+                <ul>
+                  <li>
+                  <a href="https://unsplash.com/@jeremyperkins">Jeremy Perkins</a> for cover photo.
+                    </li>
+                  </ul>
+                </div>
 
               <div id="contact-form">
                 <form

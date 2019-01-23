@@ -2,7 +2,7 @@
    position: fixed;
    width: 100%;
    top: 0;
-   background-color: #212121;
+   background-color: #020101;
    overflow: hidden;
    z-index: 3;
  }
@@ -60,7 +60,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   background-color:#212121;
+   background-color:#020101;
    z-index:9999;
  }
  .overlay-content {
@@ -70,12 +70,14 @@
    text-align: center;
    margin-top: 30px;
  }
- .overlay a {
+ .overlay a:link {
    padding: 8px;
    text-decoration: none;
    font-size: 36px;
    display: block;
    transition: 0.3s;
+   border: 0px;
+
  }
  .overlay a:hover, .overlay a:focus {
    color: #f1f1f1 !important;

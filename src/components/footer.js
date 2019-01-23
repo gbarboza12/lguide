@@ -13,7 +13,7 @@ export default class Footer extends Component {
             <Link to={`/contact`}>Contact</Link>
           </li>
           <li>
-            <Link to={`/`}>Contributors</Link>
+            <Link to={`/credits`}>Credits</Link>
           </li>
         </ul>
       </footer>
