@@ -4,10 +4,10 @@
    position: absolute;
    top: 20px;
    left: 0;
+   bottom: 0;
    background-color:#505757;
    color:white;
    font-size: 18px;
-   overflow-x: hidden;
    transition: 0.5s;
    padding-top: 60px;
    padding-left: 10px;

@@ -8,16 +8,22 @@ import Layout from '../components/layout'
 
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
-  border-radius: 12px;
-  color: #ec644b;
-  padding: 3px 8px;
+  color: #d1381c;
+  padding: 1px 8px;
   text-align: center;
   display: inline-block;
   margin: 2px 3px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  font-size: 1.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+  &:link {
+    text-decoration: none;
+  }
   &:hover {
-    background-color: #000;
+    background-color: #404142;
     color: #ec644b;
     text-decoration: none;
   }
@@ -27,18 +33,30 @@ export default class Post extends Component {
   render() {
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
-    const { slug } = this.props.pageContext
 
     return (
       <Layout>
         <div className="container-fluid main-container">
-          <div className="main-content">
-            <div key={post.id} className="post-div">
-              <h2 className="post-title">{post.title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
-              {post.image ? (
-                <img src={post.image.childImageSharp.sizes.src} alt={post.title} />
-              ) : null}
+          <div className="main-content row justify-content-center align-items-center h-100">
+            <div key={post.id} className="post-div col col-sm-6 col-md-6 ">
+              <div className="page-title-div text-center">
+                <h1 className="post-title">{post.title}</h1>
+              </div>
+
+              <div className="row">
+                {post.image ? (
+                  <div className="col-3 col-sm-2 post-cover">
+                    <img
+                      src={post.image.childImageSharp.sizes.src}
+                      alt={post.title}
+                    />
+                  </div>
+                ) : null}
+                <div className="col-9 col-sm-10">
+                  <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                </div>
+              </div>
+
               <div className="text-right">
                 <ul className="tag-list">
                   {post.tags
