@@ -4,6 +4,7 @@ export default class Sidebar extends Component {
   constructor(props) {
     super(props)
     this.close = this.close.bind(this)
+    this.reset = this.reset.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
   componentDidMount() {
@@ -20,6 +21,10 @@ export default class Sidebar extends Component {
   update(filterItem) {
     this.props.update(filterItem)
   }
+  // resets filter list
+  reset() {
+    this.props.reset()
+  }
   // clicking inside panel does nothing, clicking outside prompts panel to close
   handleClick = e => {
     if (this.node.contains(e.target)) {
@@ -32,31 +37,10 @@ export default class Sidebar extends Component {
     const filterItem = e.target.name
     this.update(filterItem)
   }
-  // returns a list of filter options
-  getFilters() {
-    const filters = []
-    this.props.filterOptions.forEach(filter => {
-      filters.push({
-        filterName:
-          filter.fieldValue.charAt(0).toUpperCase() +
-          filter.fieldValue.slice(1),
-        count: filter.totalCount,
-      })
-    })
-    return filters
-  }
-  isChecked(filterName) {
-    const filterType = this.props.filterType
-    const filterItem =
-      filterType === 'Topic' ? filterName.toLowerCase() : filterName
-    const checkedItems = this.props.checkedItems
-
-    if (checkedItems.includes(filterItem)) return true
-    else return false
-  }
   render() {
-    const { filterType, resetFilters } = this.props
-    const filterList = this.getFilters()
+    const { filterType, showFilterButton } = this.props
+    const filterList = this.props.filterOptions
+
     return (
       <div className="sidebar" ref={node => (this.node = node)}>
         <a
@@ -76,7 +60,7 @@ export default class Sidebar extends Component {
                 className="form-check-input"
                 id="filterCheck"
                 name={filter.filterName}
-                checked={this.isChecked(filter.filterName)}
+                checked={filter.isChecked}
                 onChange={this.handleChange}
               />
               {filter.filterName}({filter.count})
@@ -84,7 +68,13 @@ export default class Sidebar extends Component {
             <br />
           </div>
         ))}
-        {/* {resetFilters ? <button type="button" class="btn btn-outline-danger" onClick={this.reset} >Reset Filters</button>  : null} */}
+        {showFilterButton ? (
+          <div className="reset-btn-div text-center">
+            <button type="button" className="btn reset-btn" aria-label="Reset filters" onClick={this.reset}>
+              Reset Filters
+            </button>
+          </div>
+        ) : null}
       </div>
     )
   }

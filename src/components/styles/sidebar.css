@@ -1,13 +1,11 @@
 .sidebar {
    width: 200px;
-   min-height: 100vh;
    position: absolute;
    top: 20px;
    left: 0;
    bottom: 0;
    background-color:#505757;
    color:white;
-   font-size: 18px;
    transition: 0.5s;
    padding-top: 60px;
    padding-left: 10px;
@@ -30,6 +28,20 @@
    font-size: 36px;
    margin-left: 50px;
  }
+ .reset-btn-div {
+  padding-top: 50px;
+  margin-left: -10px;
+}
+.reset-btn {
+  background-color: #e2bbb4;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  color: #2f3636;
+}
+.reset-btn:hover {
+ background-color:#f1f1f1;
+ color: #ec644b;
+}
  .filterbtn-div {
    padding-bottom: 10px;
    margin-top: -30px;
@@ -54,6 +66,9 @@
    }
    .filter-btn {
     padding: .15rem .5rem;
+    font-size: 14px;
+   }
+   .reset-btn {
     font-size: 14px;
    }
 }
