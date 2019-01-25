@@ -43,8 +43,7 @@ export default class Tag extends React.Component {
     })
   }
   updateCheckedItems(filterName) {
-    // checkedItems list is used to filter out posts
-    // TODO: use filters list instead
+    // checkedItems list is used to filter out posts from post list
     const tempList = this.state.checkedItems
     // delete item if already in list
     if (tempList.includes(filterName)) {

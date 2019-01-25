@@ -47,7 +47,7 @@ export default class PostNode extends Component {
           <ul className="tag-list">
             {post.tags
               ? post.tags.map(tag => (
-                  <li>
+                  <li key={tag}>
                     <StyledLink key={tag} to={`/tags/${_.kebabCase(tag)}`}>
                       {tag}
                     </StyledLink>

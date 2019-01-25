@@ -10,7 +10,7 @@ export default class TopicsList extends Component {
         <h1>Topics</h1>
         <div className="topics-list-div">
         {topicsList.map(tag => (
-          <span>
+          <span key={tag.tagName}>
             <Link key={tag.tagName} to={`/tags/${_.kebabCase(tag.tagName)}`}>
               {tag.tagName}({tag.count})
             </Link>{' '}

@@ -42,7 +42,7 @@ export default class Contact extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group contact-form">
+                  <div className="form-group contact-form">
                     <label for="email">Email</label>
                     <input
                       type="email"
@@ -51,7 +51,7 @@ export default class Contact extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group contact-form">
+                  <div className="form-group contact-form">
                     <label for="message">Message</label>
                     <textarea
                       name="message"

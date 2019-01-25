@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
-import _ from 'lodash'
 
 import Search from '../components/search'
 import Layout from '../components/layout'
@@ -24,8 +22,8 @@ export default class IndexPage extends Component {
     const topicsList = this.getTags()
     return (
       <Layout>
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container hero-text">
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container hero-text">
             <h1 >Fluid jumbotron</h1>
             <p>
               This is a modified jumbotron that occupies the entire horizontal
@@ -35,7 +33,7 @@ export default class IndexPage extends Component {
         </div>
         <div className="container-fluid main-container index-container">
           <div className="main-content row justify-content-center align-items-center h-100">
-            <div class="col col-sm-6 col-md-6 ">
+            <div className="col col-sm-6 col-md-6 ">
               <Search searchData={this.props.data.siteSearchIndex.index} />
               <TopicsList topicsList={topicsList} />
             </div>

@@ -23,20 +23,19 @@ export default class Header extends Component {
   getLinks() {
     const links = []
     const collapsed = this.state.collapsed
-    const linkStyle = collapsed ? 'nav-item nav-link' : 'overlay-link'
     const divStyle = collapsed ? 'navbar-nav ml-auto' : 'overlay-content'
     links.push(
-      <Link  activeClassName="activeLink" to={`/categories/books`}>
+      <Link key="books" activeClassName="activeLink" to={`/categories/books`}>
         Books
       </Link>
     )
     links.push(
-      <Link activeClassName="activeLink" to={`/categories/films`}>
+      <Link key="films" activeClassName="activeLink" to={`/categories/films`}>
         Films
       </Link>
     )
     links.push(
-      <Link activeClassName="activeLink" to={`/`}>
+      <Link key="podcasts" activeClassName="activeLink" to={`/`}>
         Podcasts
       </Link>
     )

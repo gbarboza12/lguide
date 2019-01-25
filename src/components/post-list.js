@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 
 import PostNode from '../components/post-node'
 
@@ -37,7 +36,7 @@ export default class PostList extends Component {
     return (
       <div>
         {posts.map(post => (
-          <PostNode post={post} />
+          <PostNode key={post.title} post={post} />
         ))}
       </div>
     )
