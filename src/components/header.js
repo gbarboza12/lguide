@@ -1,45 +1,48 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import './styles/header.css'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import './styles/header.css';
 
 export default class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       collapsed: true,
-    }
-    this.toggleNavbar = this.toggleNavbar.bind(this)
+    };
+    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
   toggleNavbar() {
-    console.log()
-    this.setState({
-      collapsed: !this.state.collapsed,
-    }, () => {
-      this.props.hideContent(this.state.collapsed)
-    })
+    console.log();
+    this.setState(
+      {
+        collapsed: !this.state.collapsed,
+      },
+      () => {
+        this.props.hideContent(this.state.collapsed);
+      }
+    );
   }
   getLinks() {
-    const links = []
-    const collapsed = this.state.collapsed
-    const divStyle = collapsed ? 'navbar-nav ml-auto' : 'overlay-content'
+    const links = [];
+    const collapsed = this.state.collapsed;
+    const divStyle = collapsed ? 'navbar-nav ml-auto' : 'overlay-content';
     links.push(
       <Link key="books" activeClassName="activeLink" to={`/categories/books`}>
         Books
       </Link>
-    )
+    );
     links.push(
       <Link key="films" activeClassName="activeLink" to={`/categories/films`}>
         Films
       </Link>
-    )
+    );
     links.push(
       <Link key="podcasts" activeClassName="activeLink" to={`/`}>
         Podcasts
       </Link>
-    )
-    return <div className={`${divStyle}`}>{links}</div>
+    );
+    return <div className={`${divStyle}`}>{links}</div>;
   }
   render() {
     return (
@@ -81,6 +84,6 @@ export default class Header extends Component {
           </nav>
         )}
       </header>
-    )
+    );
   }
 }

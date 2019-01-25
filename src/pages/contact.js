@@ -1,16 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 export default class Contact extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.submitForm = this.submitForm.bind(this)
+    this.submitForm = this.submitForm.bind(this);
   }
 
   submitForm() {
-    console.log("submit")
+    console.log('submit');
   }
 
   render() {
@@ -74,6 +74,6 @@ export default class Contact extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { graphql } from 'gatsby'
-import _ from 'lodash'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import _ from 'lodash';
+import styled from 'styled-components';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
@@ -27,12 +27,12 @@ const StyledLink = styled(Link)`
     color: #ec644b;
     text-decoration: none;
   }
-`
+`;
 
 export default class Post extends Component {
   render() {
-    const postNode = this.props.data.markdownRemark
-    const post = postNode.frontmatter
+    const postNode = this.props.data.markdownRemark;
+    const post = postNode.frontmatter;
 
     return (
       <Layout>
@@ -77,7 +77,7 @@ export default class Post extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 export const pageQuery = graphql`
@@ -99,4 +99,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

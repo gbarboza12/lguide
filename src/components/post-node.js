@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import _ from 'lodash'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import _ from 'lodash';
+import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
@@ -23,17 +23,20 @@ const StyledLink = styled(Link)`
     color: #ec644b;
     text-decoration: none;
   }
-`
+`;
 
 export default class PostNode extends Component {
   render() {
-    const { post } = this.props
+    const { post } = this.props;
     return (
       <div key={post.id} className="post-div">
         <div className="row">
           {post.image ? (
             <div className="col-3 col-sm-2 post-cover">
-              <img src={post.image.childImageSharp.sizes.src} alt={post.title} />
+              <img
+                src={post.image.childImageSharp.sizes.src}
+                alt={post.title}
+              />
             </div>
           ) : null}
 
@@ -58,6 +61,6 @@ export default class PostNode extends Component {
         </div>
         <hr className="post-divider" />
       </div>
-    )
+    );
   }
 }

@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 export default class Credits extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.submitForm = this.submitForm.bind(this)
+    this.submitForm = this.submitForm.bind(this);
   }
 
   submitForm() {
-    console.log('submit')
+    console.log('submit');
   }
-
   render() {
     return (
       <Layout>
@@ -24,19 +23,24 @@ export default class Credits extends Component {
               </div>
 
               <div className="page-text-div">
-                Since we are not omniscient, we are likely to have missed a thing or two (or hundreds). 
-                Help us make this guide better with your recommendations of stuff that you think should be on here. 
-                Email us or fill out the form below.
-                We understand people's desire for privacy, so let us know if you wish to use a different name when credited.
+                Since we are not omniscient, we are likely to have missed a
+                thing or two (or hundreds). Help us make this guide better with
+                your recommendations of stuff that you think should be on here.
+                Email us or fill out the form below. We understand people's
+                desire for privacy, so let us know if you wish to use a
+                different name when credited.
               </div>
 
               <div>
                 <ul>
                   <li>
-                  <a href="https://unsplash.com/@jeremyperkins">Jeremy Perkins</a> for cover photo.
-                    </li>
-                  </ul>
-                </div>
+                    <a href="https://unsplash.com/@jeremyperkins">
+                      Jeremy Perkins
+                    </a>{' '}
+                    for cover photo.
+                  </li>
+                </ul>
+              </div>
 
               <div id="contact-form">
                 <form
@@ -84,6 +88,6 @@ export default class Credits extends Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }

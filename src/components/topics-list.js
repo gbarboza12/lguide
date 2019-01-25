@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import _ from 'lodash'
+import React from 'react';
+import { Link } from 'gatsby';
+import _ from 'lodash';
 
 const TopicsList = ({ topicsList }) => {
   return (
@@ -16,6 +16,6 @@ const TopicsList = ({ topicsList }) => {
         ))}
       </div>
     </div>
-  )
-}
-export default TopicsList
+  );
+};
+export default TopicsList;

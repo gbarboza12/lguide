@@ -1,31 +1,31 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { graphql } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
-import Layout from '../components/layout'
-import PostList from '../components/post-list'
-import Sidebar from '../components/sidebar'
+import Layout from '../components/layout';
+import PostList from '../components/post-list';
+import Sidebar from '../components/sidebar';
 
 export default class Tag extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       showSidebar: false,
       checkedItems: [],
       filtersList: [],
-    }
-    this.toggleSidebar = this.toggleSidebar.bind(this)
-    this.updateCheckedItems = this.updateCheckedItems.bind(this)
-    this.reset = this.reset.bind(this)
+    };
+    this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.updateCheckedItems = this.updateCheckedItems.bind(this);
+    this.reset = this.reset.bind(this);
   }
   componentDidMount() {
-    const filtersList = this.getFiltersList()
-    this.setState({ filtersList })
+    const filtersList = this.getFiltersList();
+    this.setState({ filtersList });
   }
   getFiltersList() {
-    const filtersList = []
-    const filterOptions = this.props.data.filters.group
+    const filtersList = [];
+    const filterOptions = this.props.data.filters.group;
     filterOptions.forEach(filter => {
       filtersList.push({
         filterName:
@@ -33,31 +33,31 @@ export default class Tag extends React.Component {
           filter.fieldValue.slice(1),
         count: filter.totalCount,
         isChecked: false,
-      })
-    })
-    return filtersList
+      });
+    });
+    return filtersList;
   }
   toggleSidebar() {
     this.setState({
       showSidebar: !this.state.showSidebar,
-    })
+    });
   }
   updateCheckedItems(filterName) {
     // checkedItems list is used to filter out posts from post list
-    const tempList = this.state.checkedItems
+    const tempList = this.state.checkedItems;
     // delete item if already in list
     if (tempList.includes(filterName)) {
       this.setState({
         checkedItems: tempList.filter(function(listItem) {
-          return listItem !== filterName
+          return listItem !== filterName;
         }),
-      })
+      });
     }
     //add item to list
     else {
       this.setState(prevState => ({
         checkedItems: [...prevState.checkedItems, filterName],
-      }))
+      }));
     }
 
     // filtersList is used to check/uncheck items on sidebar
@@ -67,11 +67,11 @@ export default class Tag extends React.Component {
           return {
             ...filterItem,
             isChecked: !filterItem.isChecked,
-          }
+          };
         }
-        return filterItem
+        return filterItem;
       }),
-    })
+    });
   }
   reset() {
     this.setState({
@@ -80,20 +80,20 @@ export default class Tag extends React.Component {
           return {
             ...filterItem,
             isChecked: false,
-          }
+          };
         }
-        return filterItem
+        return filterItem;
       }),
-      checkedItems: []
-    })
+      checkedItems: [],
+    });
   }
   render() {
-    const { tag } = this.props.pageContext
-    const postEdges = this.props.data.tags.edges
-    const checkedItems = this.state.checkedItems
-    const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1)
-    const showFilterButton = checkedItems.length > 0 ? true : false
-    const filtersList = this.state.filtersList
+    const { tag } = this.props.pageContext;
+    const postEdges = this.props.data.tags.edges;
+    const checkedItems = this.state.checkedItems;
+    const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
+    const showFilterButton = checkedItems.length > 0 ? true : false;
+    const filtersList = this.state.filtersList;
     return (
       <Layout>
         <div className="container-fluid main-container h-100">
@@ -127,7 +127,7 @@ export default class Tag extends React.Component {
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
@@ -166,4 +166,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
