@@ -1,22 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
-export default class Footer extends Component {
-  render() {
-    return (
-      <footer className="footer">
-        <ul>
-          <li>
-            <Link to={`/`}>About</Link>
-          </li>
-          <li>
-            <Link to={`/contact`}>Contact</Link>
-          </li>
-          <li>
-            <Link to={`/credits`}>Credits</Link>
-          </li>
-        </ul>
-      </footer>
-    )
-  }
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <ul>
+        <li>
+          <Link to={`/about`}>About</Link>
+        </li>
+        <li>
+          <Link to={`/contact`}>Contact</Link>
+        </li>
+        <li>
+          <Link to={`/credits`}>Credits</Link>
+        </li>
+      </ul>
+    </footer>
+  )
 }
+export default Footer

@@ -44,7 +44,7 @@ export default class Credits extends Component {
                   action="https://formspree.io/gbarboza1231@gmail.com"
                 >
                   <div className="form-group contact-form" id="contact-form">
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input
                       type="text"
                       className="form-control form-control-lg"
@@ -52,8 +52,8 @@ export default class Credits extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group contact-form">
-                    <label for="email">Email</label>
+                  <div className="form-group contact-form">
+                    <label htmlFor="email">Email</label>
                     <input
                       type="email"
                       className="form-control form-control-lg"
@@ -61,8 +61,8 @@ export default class Credits extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group contact-form">
-                    <label for="message">Message</label>
+                  <div className="form-group contact-form">
+                    <label htmlFor="message">Message</label>
                     <textarea
                       name="message"
                       className="form-control form-control-lg"
