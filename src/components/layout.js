@@ -6,6 +6,7 @@ import Header from './header';
 import Footer from './footer';
 import './styles/layout.css';
 import './styles/forms.css';
+import './styles/search.css'
 import './styles/post.css';
 import './styles/sidebar.css';
 

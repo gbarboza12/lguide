@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 import './styles/header.css';
+import Search from './search';
 
 export default class Header extends Component {
   constructor(props) {
@@ -26,7 +28,7 @@ export default class Header extends Component {
   getLinks() {
     const links = [];
     const collapsed = this.state.collapsed;
-    const divStyle = collapsed ? 'navbar-nav ml-auto' : 'overlay-content';
+    const divStyle = collapsed ? 'navbar-nav mr-auto' : 'overlay-content';
     links.push(
       <Link key="books" activeClassName="activeLink" to={`/categories/books`}>
         Books
@@ -59,7 +61,7 @@ export default class Header extends Component {
             {this.getLinks()}
           </div>
         ) : (
-          <nav className="navbar navbar-expand-sm app-header" id="navbar-brand">
+          <nav className="navbar navbar-expand-md app-header" id="navbar-brand">
             <Link className="navbar-brand" to="/">
               Navbar
             </Link>
@@ -81,6 +83,7 @@ export default class Header extends Component {
             <div className="collapse navbar-collapse" id="navlinks-div">
               {this.getLinks()}
             </div>
+            <Search />
           </nav>
         )}
       </header>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
-import Search from '../components/search';
 import Layout from '../components/layout';
 import TopicsList from '../components/topics-list';
 
@@ -34,7 +33,6 @@ export default class IndexPage extends Component {
         <div className="container-fluid main-container index-container">
           <div className="main-content row justify-content-center align-items-center h-100">
             <div className="col col-sm-6 col-md-6 ">
-              <Search searchData={this.props.data.siteSearchIndex.index} />
               <TopicsList topicsList={topicsList} />
             </div>
           </div>
