@@ -1,10 +1,10 @@
 .app-header {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   top: 0;
   background-color: #020101;
-  overflow: hidden;
-  z-index: 3;
+  /* overflow: hidden;
+  z-index: 3; */
 }
 .navigation-bar {
   width: 100%;

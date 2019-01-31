@@ -54,7 +54,13 @@
 
 
 .search-results-div {
-  padding-top: 10px;
+  position: absolute;
+  top: 40px;
+  padding: 15px;
+  z-index: 500;
+  float: left;
+  background: #bdc3c7;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.15);
 }
 .search-results-div ul {
   list-style-type: none;

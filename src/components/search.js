@@ -30,29 +30,28 @@ class Search extends Component {
     return (
       <div className="col-md-2">
         <form className="search-form">
-          <div class="form-group">
+          <div className="form-group">
             <input
               id="search"
               type="search"
-              autocomplete="off"
+              autoComplete="off"
               className="form-control"
               name="search"
               placeholder="Search"
-              value={this.state.query}
               onChange={this.search}
             />
             <span className="glyphicon glyphicon-search form-control-feedback">
               <FontAwesomeIcon icon={faSearch} />
             </span>
           </div>
-        </form>
+          </form>
         {this.state.results.length > 0 ? (
-          <div className="search-results-div">
+          <div className="search-results-div ">
             <ul>
               {this.state.results.map(page => (
                 <li key={page.id}>
                   <Link to={page.slug}>{page.title}</Link>
-                  {': ' + page.tags.join(`,`)}
+                 
                 </li>
               ))}
             </ul>
