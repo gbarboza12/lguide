@@ -76,6 +76,7 @@
 }
 .topics-text {
   font-size: 0.9rem;
+  margin-bottom: 0.2rem;
 }
 @media (max-width: 768px) {
   .topics-text { 

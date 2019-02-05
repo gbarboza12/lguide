@@ -83,6 +83,7 @@ class Search extends Component {
             {resultsList.map(page => (
               <div className="search-results-item">
                 <Link to={page.slug}>{page.title}</Link>
+                <p className="topics-text">Category: {page.category}</p>
                 <p className="topics-text">Related topics: {page.tags.join(`, `)}</p>
               </div>
             ))}
