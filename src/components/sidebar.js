@@ -53,19 +53,17 @@ export default class Sidebar extends Component {
         </a>
         <h5>{`Filter by ${filterType}`}</h5>
         {filterList.map(filter => (
-          <div className="form-check">
-            <label className="form-check-label">
+          <div className="checkbox">
               <input
                 type="checkbox"
-                className="form-check-input"
-                id="filterCheck"
+                id={filter.filterName}
                 name={filter.filterName}
                 checked={filter.isChecked}
                 onChange={this.handleChange}
               />
+              <label for={filter.filterName} className="form-check-label">
               {filter.filterName}({filter.count})
             </label>
-            <br />
           </div>
         ))}
         {showFilterButton ? (

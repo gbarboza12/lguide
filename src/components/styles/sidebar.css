@@ -1,34 +1,102 @@
-.sidebar {
-   width: 200px;
-   position: absolute;
-   top: 0px;
-   left: 0;
-   bottom: 0;
-   background-color:#505757;
-   color:white;
-   transition: 0.5s;
-   padding-top: 60px;
-   padding-left: 10px;
-   z-index: 2;
+.filterbtn-div {
+  padding-bottom: 10px;
+  margin-top: -30px;
 }
+.filter-btn {
+  background-color: #bdc3c7;
+  color: #d1381c;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.filter-btn:hover {
+  background-color: #404142;
+  color: #ec644b;
+}
+.sidebar {
+  width: 250px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  bottom: 0;
+  background-color: #505757;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.5s;
+  padding-top: 60px;
+  padding-left: 10px;
+  z-index: 2;
+}
+.sidebar h5 {
+  color: #b7cccc;
+}
+.checkbox {
+  padding-bottom: 5px;
+}
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+  margin-left: -13px;
+}
+.checkbox label {
+  position: relative;
+  display: inline-block;
+  padding-left: 22px;
+}
+.checkbox label::before,
+.checkbox label::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+}
+/*Outer box of the fake checkbox*/
+.checkbox label::before{
+  height: 16px;
+  width: 16px;
+  border: 2px solid #b7cccc;
+  left: 0px;
+  top: 5px;
+}
+
+/*Checkmark of the fake checkbox*/
+.checkbox label::after {
+  height: 5px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  left: 4px;
+  top: 10px;
+}
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+/*Unhide on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}   
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+}
+
 .sidebar a {
-   text-decoration: none;
-   font-size: 25px;
-   color: #e2bbb4;
-   display: block;
-   transition: 0.3s;
- }
- .sidebar a:hover {
-   color: #f1f1f1;
- }
- .sidebar .closebtn {
-   position: absolute;
-   top: 0;
-   right: 25px;
-   font-size: 36px;
-   margin-left: 50px;
- }
- .reset-btn-div {
+  text-decoration: none;
+  font-size: 25px;
+  color: #e2bbb4;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.reset-btn-div {
   padding-top: 50px;
   margin-left: -10px;
 }
@@ -39,36 +107,29 @@
   color: #2f3636;
 }
 .reset-btn:hover {
- background-color:#f1f1f1;
- color: #ec644b;
-}
- .filterbtn-div {
-   padding-bottom: 10px;
-   margin-top: -30px;
- }
- .filter-btn {
-   background-color: #bdc3c7;
-   -webkit-transition-duration: 0.4s; /* Safari */
-   transition-duration: 0.4s;
-   color: #d1381c;
- }
- .filter-btn:hover {
-  background-color: #404142;
+  background-color: #f1f1f1;
   color: #ec644b;
- }
- @media screen and (max-width: 450px) {
+}
+
+@media screen and (max-width: 450px) {
   .sidebar {
+    width: 200px;
     font-size: 16px;
-   }
-   .filterbtn-div {
-     padding-bottom: 20px;
-     margin-left: -10px;
-   }
-   .filter-btn {
-    padding: .15rem .5rem;
+  }
+  .checkbox label::before{
+    height: 15px;
+    width: 15px;
+  }
+  .filterbtn-div {
+    padding-bottom: 20px;
+    margin-top: -35px;
+    margin-left: -20px;
+  }
+  .filter-btn {
+    padding: 0.15rem 0.5rem;
     font-size: 14px;
-   }
-   .reset-btn {
+  }
+  .reset-btn {
     font-size: 14px;
-   }
+  }
 }

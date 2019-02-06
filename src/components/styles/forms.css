@@ -9,11 +9,13 @@
 }
 .contact-form-btn {
   background-color: #bdc3c7;
-  color: #c62828;
+  color: #d1381c;
   padding: 10px;
   border-radius: 0rem;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 .contact-form-btn:hover {
-  background-color: #000;
-  color: #c62828;
+  background-color: #404142;
+  color: #ec644b;
 }
