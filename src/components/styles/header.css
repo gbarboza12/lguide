@@ -55,8 +55,11 @@
 }
 .activeLink {
   border-bottom: 1px solid #c62828;
-  color: #fff !important;
+  color: #bdc3c7 !important;
   text-decoration: none !important;
+}
+.activeLink:hover {
+  color: #bdc3c7 !important;
 }
 .overlay {
   position: absolute;

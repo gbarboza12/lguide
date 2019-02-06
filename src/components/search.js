@@ -16,15 +16,27 @@ class Search extends Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
   }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClick, false);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClick, false);
+  }
+  // clicking inside search does nothing, clicking outside prompts search results div to close
+  handleClick = e => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+    this.setState({ showResults: false });
+  };
   handleFocus() {
     this.setState({
       showResults: true,
-      searchFormCSS: 'search-form.focus',
+      searchFormCSS: 'search-form search-form-focus',
     });
   }
   handleBlur() {
     this.setState({
-      // showResults: false,
       searchFormCSS: 'search-form',
     });
   }
@@ -59,7 +71,7 @@ class Search extends Component {
     const resultsList = this.state.results;
     const searchFormCSS = this.state.searchFormCSS;
     return (
-      <div className="col-md-3 search-div">
+      <div className="col-md-3 search-div" ref={node => (this.node = node)}>
         <form className={searchFormCSS}>
           <div className="input-group input-wrapper">
             <input
@@ -79,14 +91,20 @@ class Search extends Component {
           </div>
         </form>
         {showResultsDiv ? (
-          <div className="search-results-div" ref={node => (this.node = node)}>
-            {resultsList.map(page => (
-              <div className="search-results-item">
-                <Link to={page.slug}>{page.title}</Link>
-                <p className="topics-text">Category: {page.category}</p>
-                <p className="topics-text">Related topics: {page.tags.join(`, `)}</p>
-              </div>
-            ))}
+          <div className="search-results-div">
+            <ul>
+              {resultsList.map(page => (
+                <li>
+                  <Link to={page.slug}>
+                    <h5>{page.title}</h5>
+                    <p className="results-text">Category: {page.category}</p>
+                    <p className="results-text">
+                      Related topics: {page.tags.join(`, `)}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         ) : null}
       </div>
