@@ -35,7 +35,22 @@ a:hover {
     font-size: 1rem;
   }
 }
-/* Place text in the middle of the image */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+} 
+.focusable.visually-hidden:focus {
+  position: relative;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  color: #ec644b;  
+} 
 .hero-text {
   text-align: center;
   position: absolute;

@@ -99,6 +99,7 @@ export default class Category extends Component {
     return (
       <Layout>
         <div className="container-fluid main-container h-100">
+        <main id="main-content">
           {this.state.showSidebar ? (
             <Sidebar
               filterType={'Topic'}
@@ -127,6 +128,7 @@ export default class Category extends Component {
             </div>
             <PostList postEdges={postEdges} checkedTags={checkedItems} />
           </div>
+          </main>
         </div>
       </Layout>
     );

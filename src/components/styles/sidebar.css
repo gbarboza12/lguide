@@ -23,7 +23,7 @@
   font-size: 1.2rem;
   transition: 0.5s;
   padding-top: 60px;
-  padding-left: 10px;
+  padding-left: 15px;
   z-index: 2;
 }
 .sidebar h5 {
@@ -51,7 +51,7 @@
 .checkbox label::before{
   height: 16px;
   width: 16px;
-  border: 2px solid #b7cccc;
+  border: 2px solid #bbbaba;
   left: 0px;
   top: 5px;
 }

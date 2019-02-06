@@ -6,7 +6,7 @@ import Header from './header';
 import Footer from './footer';
 import './styles/layout.css';
 import './styles/forms.css';
-import './styles/search.css'
+import './styles/search.css';
 import './styles/post.css';
 import './styles/sidebar.css';
 
@@ -34,6 +34,9 @@ export default class Layout extends Component {
     const { children } = this.props;
     return (
       <div>
+        <a class="focusable visually-hidden" href="#main-content">
+          Skip to main content
+        </a>
         <Header hideContent={this.hideContent} />
         {this.state.hideContent ? null : (
           <React.Fragment>
