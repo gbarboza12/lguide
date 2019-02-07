@@ -21,7 +21,7 @@
   background-color: #505757;
   color: #fff;
   font-size: 1.2rem;
-  transition: 0.5s;
+  transition: all 0.5s ease;
   padding-top: 60px;
   padding-left: 15px;
   z-index: 2;
@@ -53,7 +53,7 @@
   width: 16px;
   border: 2px solid #bbbaba;
   left: 0px;
-  top: 5px;
+  top: 6px;
 }
 
 /*Checkmark of the fake checkbox*/

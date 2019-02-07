@@ -81,6 +81,7 @@ class Search extends Component {
               className="form-control input-search"
               name="search"
               placeholder="Search"
+              aria-label="search"
               onChange={this.search}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}

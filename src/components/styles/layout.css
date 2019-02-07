@@ -108,8 +108,17 @@ a:hover {
 .page-text-div {
   padding-bottom: 40px;
 }
+.credits-list-div {
+  padding-bottom: 40px;
+}
 @media screen and (max-width: 768px) {
+  .page-title-div {
+    padding-bottom: 15px;
+  }
   .page-text-div {
+    padding-bottom: 25px;
+  }
+  .credits-list-div {
     padding-bottom: 25px;
   }
 }

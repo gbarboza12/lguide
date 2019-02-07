@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TinyButton as ScrollUpButton} from "react-scroll-up-button"; 
+import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 
 import Header from './header';
 import Footer from './footer';
@@ -42,7 +42,13 @@ export default class Layout extends Component {
         {this.state.hideContent ? null : (
           <React.Fragment>
             {children}
-            <ScrollUpButton style={{'background-color': 'transparent', 'fill': 'rgb(228, 180, 171)'}} />
+            <ScrollUpButton
+              style={{
+                'background-color': 'transparent',
+                fill: 'rgb(228, 180, 171)',
+              }}
+              EasingType="linear"
+            />
             <Footer />
           </React.Fragment>
         )}

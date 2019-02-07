@@ -11,7 +11,7 @@
 @media (min-width: 768px) {
   .search-form {
     width: 150px;
-    transition: all 0.5s ease;;
+    transition: all 0.5s ease;
   }
   .search-form-focus {
     width: 300px;
@@ -78,7 +78,7 @@
   display: block;
   padding: 0.25rem 0.9rem;
 }
-.search-results-div ul li a:link {
+.search-results-div ul li a:link, .search-results-div ul li a:visited {
   color: #57413d !important;
 }
 .search-results-div ul li a:hover {
