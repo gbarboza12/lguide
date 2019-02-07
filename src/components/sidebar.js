@@ -61,7 +61,7 @@ export default class Sidebar extends Component {
                 checked={filter.isChecked}
                 onChange={this.handleChange}
               />
-              <label for={filter.filterName} className="form-check-label">
+              <label htmlFor={filter.filterName} className="form-check-label">
               {filter.filterName}({filter.count})
             </label>
           </div>

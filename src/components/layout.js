@@ -35,7 +35,7 @@ export default class Layout extends Component {
     const { children } = this.props;
     return (
       <div>
-        <a class="focusable visually-hidden" href="#main-content">
+        <a className="focusable visually-hidden" href="#main-content">
           Skip to main content
         </a>
         <Header hideContent={this.hideContent} />
@@ -44,7 +44,7 @@ export default class Layout extends Component {
             {children}
             <ScrollUpButton
               style={{
-                'background-color': 'transparent',
+                'backgroundColor': 'transparent',
                 fill: 'rgb(228, 180, 171)',
               }}
               EasingType="linear"

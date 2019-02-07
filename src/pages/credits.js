@@ -4,10 +4,6 @@ import Layout from '../components/layout';
 import ContactForm from '../components/contact-form';
 
 export default class Credits extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Layout>

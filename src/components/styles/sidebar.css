@@ -14,8 +14,8 @@
 }
 .sidebar {
   width: 250px;
-  position: absolute;
-  top: 0px;
+  position: fixed;
+  top: 0;
   left: 0;
   bottom: 0;
   background-color: #505757;
@@ -55,7 +55,6 @@
   left: 0px;
   top: 6px;
 }
-
 /*Checkmark of the fake checkbox*/
 .checkbox label::after {
   height: 5px;
