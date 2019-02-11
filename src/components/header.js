@@ -61,7 +61,7 @@ export default class Header extends Component {
             {this.getLinks()}
           </div>
         ) : (
-          <nav className="navbar navbar-expand-md app-header" id="navbar-brand">
+          <nav className="navbar navbar-expand-md app-header" id="navbar-brand" aria-label="Primary Menu">
             <Link className="navbar-brand" to="/">
               Navbar
             </Link>

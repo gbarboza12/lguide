@@ -42,7 +42,7 @@ export default class Sidebar extends Component {
     const filterList = this.props.filterOptions;
 
     return (
-      <div className="sidebar" ref={node => (this.node = node)}>
+      <aside className="sidebar" aria-label="Sidebar" ref={node => (this.node = node)}>
         <a
           href="javascript:void(0)"
           aria-label="Close"
@@ -78,7 +78,7 @@ export default class Sidebar extends Component {
             </button>
           </div>
         ) : null}
-      </div>
+      </aside>
     );
   }
 }

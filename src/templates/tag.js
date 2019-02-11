@@ -97,7 +97,7 @@ export default class Tag extends React.Component {
     return (
       <Layout>
         <div className="container-fluid main-container h-100">
-          <main id="main-content">
+          <main id="main-content" aria-label="Main Content">
             {this.state.showSidebar ? (
               <Sidebar
                 filterType={'Category'}
