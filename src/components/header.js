@@ -15,7 +15,6 @@ export default class Header extends Component {
     this.toggleNavbar = this.toggleNavbar.bind(this);
   }
   toggleNavbar() {
-    console.log();
     this.setState(
       {
         collapsed: !this.state.collapsed,
@@ -29,39 +28,61 @@ export default class Header extends Component {
     const links = [];
     const collapsed = this.state.collapsed;
     const divStyle = collapsed ? 'navbar-nav mr-auto' : 'overlay-content';
+    const linkStyle = collapsed ? 'nav-link' : '';
     links.push(
-      <Link key="books" activeClassName="activeLink" to={`/categories/books`}>
-        Books
-      </Link>
+      <li>
+        <Link
+          key="books"
+          className={linkStyle}
+          activeClassName="activeLink"
+          to={`/categories/books`}
+        >
+          Books
+        </Link>
+      </li>
     );
     links.push(
-      <Link key="films" activeClassName="activeLink" to={`/categories/films`}>
-        Films
-      </Link>
+      <li>
+        <Link
+          key="films"
+          className={linkStyle}
+          activeClassName="activeLink"
+          to={`/categories/films`}
+        >
+          Films
+        </Link>
+      </li>
     );
     links.push(
-      <Link key="podcasts" activeClassName="activeLink" to={`/`}>
-        Podcasts
-      </Link>
+      <li>
+        <Link
+          key="podcasts"
+          className={linkStyle}
+          activeClassName="activeLink"
+          to={`/`}
+        >
+          Podcasts
+        </Link>
+      </li>
     );
-    return <div className={`${divStyle}`}>{links}</div>;
+    return <ul className={`${divStyle}`}>{links}</ul>;
   }
   render() {
     return (
-      <header>
+      <header aria-label="Site Header">
         {!this.state.collapsed ? (
           <div className="overlay">
-            <button
-              href="javascript:void(0)"
-              className="btn closebtn"
-              onClick={this.toggleNavbar}
-            >
+            <button className="btn closebtn" onClick={this.toggleNavbar}>
               &times;
             </button>
             {this.getLinks()}
           </div>
         ) : (
-          <nav className="navbar navbar-expand-md app-header" id="navbar-brand" aria-label="Primary Menu">
+          <nav
+            className="navbar navbar-expand-md app-header"
+            id="navbar-brand"
+            aria-label="Primary Menu"
+          >
             <Link className="navbar-brand" to="/">
               Navbar
             </Link>
