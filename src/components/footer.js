@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" aria-label="Site Footer">
       <ul>
         <li>
           <Link to={`/about`}>About</Link>

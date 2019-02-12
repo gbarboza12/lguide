@@ -110,7 +110,13 @@ a:hover {
 .credits-list-div {
   padding-bottom: 40px;
 }
+.suggestions-text {
+  font-size: 1rem;
+}
 @media screen and (max-width: 768px) {
+  .main-content {
+    padding: 40px 20px;
+  }
   .page-title-div {
     padding-bottom: 15px;
   }
@@ -119,6 +125,9 @@ a:hover {
   }
   .credits-list-div {
     padding-bottom: 25px;
+  }
+  .suggestions-text {
+    font-size: .8rem;
   }
 }
 

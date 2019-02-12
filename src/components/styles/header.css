@@ -94,4 +94,9 @@
   top: 20px;
   right: 45px;
   font-size: 60px;
+  background-color: transparent;
+  color: #bdc3c7;
+}
+.overlay .closebtn:hover {
+  color: #f1f1f1 !important;
 }

@@ -36,48 +36,48 @@ export default class Post extends Component {
 
     return (
       <Layout>
-        <div className="container-fluid main-container">
         <main id="main-content" aria-label="Main Content">
-          <div className="main-content row justify-content-center align-items-center h-100">
-            <div key={post.id} className="post-div col col-sm-6 col-md-6 ">
-              <div className="page-title-div text-center">
-                <h1 className="post-title">{post.title}</h1>
-              </div>
-
-              <div className="row">
-                {post.image ? (
-                  <div className="col-3 col-sm-2 post-cover">
-                    <img
-                      src={post.image.childImageSharp.sizes.src}
-                      alt={post.title}
-                    />
-                  </div>
-                ) : null}
-                <div className="col-9 col-sm-10">
-                  <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div className="container-fluid main-container">
+            <div className="main-content row justify-content-center align-items-center h-100">
+              <div key={post.id} className="post-div col col-sm-6 col-md-6 ">
+                <div className="page-title-div text-center">
+                  <h1 className="post-title">{post.title}</h1>
                 </div>
-              </div>
 
-              <div className="text-right">
-                <ul className="tag-list">
-                  {post.tags
-                    ? post.tags.map(tag => (
-                        <li>
-                          <StyledLink
-                            key={tag}
-                            to={`/tags/${_.kebabCase(tag)}`}
-                          >
-                            {tag}
-                          </StyledLink>
-                        </li>
-                      ))
-                    : null}
-                </ul>
+                <div className="row">
+                  {post.image ? (
+                    <div className="col-3 col-sm-2 post-cover">
+                      <img
+                        src={post.image.childImageSharp.sizes.src}
+                        alt={post.title}
+                      />
+                    </div>
+                  ) : null}
+                  <div className="col-9 col-sm-10">
+                    <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                  </div>
+                </div>
+
+                <div className="text-right">
+                  <ul className="tag-list">
+                    {post.tags
+                      ? post.tags.map(tag => (
+                          <li>
+                            <StyledLink
+                              key={tag}
+                              to={`/tags/${_.kebabCase(tag)}`}
+                            >
+                              {tag}
+                            </StyledLink>
+                          </li>
+                        ))
+                      : null}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          </main>
-        </div>
+        </main>
       </Layout>
     );
   }

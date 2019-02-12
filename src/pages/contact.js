@@ -7,8 +7,8 @@ export default class Contact extends Component {
   render() {
     return (
       <Layout>
-        <div className="container-fluid main-container">
-          <main id="main-content" aria-label="Main Content">
+        <main id="main-content" aria-label="Main Content">
+          <div className="container-fluid main-container">
             <div className="main-content row justify-content-center align-items-center h-100">
               <div className="col col-sm-6 col-md-6 ">
                 <div className="page-title-div text-center">
@@ -21,8 +21,8 @@ export default class Contact extends Component {
                 <ContactForm pageContext={'contact'} />
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </Layout>
     );
   }

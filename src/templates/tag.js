@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
@@ -96,8 +96,8 @@ export default class Tag extends React.Component {
     const filtersList = this.state.filtersList;
     return (
       <Layout>
-        <div className="container-fluid main-container h-100">
-          <main id="main-content" aria-label="Main Content">
+        <main id="main-content" aria-label="Main Content">
+          <div className="container-fluid main-container h-100">
             {this.state.showSidebar ? (
               <Sidebar
                 filterType={'Category'}
@@ -108,7 +108,6 @@ export default class Tag extends React.Component {
                 showFilterButton={showFilterButton}
               />
             ) : null}
-
             <div className="main-content">
               <div className="filterbtn-div">
                 <button
@@ -120,7 +119,6 @@ export default class Tag extends React.Component {
                   <FontAwesomeIcon icon={faFilter} /> Filter
                 </button>
               </div>
-
               <div className="text-center page-title-div">
                 <h1>{formattedTag}</h1>
               </div>
@@ -128,9 +126,12 @@ export default class Tag extends React.Component {
                 postEdges={postEdges}
                 checkedCategories={checkedItems}
               />
+              <p>
+                <em> <Link to={`/credits`}>Click here</Link> to send us your suggestions.</em>
+              </p>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </Layout>
     );
   }

@@ -42,11 +42,11 @@ export default class PostList extends Component {
   render() {
     const posts = this.getPosts();
     return (
-      <div>
+      <React.Fragment>
         {posts.map(post => (
           <PostNode key={post.title} post={post} />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }

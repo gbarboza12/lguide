@@ -51,13 +51,13 @@ export default class Header extends Component {
       <header>
         {!this.state.collapsed ? (
           <div className="overlay">
-            <a
+            <button
               href="javascript:void(0)"
-              className="closebtn"
+              className="btn closebtn"
               onClick={this.toggleNavbar}
             >
               &times;
-            </a>
+            </button>
             {this.getLinks()}
           </div>
         ) : (

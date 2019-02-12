@@ -7,8 +7,8 @@ export default class Credits extends Component {
   render() {
     return (
       <Layout>
-        <div className="container-fluid main-container">
-          <main id="main-content" aria-label="Main Content">
+        <main id="main-content" aria-label="Main Content">
+          <div className="container-fluid main-container">
             <div className="main-content row justify-content-center align-items-center h-100">
               <div className="col col-sm-6 col-md-6 ">
                 <div className="page-title-div text-center">
@@ -16,12 +16,12 @@ export default class Credits extends Component {
                 </div>
 
                 <div className="page-text-div">
-                  Since we are not omniscient, we likely missed a
-                  thing or two (or hundreds). Help us make this guide better
-                  by sending us your suggestions of stuff that you think should be on
-                  here. Email us or fill out the form below. We understand
-                  people's desire for privacy, so let us know if you wish to use
-                  a different name when credited.
+                  Since we are not omniscient, we likely missed a thing or two
+                  (or hundreds). Help us make this guide better by sending us
+                  your suggestions of stuff that you think should be on here.
+                  Email us or fill out the form below. We understand people's
+                  desire for privacy, so let us know if you wish to use a
+                  different name when credited.
                 </div>
 
                 <div className="credits-list-div">
@@ -38,8 +38,8 @@ export default class Credits extends Component {
                 <ContactForm pageContext={'credits'} />
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </main>
       </Layout>
     );
   }

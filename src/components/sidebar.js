@@ -43,14 +43,14 @@ export default class Sidebar extends Component {
 
     return (
       <aside className="sidebar" aria-label="Sidebar" ref={node => (this.node = node)}>
-        <a
-          href="javascript:void(0)"
+        <button
+          type="button"
           aria-label="Close"
-          className="closebtn"
+          className="btn closebtn"
           onClick={this.close}
         >
           &times;
-        </a>
+        </button>
         <h5>{`Filter by ${filterType}`}</h5>
         {filterList.map(filter => (
           <div className="checkbox">

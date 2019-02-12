@@ -30,15 +30,15 @@ export default class IndexPage extends Component {
             </p>
           </div>
         </div>
-        <div className="container-fluid main-container index-container">
         <main id="main-content" aria-label="Main Content">
-          <div className="main-content row justify-content-center align-items-center h-100">
-            <div className="col col-sm-6 col-md-6 ">
-              <TopicsList topicsList={topicsList} />
+          <div className="container-fluid main-container index-container">
+            <div className="main-content row justify-content-center align-items-center h-100">
+              <div className="col col-sm-6 col-md-6 ">
+                <TopicsList topicsList={topicsList} />
+              </div>
             </div>
           </div>
-          </main>
-        </div>
+        </main>
       </Layout>
     );
   }

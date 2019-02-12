@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,7 +44,6 @@ export default class Category extends Component {
   }
   updateCheckedItems(filterName) {
     // checkedItems list is used to filter out posts
-    // TODO: use filters list instead
     const tempList = this.state.checkedItems;
     // delete item if already in list
     if (tempList.includes(filterName)) {
@@ -98,38 +97,39 @@ export default class Category extends Component {
     const filtersList = this.state.filtersList;
     return (
       <Layout>
-        <div className="container-fluid main-container h-100">
         <main id="main-content" aria-label="Main Content">
-          {this.state.showSidebar ? (
-            <Sidebar
-              filterType={'Topic'}
-              close={this.toggleSidebar}
-              update={this.updateCheckedItems}
-              reset={this.reset}
-              filterOptions={filtersList}
-              showFilterButton={showFilterButton}
-            />
-          ) : null}
-
-          <div className="main-content">
-            <div className="filterbtn-div">
-              <button
-                className="btn filter-btn"
-                type="button"
-                aria-label="Filter category by topics"
-                onClick={this.toggleSidebar}
-              >
-                <FontAwesomeIcon icon={faFilter} /> Filter
-              </button>
+          <div className="container-fluid main-container h-100">
+            {this.state.showSidebar ? (
+              <Sidebar
+                filterType={'Topic'}
+                close={this.toggleSidebar}
+                update={this.updateCheckedItems}
+                reset={this.reset}
+                filterOptions={filtersList}
+                showFilterButton={showFilterButton}
+              />
+            ) : null}
+            <div className="main-content">
+              <div className="filterbtn-div">
+                <button
+                  className="btn filter-btn"
+                  type="button"
+                  aria-label="Filter category by topics"
+                  onClick={this.toggleSidebar}
+                >
+                  <FontAwesomeIcon icon={faFilter} /> Filter
+                </button>
+              </div>
+              <div className="text-center page-title-div">
+                <h1>{category}</h1>
+              </div>
+              <PostList postEdges={postEdges} checkedTags={checkedItems} />
+              <p className="text-center suggestions-text">
+                <em><Link to={`/credits`}>Click here</Link> to send us your suggestions.</em>
+              </p>
             </div>
-
-            <div className="text-center page-title-div">
-              <h1>{category}</h1>
-            </div>
-            <PostList postEdges={postEdges} checkedTags={checkedItems} />
           </div>
-          </main>
-        </div>
+        </main>
       </Layout>
     );
   }
