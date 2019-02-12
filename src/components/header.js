@@ -30,9 +30,8 @@ export default class Header extends Component {
     const divStyle = collapsed ? 'navbar-nav mr-auto' : 'overlay-content';
     const linkStyle = collapsed ? 'nav-link' : '';
     links.push(
-      <li>
+      <li key="books">
         <Link
-          key="books"
           className={linkStyle}
           activeClassName="activeLink"
           to={`/categories/books`}
@@ -42,9 +41,8 @@ export default class Header extends Component {
       </li>
     );
     links.push(
-      <li>
+      <li key="films">
         <Link
-          key="films"
           className={linkStyle}
           activeClassName="activeLink"
           to={`/categories/films`}
@@ -54,9 +52,8 @@ export default class Header extends Component {
       </li>
     );
     links.push(
-      <li>
+      <li key="podcasts">
         <Link
-          key="podcasts"
           className={linkStyle}
           activeClassName="activeLink"
           to={`/`}

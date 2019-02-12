@@ -35,6 +35,7 @@
 #navlinks-div a:active {
   color: #ec644b;
   text-decoration: none;
+  transition: .2s linear;
 }
 #navlinks-div a:hover {
   text-decoration: none;

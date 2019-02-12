@@ -3,14 +3,14 @@
   margin-top: -30px;
 }
 .filter-btn {
-  background-color: #bdc3c7;
-  color: #d1381c;
+  background-color: #ced2d5;
+  color: #0c3b6d;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
 .filter-btn:hover {
   background-color: #404142;
-  color: #ec644b;
+  color: #e2bbb4;
 }
 .sidebar {
   width: 250px;
@@ -27,7 +27,7 @@
   z-index: 2;
 }
 .sidebar h5 {
-  color: #b7cccc;
+  color: #e2f6ef;
 }
 .checkbox {
   padding-bottom: 5px;

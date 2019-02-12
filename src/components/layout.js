@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from "react-helmet"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { TinyButton as ScrollUpButton } from 'react-scroll-up-button';
 
@@ -34,7 +35,13 @@ export default class Layout extends Component {
   render() {
     const { children } = this.props;
     return (
-      <div>
+      <>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>My Title</title>
+          <html lang="en" />
+          <link rel="canonical" href="" />
+        </Helmet>
         <a className="focusable visually-hidden" href="#main-content">
           Skip to main content
         </a>
@@ -52,7 +59,7 @@ export default class Layout extends Component {
             <Footer />
           </React.Fragment>
         )}
-      </div>
+      </>
     );
   }
 }

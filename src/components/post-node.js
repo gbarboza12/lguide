@@ -5,7 +5,6 @@ import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
   background-color: #bdc3c7;
-  color: #d1381c;
   padding: 1px 8px;
   display: inline-block;
   margin: 2px 3px;
@@ -15,12 +14,14 @@ const StyledLink = styled(Link)`
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
   }
-  &:link {
+  &:link, &:visited, &:active {
     text-decoration: none;
+    color: #0c3b6d;
+    border-bottom: 0 !important;
   }
   &:hover {
     background-color: #404142;
-    color: #ec644b;
+    color: #e2bbb4;
     text-decoration: none;
   }
 `;
@@ -35,7 +36,7 @@ export default class PostNode extends Component {
             <div className="col-3 col-sm-2 post-cover">
               <img
                 src={post.image.childImageSharp.sizes.src}
-                alt={post.title}
+                alt=""
               />
             </div>
           ) : null}

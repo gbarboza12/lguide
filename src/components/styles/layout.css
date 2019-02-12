@@ -14,11 +14,16 @@ body {
 a:link,
 a:visited,
 a:active {
-  text-decoration: underline;
-  color: #ec644b;
+  color: #d31f1f;
+  text-decoration: none;
+  transition: .3s linear;
+}
+.main-container a:link, .main-container a:visited,
+.main-container a:active {
+  border-bottom: solid 3px #0c3b6d;
 }
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: #212121;
 }
 @media (max-width: 768px) {
@@ -42,6 +47,7 @@ a:hover {
   width: 1px;
   height: 1px;
   overflow: hidden;
+  color: #ec644b;  
 } 
 .focusable.visually-hidden:focus {
   position: relative;
@@ -95,7 +101,7 @@ a:hover {
   padding-top: 20px;
 }
 .topics-list-div a:link {
-  text-decoration: none;
+  border-bottom: 0;
 }
 .main-content {
   padding: 50px 30px;
@@ -157,6 +163,7 @@ a:hover {
   text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
+  color: #ec644b;
 }
 .footer a:hover {
   text-decoration: none !important;
