@@ -7,6 +7,12 @@
   margin-left: 15px;
   font-size: 30px;
 }
+.navbar-toggler {
+  color: #fff;
+}
+.navbar-toggler a:hover {
+  color: #ec644b;
+}
 #navbar-brand a:link,
 #navbar-brand a:visited,
 #navbar-brand a:active,
@@ -14,9 +20,12 @@
   color: #fff;
   text-decoration: none;
 }
-.navbar-nav  {
+.navbar-nav {
   padding: 0 20px;
   text-transform: uppercase;
+}
+.nav-link {
+  padding: 0 1rem;
 }
 #navlinks-div a {
   font-size: 22px;
@@ -36,12 +45,6 @@
     padding-right: .7rem;
     padding-left: .7rem;
   }
-}
-.navbar-toggler {
-  color: #fff;
-}
-.navbar-toggler a:hover {
-  color: #ec644b;
 }
 .activeLink {
   border-bottom: 1px solid #c62828;
