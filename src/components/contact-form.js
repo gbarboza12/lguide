@@ -8,11 +8,12 @@ const ContactForm = (props) => {
     <div id="contact-form">
       <form method="POST" action="https://formspree.io/gbarboza1231@gmail.com">
         <div className="form-group contact-form" id="contact-form">
-          <label htmlFor="name">Name</label>
+          <label for="name">Name</label>
           <input
             type="text"
             className="form-control form-control-lg"
             name="name"
+            id="name"
             required
           />
         </div>
@@ -22,15 +23,17 @@ const ContactForm = (props) => {
             type="email"
             className="form-control form-control-lg"
             name="email"
+            id="email"
             required
           />
         </div>
         <div className="form-group contact-form">
           <label htmlFor="message">{textareaLabel}</label>
           <textarea
-            name="message"
             className="form-control form-control-lg"
             rows="6"
+            name="message"
+            id="message"
             required
           />
         </div>

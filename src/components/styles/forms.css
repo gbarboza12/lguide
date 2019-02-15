@@ -9,7 +9,7 @@
 }
 .contact-form-btn {
   background-color: #bdc3c7;
-  color: #d1381c;
+  color: #0c3b6d;
   padding: 10px;
   border-radius: 0rem;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -17,5 +17,5 @@
 }
 .contact-form-btn:hover {
   background-color: #404142;
-  color: #ec644b;
+  color: #a3c3e4;
 }

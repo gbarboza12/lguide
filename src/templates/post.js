@@ -25,8 +25,8 @@ const StyledLink = styled(Link)`
     border-bottom: 0 !important;
   }
   &:hover {
-    background-color: #404142;
-    color: #e2bbb4;
+    background-color: #505757;
+    color: #a3c3e4;
     text-decoration: none;
   }
 `;
