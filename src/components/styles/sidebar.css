@@ -7,6 +7,7 @@
   color: #0c3b6d;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  border-radius: 0;
 }
 .filter-btn:hover {
   background-color: #404142;
@@ -20,7 +21,7 @@
   bottom: 0;
   background-color: #505757;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   transition: all 0.5s ease;
   padding-top: 60px;
   padding-left: 15px;
@@ -29,10 +30,15 @@
 .sidebar h5 {
   color: #e2f6ef;
 }
+@media (min-width: 450px) {
+  .sidebar h5 {
+    font-size: 1.25rem;
+  }
+}
 .checkbox {
   padding-bottom: 5px;
 }
-.checkbox input[type="checkbox"] {
+.checkbox input[type='checkbox'] {
   opacity: 0;
   margin-left: -13px;
 }
@@ -44,11 +50,11 @@
 .checkbox label::before,
 .checkbox label::after {
   position: absolute;
-  content: "";
+  content: '';
   display: inline-block;
 }
 /*Outer box of the fake checkbox*/
-.checkbox label::before{
+.checkbox label::before {
   height: 16px;
   width: 16px;
   border: 2px solid #bbbaba;
@@ -66,15 +72,15 @@
   top: 10px;
 }
 /*Hide the checkmark by default*/
-.checkbox input[type="checkbox"] + label::after {
+.checkbox input[type='checkbox'] + label::after {
   content: none;
 }
 /*Unhide on the checked state*/
-.checkbox input[type="checkbox"]:checked + label::after {
-  content: "";
-}   
+.checkbox input[type='checkbox']:checked + label::after {
+  content: '';
+}
 /*Adding focus styles on the outer-box of the fake checkbox*/
-.checkbox input[type="checkbox"]:focus + label::before {
+.checkbox input[type='checkbox']:focus + label::before {
   outline: rgb(59, 153, 252) auto 5px;
 }
 
@@ -106,25 +112,18 @@
   margin-left: -10px;
 }
 .reset-btn {
-  background-color: #e2bbb4;
+  background-color: #ced2d5;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  color: #2f3636;
+  color: #0c3b6d;
+  border-radius: 0;
 }
 .reset-btn:hover {
   background-color: #f1f1f1;
-  color: #ec644b;
+  color: #0c3b6d;
 }
 
-@media screen and (max-width: 450px) {
-  .sidebar {
-    width: 200px;
-    font-size: 16px;
-  }
-  .checkbox label::before{
-    height: 15px;
-    width: 15px;
-  }
+@media screen and (max-width: 768px) {
   .filterbtn-div {
     padding-bottom: 20px;
     margin-top: -25px;
@@ -133,6 +132,16 @@
   .filter-btn {
     padding: 0.15rem 0.5rem;
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.9rem;
+  }
+  .checkbox label::before {
+    height: 15px;
+    width: 15px;
   }
   .reset-btn {
     font-size: 14px;

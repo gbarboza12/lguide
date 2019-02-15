@@ -33,7 +33,7 @@ export default class IndexPage extends Component {
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container index-container">
             <div className="main-content row justify-content-center align-items-center h-100">
-              <div className="col col-sm-6 col-md-6 ">
+              <div className="col col-sm-8 col-md-8">
                 <TopicsList topicsList={topicsList} />
               </div>
             </div>

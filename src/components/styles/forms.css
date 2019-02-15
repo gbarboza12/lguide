@@ -7,6 +7,15 @@
   border-color: #c62828;
   border-width: 2px;
 }
+@media (max-width: 768px) {
+  .contact-form .form-control-lg {
+    height: calc(2.25rem + 2px);
+    font-size: 0.9rem;
+  }
+  .contact-form textarea.form-control {
+    height: auto;
+  }
+}
 .contact-form-btn {
   background-color: #bdc3c7;
   color: #0c3b6d;

@@ -10,7 +10,7 @@ export default class Credits extends Component {
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container">
             <div className="main-content row justify-content-center align-items-center h-100">
-              <div className="col col-sm-6 col-md-6 ">
+              <div className="col col-sm-8 col-md-8">
                 <div className="page-title-div text-center">
                   <h1>Credits</h1>
                 </div>
@@ -25,7 +25,7 @@ export default class Credits extends Component {
                 </div>
 
                 <div className="credits-list-div">
-                  <h2>A huge thanks to...</h2>
+                  <h2><em>A huge thanks to...</em></h2>
                   <ul>
                     <li>
                       <a href="https://unsplash.com/@jeremyperkins">
