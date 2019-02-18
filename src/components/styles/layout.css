@@ -14,7 +14,7 @@ body {
 a:link,
 a:visited,
 a:active {
-  color: #d31f1f;
+  color: #d32f2f;
   text-decoration: none;
   transition: .3s linear;
 }
@@ -86,7 +86,7 @@ a:hover {
 .main-container {
   position: relative;
   padding: 30px;
-  background-color: #c62828;
+  background-color: #484848;
   min-height: 100vh;
 }
 .index-container {
@@ -109,6 +109,7 @@ a:hover {
 }
 .page-title-div {
   padding-bottom: 30px;
+  text-transform: uppercase;
 }
 .page-text-div {
   padding-bottom: 40px;

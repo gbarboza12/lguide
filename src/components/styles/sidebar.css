@@ -3,15 +3,16 @@
   margin-top: -30px;
 }
 .filter-btn {
-  background-color: #ced2d5;
-  color: #0c3b6d;
+  background-color: transparent;
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+  border-radius: 0;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  border-radius: 0;
 }
 .filter-btn:hover {
-  background-color: #404142;
-  color: #e2bbb4;
+  background-color: #d32f2f;
+  color: #fff;
 }
 .sidebar {
   width: 250px;
@@ -19,16 +20,18 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #505757;
-  color: #fff;
+  background-color: #d4d9dd;
+  color: #000;
   font-size: 1.1rem;
   transition: all 0.5s ease;
   padding-top: 60px;
   padding-left: 15px;
   z-index: 2;
+  box-shadow: 0 3px 15px 0 rgba(0,0,0,.15);
 }
 .sidebar h5 {
-  color: #e2f6ef;
+  text-transform: uppercase;
+  padding-bottom: 5px;
 }
 @media (min-width: 450px) {
   .sidebar h5 {
@@ -42,57 +45,11 @@
   opacity: 0;
   margin-left: -13px;
 }
-.checkbox label {
-  position: relative;
-  display: inline-block;
-  padding-left: 22px;
+.checked-label {
+  color: #e01a1a;
 }
-.checkbox label::before,
-.checkbox label::after {
-  position: absolute;
-  content: '';
-  display: inline-block;
-}
-/*Outer box of the fake checkbox*/
-.checkbox label::before {
-  height: 16px;
-  width: 16px;
-  border: 2px solid #bbbaba;
-  left: 0px;
-  top: 6px;
-}
-/*Checkmark of the fake checkbox*/
-.checkbox label::after {
-  height: 5px;
-  width: 9px;
-  border-left: 2px solid;
-  border-bottom: 2px solid;
-  transform: rotate(-45deg);
-  left: 4px;
-  top: 10px;
-}
-/*Hide the checkmark by default*/
-.checkbox input[type='checkbox'] + label::after {
-  content: none;
-}
-/*Unhide on the checked state*/
-.checkbox input[type='checkbox']:checked + label::after {
-  content: '';
-}
-/*Adding focus styles on the outer-box of the fake checkbox*/
-.checkbox input[type='checkbox']:focus + label::before {
-  outline: rgb(59, 153, 252) auto 5px;
-}
-
-.sidebar a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #e2bbb4;
-  display: block;
-  transition: 0.3s;
-}
-.sidebar a:hover {
-  color: #f1f1f1;
+.filter-count {
+  color: #c27c7c;
 }
 .sidebar .closebtn {
   position: absolute;
@@ -101,26 +58,27 @@
   font-size: 36px;
   background: transparent;
   border: 0;
-  color: #e2bbb4;
+  color: #0c3b6d;
   transition: 0.3s;
 }
 .sidebar .closebtn:hover {
-  color: #f1f1f1;
+  color: #5e5e5e;
 }
 .reset-btn-div {
   padding-top: 50px;
   margin-left: -10px;
 }
 .reset-btn {
-  background-color: #ced2d5;
+  background-color: transparent;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   color: #0c3b6d;
+  border: 2px solid #0c3b6d;
   border-radius: 0;
 }
 .reset-btn:hover {
-  background-color: #f1f1f1;
-  color: #0c3b6d;
+  background-color: #0c3b6d;
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {

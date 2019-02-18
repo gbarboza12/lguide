@@ -6,6 +6,7 @@ export default class Sidebar extends Component {
     this.close = this.close.bind(this);
     this.reset = this.reset.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.getLabelCss = this.getLabelCss.bind(this);
   }
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClick, false);
@@ -37,12 +38,19 @@ export default class Sidebar extends Component {
     const filterItem = e.target.name;
     this.update(filterItem);
   }
+  getLabelCss(isChecked) {
+    return isChecked ? 'form-check-label checked-label' : 'form-check-label'
+  }
   render() {
     const { filterType, showFilterButton } = this.props;
     const filterList = this.props.filterOptions;
 
     return (
-      <aside className="sidebar" aria-label="Sidebar" ref={node => (this.node = node)}>
+      <aside
+        className="sidebar"
+        aria-label="Sidebar"
+        ref={node => (this.node = node)}
+      >
         <button
           type="button"
           aria-label="Close"
@@ -53,17 +61,25 @@ export default class Sidebar extends Component {
         </button>
         <h5>{`Filter by ${filterType}`}</h5>
         {filterList.map(filter => (
-          <div className="checkbox">
-              <input
-                type="checkbox"
-                id={filter.filterName}
-                name={filter.filterName}
-                checked={filter.isChecked}
-                onChange={this.handleChange}
-              />
-              <label htmlFor={filter.filterName} className="form-check-label">
-              {filter.filterName}({filter.count})
-            </label>
+          <div className="row">
+            <div className="col-9">
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id={filter.filterName}
+                  name={filter.filterName}
+                  checked={filter.isChecked}
+                  onChange={this.handleChange}
+                />
+                <label
+                  htmlFor={filter.filterName}
+                  className={this.getLabelCss(filter.isChecked)}
+                >
+                {filter.filterName}
+                </label>
+              </div>
+            </div>
+            <div className="col-3 filter-count">{filter.count}</div>
           </div>
         ))}
         {showFilterButton ? (

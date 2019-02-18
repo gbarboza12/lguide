@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 
 const StyledLink = styled(Link)`
-  background-color: #bdc3c7;
+  background-color: transparent
   color: #d1381c;
   padding: 1px 8px;
   text-align: center;
@@ -21,12 +21,12 @@ const StyledLink = styled(Link)`
   }
   &:link, &:visited, &:active {
     text-decoration: none;
-    color: #0c3b6d;
-    border-bottom: 0 !important;
+    color: #d32f2f;
+    border: 2px solid #d32f2f !important;
   }
   &:hover {
-    background-color: #505757;
-    color: #a3c3e4;
+    background-color: #d32f2f;
+    color: #fff;
     text-decoration: none;
   }
 `;
