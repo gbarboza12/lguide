@@ -17,8 +17,7 @@ export default class Credits extends Component {
 
                 <div className="page-text-div">
                   Since we are not omniscient, we likely missed a thing or two
-                  (or hundreds). Help us make this guide better by sending us
-                  your suggestions of stuff that you think should be on here.
+                  (or hundreds). Help us make this guide better with your recommendations.
                   Email us or fill out the form below. We understand people's
                   desire for privacy, so let us know if you wish to use a
                   different name when credited.

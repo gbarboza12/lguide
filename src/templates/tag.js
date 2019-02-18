@@ -126,8 +126,8 @@ export default class Tag extends React.Component {
                 postEdges={postEdges}
                 checkedCategories={checkedItems}
               />
-              <p>
-                <em> <Link to={`/credits`}>Click here</Link> to send us your suggestions.</em>
+              <p className="text-center suggestions-text">
+                <em><Link to={`/credits`}>Click here</Link> to send us your suggestions.</em>
               </p>
             </div>
           </div>

@@ -45,6 +45,9 @@
   opacity: 0;
   margin-left: -13px;
 }
+.sidebar label {
+  cursor: pointer;
+}
 .checked-label {
   color: #e01a1a;
 }

@@ -5,8 +5,7 @@ const ContactForm = (props) => {
   const textareaLabel = pageContext === 'credits' ? 'Suggestion(s)' : 'Message';
 
   return (
-    <div id="contact-form">
-      <form method="POST" action="https://formspree.io/gbarboza1231@gmail.com">
+      <form id="contact-form" className="col-lg-7 offset-lg-3 "  method="POST" action="https://formspree.io/gbarboza1231@gmail.com">
         <div className="form-group contact-form" id="contact-form">
           <label for="name">Name</label>
           <input
@@ -45,7 +44,6 @@ const ContactForm = (props) => {
           Submit
         </button>
       </form>
-    </div>
   );
 };
 export default ContactForm;
