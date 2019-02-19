@@ -86,9 +86,7 @@ class Search extends Component {
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
             />
-            <span className="glyphicon">
-              <FontAwesomeIcon icon={faSearch} />
-            </span>
+            <FontAwesomeIcon icon={faSearch} />
           </div>
         </form>
         {showResultsDiv ? (
