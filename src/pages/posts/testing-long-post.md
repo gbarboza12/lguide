@@ -5,6 +5,7 @@ category: Books
 tags:
   - Super long tag test
   - test
+image: /img/stock.jpg
 ---
 Lorem ipsum dolor sit amet, pri elaboraret reformidans reprehendunt an. Autem error vix ut, ut per viderer equidem voluptua. Cum ea labore facete senserit, ei homero scaevola insolens vim, ne nec viris expetendis. Cu sed nullam alienum abhorreant, cu quo modus cotidieque.
 
