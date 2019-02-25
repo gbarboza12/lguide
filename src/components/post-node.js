@@ -41,11 +41,12 @@ export default class PostNode extends Component {
             </div>
           ) : null}
 
-          <div className="col-9 col-sm-10">
+          <div className="col-9 col-sm-10 my-auto">
             <h2 className="post-title">{post.title}</h2>
-            <p dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
+
+        <div className="post-description-div" dangerouslySetInnerHTML={{ __html: post.html }} />
 
         <div className="text-right">
           <ul className="tag-list">

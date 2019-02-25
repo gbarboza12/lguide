@@ -5,7 +5,7 @@
   margin-top: 4px;
 }
 .post-cover img {
-  width: 100%;
+  width: 150px;
 }
 @media screen and (max-width: 768px) {
   .post-cover img {
@@ -19,6 +19,9 @@
 }
 .post-title {
   font-weight: 600;
+}
+.post-description-div {
+  padding-top: 15px;
 }
 .tag-list {
   display: inline-flex;
