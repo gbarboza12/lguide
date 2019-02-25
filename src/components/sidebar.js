@@ -39,7 +39,7 @@ export default class Sidebar extends Component {
     this.update(filterItem);
   }
   getLabelCss(isChecked) {
-    return isChecked ? 'form-check-label checked-label' : 'form-check-label'
+    return isChecked ? 'form-check-label checked-label' : 'form-check-label';
   }
   render() {
     const { filterType, showFilterButton } = this.props;
@@ -59,38 +59,41 @@ export default class Sidebar extends Component {
         >
           &times;
         </button>
-        <h5>{`Filter by ${filterType}`}</h5>
-        {filterList.map(filter => (
-          <div className="row">
-            <div className="col-9">
-              <div className="checkbox">
-                <input
-                  type="checkbox"
-                  id={filter.filterName}
-                  name={filter.filterName}
-                  checked={filter.isChecked}
-                  onChange={this.handleChange}
-                />
-                <label
-                  htmlFor={filter.filterName}
-                  className={this.getLabelCss(filter.isChecked)}
-                >
-                {filter.filterName}
-                </label>
+        <h4>Filter by </h4>
+        <div className="sidebar-list-div">
+          {filterList.map(filter => (
+            <div className="row">
+              <div className="col-9">
+                <div className="checkbox">
+                  <input
+                    type="checkbox"
+                    id={filter.filterName}
+                    name={filter.filterName}
+                    checked={filter.isChecked}
+                    onChange={this.handleChange}
+                  />
+                  <label
+                    htmlFor={filter.filterName}
+                    className={this.getLabelCss(filter.isChecked)}
+                  >
+                    {filter.filterName}
+                  </label>
+                </div>
               </div>
+              <div className="col-3 filter-count">{filter.count}</div>
+              <hr className="" />
             </div>
-            <div className="col-3 filter-count">{filter.count}</div>
-          </div>
-        ))}
+          ))}
+        </div>
         {showFilterButton ? (
           <div className="reset-btn-div text-center">
             <button
               type="button"
               className="btn reset-btn"
-              aria-label="Reset filters"
+              aria-label="Clear filters"
               onClick={this.reset}
             >
-              Reset Filters
+              Clear Filters
             </button>
           </div>
         ) : null}
