@@ -11,6 +11,7 @@ import './styles/forms.css';
 import './styles/search.css';
 import './styles/post.css';
 import './styles/sidebar.css';
+import './styles/topics-list.css';
 
 export default class Layout extends Component {
   constructor(props) {

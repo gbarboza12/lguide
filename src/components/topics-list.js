@@ -5,15 +5,17 @@ import _ from 'lodash';
 const TopicsList = ({ topicsList }) => {
   return (
     <div className="topics-content">
-      <h1>Browse Topics</h1>
+      <h1 className="page-title-div text-center">Browse Topics</h1>
       <div className="topics-list-div">
+      <ul className="topics-list">
         {topicsList.map(tag => (
-          <span key={tag.tagName}>
+          <li key={tag.tagName}>
             <Link key={tag.tagName} to={`/tags/${_.kebabCase(tag.tagName)}`}>
-              {tag.tagName}({tag.count})
-            </Link>{' '}
-          </span>
+              {tag.tagName}
+            </Link>
+          </li>
         ))}
+        </ul>
       </div>
     </div>
   );

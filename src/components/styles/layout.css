@@ -1,7 +1,8 @@
 * {
   box-sizing: border-box;
 }
-html,body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -15,9 +16,10 @@ a:visited,
 a:active {
   color: #d32f2f;
   text-decoration: none;
-  transition: .3s linear;
+  transition: 0.3s linear;
 }
-.main-container a:link, .main-container a:visited,
+.main-container a:link,
+.main-container a:visited,
 .main-container a:active {
   border-bottom: solid 3px #0c3b6d;
 }
@@ -46,16 +48,16 @@ a:hover {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  color: #ec644b;  
-} 
+  color: #ec644b;
+}
 .focusable.visually-hidden:focus {
   position: relative;
   left: 0;
   width: auto;
   height: auto;
   overflow: auto;
-  color: #ec644b;  
-} 
+  color: #ec644b;
+}
 .hero-text {
   text-align: center;
   position: absolute;
@@ -91,17 +93,6 @@ a:hover {
 .index-container {
   top: 0px;
 }
-.topics-content {
-  padding: 20px;
-  background: #fff;
-  text-align: center;
-}
-.topics-list-div {
-  padding-top: 20px;
-}
-.topics-list-div a:link {
-  border-bottom: 0;
-}
 .main-content {
   padding: 50px 30px;
   background: #fff;
@@ -121,7 +112,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .main-content {
-    padding: 40px 20px;
+    padding: 40px 5px;
   }
   .page-title-div {
     padding-bottom: 15px;
@@ -133,7 +124,7 @@ a:hover {
     padding-bottom: 25px;
   }
   .suggestions-text {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
