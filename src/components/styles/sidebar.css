@@ -60,14 +60,14 @@
   border-bottom: 1px solid rgb(209, 206, 206);
 }
 .sidebar-list-div .col-9 {
-  padding-left: 10px;
+  padding-left: 15px;
 }
 .sidebar-list-div .col-3 {
   padding-left: 50px;
 }
 .checkbox input[type='checkbox'] {
   opacity: 0;
-  margin-left: -13px;
+  margin-left: -18px;
 }
 .checkbox label {
   position: relative;
@@ -151,6 +151,10 @@
   .sidebar {
     width: 250px;
     font-size: 0.9rem;
+  }
+  .checkbox input[type='checkbox'] {
+    opacity: 0;
+    margin-left: -23px;
   }
   .sidebar-list-div .col-3 {
     padding-left: 40px;

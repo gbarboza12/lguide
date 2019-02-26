@@ -21,8 +21,8 @@ export default class IndexPage extends Component {
     const topicsList = this.getTags();
     return (
       <Layout>
-        <div className="jumbotron jumbotron-fluid">
-          <div className="container hero-text">
+        <div className="hero-image">
+          <div className="hero-text">
             <h1>Fluid jumbotron</h1>
             <p>
               This is a modified jumbotron that occupies the entire horizontal
