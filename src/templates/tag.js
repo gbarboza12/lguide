@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+import { faSlidersH } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 import PostList from '../components/post-list';
@@ -116,10 +116,10 @@ export default class Tag extends React.Component {
                   aria-label="Filter topics by category"
                   onClick={this.toggleSidebar}
                 >
-                  <FontAwesomeIcon icon={faFilter} /> Filter
+                  <FontAwesomeIcon icon={faSlidersH} /> Filter
                 </button>
               </div>
-              <div className="text-center page-title-div">
+              <div className="text-center page-title-div post-list-title-div">
                 <h1>{formattedTag}</h1>
               </div>
               <PostList

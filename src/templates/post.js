@@ -48,14 +48,14 @@ export default class Post extends Component {
 
                 <div className="row">
                   {post.image ? (
-                    <div className="col-3 col-sm-2 post-cover">
+                    <div className="col-3 col-sm-3 col-md-4 col-lg-3 post-cover">
                       <img
                         src={post.image.childImageSharp.sizes.src}
                         alt=""
                       />
                     </div>
                   ) : null}
-                  <div className="col-9 col-sm-10">
+                  <div className="col-9 col-sm-9 col-md-8 col-lg-9">
                     <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
                   </div>
                 </div>

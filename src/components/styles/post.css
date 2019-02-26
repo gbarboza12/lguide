@@ -7,16 +7,6 @@
 .post-cover img {
   width: 150px;
 }
-@media screen and (max-width: 768px) {
-  .post-cover img {
-    width: 70px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .post-cover img {
-    width: 60px;
-  }
-}
 .post-title {
   font-weight: 600;
 }
@@ -36,4 +26,22 @@ hr.post-divider {
   #fff 50%, #fff 100%), linear-gradient(to left, #333333, #dd1818);
   background-size: 20px 3px, 100% 3px;
   border: none;
+}
+@media screen and (max-width: 768px) {
+  .post-cover img {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .post-cover img {
+    width: 60px;
+  }
+  .post-list-title-div {
+    margin-top: -17px;
+    text-align: right !important;
+  }
+  .post-list-title-div h1 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
 }

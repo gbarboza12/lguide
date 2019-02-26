@@ -29,13 +29,13 @@ a:hover {
 }
 @media (max-width: 768px) {
   body {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   h1 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   h5 {
     font-size: 1rem;
@@ -112,7 +112,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .main-content {
-    padding: 40px 10px;
+    padding: 40px 15px;
   }
   .page-title-div {
     padding-bottom: 15px;

@@ -72,8 +72,8 @@ class Search extends Component {
     const searchFormCSS = this.state.searchFormCSS;
     return (
       <div className="col-md-3 search-div" ref={node => (this.node = node)}>
-        <form className="">
-          <label className={searchFormCSS} for="inpt_search">
+        <form>
+          <label className={searchFormCSS} htmlFor="search">
             <input
               id="search"
               type="search"
@@ -85,21 +85,6 @@ class Search extends Component {
               onBlur={this.handleBlur}
             />
           </label>
-          {/* <div className="input-group input-wrapper">
-            <input
-              id="search"
-              type="search"
-              autoComplete="off"
-              className="form-control input-search"
-              name="search"
-              placeholder="Search"
-              aria-label="search"
-              onChange={this.search}
-              onFocus={this.handleFocus}
-              onBlur={this.handleBlur}
-            />
-            <FontAwesomeIcon icon={faSearch} />
-          </div> */}
         </form>
         {showResultsDiv ? (
           <div className="search-results-div">

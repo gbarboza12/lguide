@@ -1,17 +1,17 @@
 .topics-content {
-  padding: 20px;
-  background: #fff;
+  padding: 0;
 }
 .topics-list-div {
   text-align: center;
 }
 .topics-list-div a:link {
-  border-bottom: 0;
+  border-bottom: 0 !important;
 }
 ul.topics-list {
   display: inline-flex;
   flex-wrap: wrap;
   list-style: none;
+  word-break: break-word;
 }
 ul.topics-list li {
   padding-right: 0.5rem;

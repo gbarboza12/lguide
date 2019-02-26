@@ -1,18 +1,14 @@
 .filterbtn-div {
-  padding-bottom: 10px;
   margin-top: -30px;
 }
 .filter-btn {
   background-color: transparent;
   color: #d32f2f;
-  border: 2px solid #d32f2f;
+  text-transform: uppercase;
   border-radius: 0;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-}
-.filter-btn:hover {
-  background-color: #d32f2f;
-  color: #fff;
+  padding: 0;
 }
 .sidebar {
   width: 350px;
@@ -28,6 +24,7 @@
   padding-left: 15px;
   z-index: 2;
   box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.15);
+  overflow: auto;
 }
 .sidebar .closebtn {
   position: absolute;
@@ -144,12 +141,10 @@
 
 @media screen and (max-width: 768px) {
   .filterbtn-div {
-    padding-bottom: 20px;
     margin-top: -25px;
   }
   .filter-btn {
-    padding: 0.15rem 0.5rem;
-    font-size: 14px;
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 450px) {

@@ -13,6 +13,7 @@ const StyledLink = styled(Link)`
   font-size: 1rem;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
+    padding: 1px 5px;
   }
   &:link, &:visited, &:active {
     text-decoration: none;
@@ -33,7 +34,7 @@ export default class PostNode extends Component {
       <div key={post.id} className="post-div">
         <div className="row">
           {post.image ? (
-            <div className="col-3 col-sm-2 post-cover">
+            <div className="col-3 col-sm-2 col-md-3 col-lg-2 post-cover">
               <img
                 src={post.image.childImageSharp.sizes.src}
                 alt=""
@@ -41,7 +42,7 @@ export default class PostNode extends Component {
             </div>
           ) : null}
 
-          <div className="col-9 col-sm-10 my-auto">
+          <div className="col-9 col-sm-10 col-md-9 col-lg-9 my-auto">
             <h2 className="post-title">{post.title}</h2>
           </div>
         </div>

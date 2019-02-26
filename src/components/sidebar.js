@@ -42,7 +42,7 @@ export default class Sidebar extends Component {
     return isChecked ? 'form-check-label checked-label' : 'form-check-label';
   }
   render() {
-    const { filterType, showFilterButton } = this.props;
+    const { showFilterButton } = this.props;
     const filterList = this.props.filterOptions;
 
     return (
