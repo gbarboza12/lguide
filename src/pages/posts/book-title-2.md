@@ -5,5 +5,6 @@ category: Books
 tags:
   - horror
   - mystery
+image: /img/stock.jpg
 ---
 Second book post
