@@ -36,12 +36,4 @@ hr.post-divider {
   .post-cover img {
     width: 60px;
   }
-  .post-list-title-div {
-    margin-top: -17px;
-    text-align: right !important;
-  }
-  .post-list-title-div h1 {
-    font-size: 1rem;
-    font-weight: 600;
-  }
 }

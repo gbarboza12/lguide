@@ -56,7 +56,7 @@ export default class Post extends Component {
                     </div>
                   ) : null}
                   <div className="col-9 col-sm-9 col-md-8 col-lg-9">
-                    <p dangerouslySetInnerHTML={{ __html: postNode.html }} />
+                    <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
                   </div>
                 </div>
 

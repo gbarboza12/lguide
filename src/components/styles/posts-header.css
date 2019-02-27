@@ -1,0 +1,43 @@
+.filterbtn-div {
+  margin-top: -30px;
+}
+.filter-btn, .display-btn {
+  background-color: transparent;
+  color: #d32f2f;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0;
+}
+.display-btn {
+  color: #000000;
+}
+.display-btn-active {
+  color: #5d33f7;
+}
+@media screen and (max-width: 768px) {
+  .filterbtn-div {
+    margin-top: -25px;
+  }
+  .filter-btn, .display-btn {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .display-btn {
+    font-size: 0;
+  }
+  .display-btn .svg-inline--fa {
+    font-size: 0.8rem;
+  }
+  .post-list-title-div {
+    padding-top: 7px;
+  }
+  .display-options-div {
+    margin-top: -17px;
+    text-align: right !important;
+  }
+  .post-list-title-div h1 {
+    font-size: .9rem;
+    font-weight: bold;
+  }
+}

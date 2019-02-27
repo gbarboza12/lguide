@@ -15,7 +15,7 @@ a:link,
 a:visited,
 a:active {
   color: #d32f2f;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: 0.3s linear;
 }
 .main-container a:link,
@@ -24,7 +24,7 @@ a:active {
   border-bottom: solid 3px #0c3b6d;
 }
 a:hover {
-  /* text-decoration: underline; */
+  text-decoration: none !important;
   color: #212121;
 }
 @media (max-width: 768px) {
@@ -117,7 +117,7 @@ a:hover {
     padding: 40px 15px;
   }
   .page-title-div {
-    padding-bottom: 15px;
+    padding-bottom: 10px;
   }
   .page-text-div {
     padding-bottom: 25px;

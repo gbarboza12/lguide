@@ -10,6 +10,8 @@ import './styles/layout.css';
 import './styles/forms.css';
 import './styles/search.css';
 import './styles/post.css';
+import './styles/post-cover.css';
+import './styles/posts-header.css';
 import './styles/sidebar.css';
 import './styles/topics-list.css';
 

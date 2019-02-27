@@ -1,27 +1,45 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import Modal from 'react-modal';
 
 import Layout from '../components/layout';
-import PostList from '../components/post-list';
+import PostsHeader from '../components/posts-header';
+import PostsHandler from '../components/posts-handler';
 import Sidebar from '../components/sidebar';
+import PostModal from '../components/post-modal';
 
 export default class Tag extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showSidebar: false,
+      listMode: true,
+      showModal: false,
       checkedItems: [],
       filtersList: [],
+      featuredPost: null,
     };
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.toggleListMode = this.toggleListMode.bind(this);
     this.updateCheckedItems = this.updateCheckedItems.bind(this);
     this.reset = this.reset.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
   componentDidMount() {
+    Modal.setAppElement('body');
     const filtersList = this.getFiltersList();
     this.setState({ filtersList });
+  }
+  toggleSidebar() {
+    this.setState({
+      showSidebar: !this.state.showSidebar,
+    });
+  }
+  toggleListMode(value) {
+    this.setState({
+      listMode: value,
+    });
   }
   getFiltersList() {
     const filtersList = [];
@@ -36,11 +54,6 @@ export default class Tag extends React.Component {
       });
     });
     return filtersList;
-  }
-  toggleSidebar() {
-    this.setState({
-      showSidebar: !this.state.showSidebar,
-    });
   }
   updateCheckedItems(filterName) {
     // checkedItems list is used to filter out posts from post list
@@ -87,18 +100,30 @@ export default class Tag extends React.Component {
       checkedItems: [],
     });
   }
+  handleOpenModal(post) {
+    this.setState({ showModal: true, featuredPost: post });
+  }
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
   render() {
     const { tag } = this.props.pageContext;
     const postEdges = this.props.data.tags.edges;
     const checkedItems = this.state.checkedItems;
-    const formattedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
+    const pageTitle = tag.charAt(0).toUpperCase() + tag.slice(1);
     const showFilterButton = checkedItems.length > 0 ? true : false;
-    const filtersList = this.state.filtersList;
+    const {
+      filtersList,
+      showSidebar,
+      listMode,
+      showModal,
+      featuredPost,
+    } = this.state;
     return (
       <Layout>
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container h-100">
-            {this.state.showSidebar ? (
+            {showSidebar ? (
               <Sidebar
                 filterType={'Category'}
                 close={this.toggleSidebar}
@@ -109,27 +134,36 @@ export default class Tag extends React.Component {
               />
             ) : null}
             <div className="main-content">
-              <div className="filterbtn-div">
-                <button
-                  className="btn filter-btn"
-                  type="button"
-                  aria-label="Filter topics by category"
-                  onClick={this.toggleSidebar}
-                >
-                  <FontAwesomeIcon icon={faSlidersH} /> Filter
-                </button>
-              </div>
-              <div className="text-center page-title-div post-list-title-div">
-                <h1>{formattedTag}</h1>
-              </div>
-              <PostList
+              <PostsHeader
+                toggleSidebar={this.toggleSidebar}
+                toggleListMode={this.toggleListMode}
+                listMode={listMode}
+                pageTitle={pageTitle}
+              />
+              <PostsHandler
                 postEdges={postEdges}
                 checkedCategories={checkedItems}
+                listMode={listMode}
+                showModal={showModal}
+                handleOpenModal={this.handleOpenModal}
               />
               <p className="text-center suggestions-text">
-                <em><Link to={`/credits`}>Click here</Link> to send us your suggestions.</em>
+                <em>
+                  <Link to={`/credits`}>Click here</Link> to send us your
+                  suggestions.
+                </em>
               </p>
             </div>
+            <Modal
+              isOpen={this.state.showModal}
+              contentLabel="onRequestClose Example"
+              onRequestClose={this.handleCloseModal}
+              className="modal-body"
+              overlayClassName="modal-overlay"
+            >
+              {featuredPost ? 
+                <PostModal post={featuredPost} handleCloseModal={this.handleCloseModal} /> : null}
+            </Modal>
           </div>
         </main>
       </Layout>
