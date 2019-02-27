@@ -5,6 +5,5 @@ category: Books
 tags:
   - horror
   - test
-  - ''
 ---
 testing
