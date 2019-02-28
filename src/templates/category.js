@@ -124,7 +124,7 @@ export default class Category extends Component {
       <Layout>
         <main id="main-content" aria-label="Main Content">
           <div id="main" className="container-fluid main-container h-100">
-            {showSidebar ? (
+            {showSidebar && (
               <Sidebar
                 filterType={'Topic'}
                 close={this.toggleSidebar}
@@ -133,7 +133,7 @@ export default class Category extends Component {
                 filterOptions={filtersList}
                 showFilterButton={showFilterButton}
               />
-            ) : null}
+            )}
             <div className="main-content">
               <PostsHeader
                 toggleSidebar={this.toggleSidebar}
@@ -162,8 +162,12 @@ export default class Category extends Component {
               className="modal-body"
               overlayClassName="modal-overlay"
             >
-              {featuredPost ? 
-                <PostModal post={featuredPost} handleCloseModal={this.handleCloseModal} /> : null}
+              {featuredPost && (
+                <PostModal
+                  post={featuredPost}
+                  handleCloseModal={this.handleCloseModal}
+                />
+              )}
             </Modal>
           </div>
         </main>
@@ -188,6 +192,7 @@ export const pageQuery = graphql`
             title
             category
             tags
+            website
             image {
               childImageSharp {
                 sizes(maxWidth: 200) {

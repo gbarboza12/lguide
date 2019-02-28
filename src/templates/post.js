@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import _ from 'lodash';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 
@@ -42,19 +44,43 @@ export default class Post extends Component {
           <div className="container-fluid main-container">
             <div className="main-content row justify-content-center align-items-center h-100">
               <div key={post.id} className="post-div col col-sm-8 col-md-8">
-                <div className="page-title-div text-center">
+                <div className="bottom-padding">
                   <h1 className="post-title">{post.title}</h1>
+                  {post.website && (
+                    <div className="website-div">
+                      <a
+                        href={post.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Website <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 <div className="row">
-                  {post.image ? (
+                  {post.image && (
                     <div className="col-3 col-sm-3 col-md-4 col-lg-3 post-cover">
-                      <img
-                        src={post.image.childImageSharp.sizes.src}
-                        alt=""
-                      />
+                      {post.website ? (
+                        <a
+                          href={post.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src={post.image.childImageSharp.sizes.src}
+                            alt=""
+                          />
+                        </a>
+                      ) : (
+                        <img
+                          src={post.image.childImageSharp.sizes.src}
+                          alt=""
+                        />
+                      )}
                     </div>
-                  ) : null}
+                  )}
                   <div className="col-9 col-sm-9 col-md-8 col-lg-9">
                     <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
                   </div>
@@ -62,18 +88,17 @@ export default class Post extends Component {
 
                 <div className="text-right">
                   <ul className="tag-list">
-                    {post.tags
-                      ? post.tags.map(tag => (
-                          <li>
-                            <StyledLink
-                              key={tag}
-                              to={`/tags/${_.kebabCase(tag)}`}
-                            >
-                              {tag}
-                            </StyledLink>
-                          </li>
-                        ))
-                      : null}
+                    {post.tags &&
+                      post.tags.map(tag => (
+                        <li>
+                          <StyledLink
+                            key={tag}
+                            to={`/tags/${_.kebabCase(tag)}`}
+                          >
+                            {tag}
+                          </StyledLink>
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -93,6 +118,7 @@ export const pageQuery = graphql`
         title
         category
         tags
+        website
         image {
           childImageSharp {
             sizes(maxWidth: 500) {

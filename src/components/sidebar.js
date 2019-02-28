@@ -85,7 +85,7 @@ export default class Sidebar extends Component {
             </div>
           ))}
         </div>
-        {showFilterButton ? (
+        {showFilterButton && (
           <div className="reset-btn-div text-center">
             <button
               type="button"
@@ -96,7 +96,7 @@ export default class Sidebar extends Component {
               Clear Filters
             </button>
           </div>
-        ) : null}
+        )}
       </aside>
     );
   }

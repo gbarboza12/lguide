@@ -50,22 +50,6 @@
     width: 300px;
   }
 }
-
-/* .search-form {
-  width: 100%;
-}
-.search-form-focus {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .search-form {
-    width: 150px;
-    transition: all 0.5s ease;
-  }
-  .search-form-focus {
-    width: 300px;
-  }
-} */
 .input-wrapper {
   padding-left: 10px;
   background: transparent;

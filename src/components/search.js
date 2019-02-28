@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Index } from 'elasticlunr';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 class Search extends Component {
   constructor(props) {
@@ -86,7 +84,7 @@ class Search extends Component {
             />
           </label>
         </form>
-        {showResultsDiv ? (
+        {showResultsDiv && (
           <div className="search-results-div">
             <ul>
               {resultsList.map(page => (
@@ -102,7 +100,7 @@ class Search extends Component {
               ))}
             </ul>
           </div>
-        ) : null}
+        )}
       </div>
     );
   }

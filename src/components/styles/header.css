@@ -10,7 +10,7 @@
 .navbar-toggler {
   color: #fff;
 }
-.navbar-toggler a:hover {
+.navbar-toggler:hover {
   color: #ec644b;
 }
 #navbar-brand a:link,
@@ -72,6 +72,10 @@
   text-transform: uppercase;
   margin-top: 30px;
 }
+.overlay ul {
+  list-style: none;
+  padding: 0;
+}
 .overlay a:link {
   padding: 8px;
   text-decoration: none;
@@ -86,8 +90,7 @@
 }
 .overlay .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  right: 15px;
   font-size: 60px;
   background-color: transparent;
   color: #bdc3c7;

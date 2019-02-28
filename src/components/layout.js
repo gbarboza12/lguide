@@ -55,7 +55,7 @@ export default class Layout extends Component {
             <ScrollUpButton
               style={{
                 'backgroundColor': 'transparent',
-                fill: 'rgb(228, 180, 171)',
+                fill: '#d32f2f',
               }}
               EasingType="linear"
             />

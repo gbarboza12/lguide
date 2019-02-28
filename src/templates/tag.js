@@ -123,7 +123,7 @@ export default class Tag extends React.Component {
       <Layout>
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container h-100">
-            {showSidebar ? (
+            {showSidebar && (
               <Sidebar
                 filterType={'Category'}
                 close={this.toggleSidebar}
@@ -132,7 +132,7 @@ export default class Tag extends React.Component {
                 filterOptions={filtersList}
                 showFilterButton={showFilterButton}
               />
-            ) : null}
+            )}
             <div className="main-content">
               <PostsHeader
                 toggleSidebar={this.toggleSidebar}
@@ -161,8 +161,12 @@ export default class Tag extends React.Component {
               className="modal-body"
               overlayClassName="modal-overlay"
             >
-              {featuredPost ? 
-                <PostModal post={featuredPost} handleCloseModal={this.handleCloseModal} /> : null}
+              {featuredPost && (
+                <PostModal
+                  post={featuredPost}
+                  handleCloseModal={this.handleCloseModal}
+                />
+              )}
             </Modal>
           </div>
         </main>

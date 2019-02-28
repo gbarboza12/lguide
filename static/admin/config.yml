@@ -17,6 +17,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Category", name: "category", widget: "select", 
           options: ["Books", "Films", "Social Media", "Podcasts"]}
-      - {label: "Tags (separate each tag with a comma)", name: "tags", widget: "list"}
+      - {label: "Tags", hint: "Separate each tag with a comma", name: "tags", widget: "list"}
+      - {label: "Website", name: "website", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Featured image", name: "image", widget: "image", required: false}

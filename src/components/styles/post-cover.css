@@ -14,8 +14,8 @@
 }
 .container {
   position: relative;
-  width: 100%;
   padding: 0;
+  margin: 0;
 }
 .post-cover-overlay {
   position: absolute;
@@ -23,8 +23,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: #d32f2f;
@@ -42,6 +40,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  word-wrap: break-word;
 }
 .post-cover-description {
   text-align: right !important;
@@ -56,6 +55,7 @@
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  padding: 15px;
 }
 .modal-overlay {
   position: fixed;
@@ -65,15 +65,44 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
-.modal-btn {
-  background-color: transparent;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+.modal-closebtn {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 36px;
+  background: transparent;
+  border: 0;
   color: #0c3b6d;
-  border: 2px solid #0c3b6d !important;
-  border-radius: 0;
+  transition: 0.3s;
 }
-.modal-btn:hover {
-  background-color: #0c3b6d;
-  color: #fff;
+.modal-closebtn:hover {
+  color: #5e5e5e;
+}
+.bottom-padding {
+  padding-bottom: 15px;
+}
+#modal .tag-list {
+  padding: 0;
+}
+@media screen and (max-width: 768px) {
+  .post-cover-node img {
+    width: 100px;
+    height: 100px;
+  }
+  .post-cover-overlay {
+    padding: 5px;
+  }
+  .post-cover-text {
+    font-size: .8rem;
+    word-wrap: break-word;
+  }
+  .post-cover-description {
+    font-size: .6rem;
+    text-align: center !important;
+  }
+  .modal-closebtn {
+    top: -17px;
+    right: -9px;
+    font-size: 25px;
+  }
 }

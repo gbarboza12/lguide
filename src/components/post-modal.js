@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import _ from 'lodash';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 const StyledLink = styled(Link)`
   background-color: transparent;
@@ -36,28 +38,37 @@ const PostModal = props => {
   const post = props.post;
 
   return (
-    <div>
-      <div className="page-title-div text-center">
-        <h1 className="post-title">{post.title}</h1>
-      </div>
+    <div id="modal">
+      <button
+        type="button"
+        aria-label="Close"
+        className="btn modal-closebtn"
+        onClick={close}
+      >
+        &times;
+      </button>
+      {post.website ? (
+        <>
+        <h2 className="post-title">{post.title}</h2>
+        <div className="website-div">
+          <a href={post.website} target="_blank" rel="noopener noreferrer">
+            Website <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </a>
+        </div>
+        </>
+      ) : <h2 className="bottom-padding">{post.title}</h2>}
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
       <div className="text-right">
         <ul className="tag-list">
-          {post.tags
-            ? post.tags.map(tag => (
-                <li key={tag}>
-                  <StyledLink key={tag} to={`/tags/${_.kebabCase(tag)}`}>
-                    {tag}
-                  </StyledLink>
-                </li>
-              ))
-            : null}
+          {post.tags &&
+            post.tags.map(tag => (
+              <li key={tag}>
+                <StyledLink key={tag} to={`/tags/${_.kebabCase(tag)}`}>
+                  {tag}
+                </StyledLink>
+              </li>
+            ))}
         </ul>
-      </div>
-      <div className="text-center">
-        <button className="btn modal-btn" onClick={close}>
-          Close
-        </button>
       </div>
     </div>
   );

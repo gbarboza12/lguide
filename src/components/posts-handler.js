@@ -43,6 +43,7 @@ export default class PostsHandler extends Component {
         title: postEdge.node.frontmatter.title,
         category: postEdge.node.frontmatter.category,
         tags: postEdge.node.frontmatter.tags,
+        website: postEdge.node.frontmatter.website,
         html: postEdge.node.html,
         id: postEdge.node.id,
         image: postEdge.node.frontmatter.image,
