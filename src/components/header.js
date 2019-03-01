@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import './styles/header.css';
 import Search from './search';
+import logo from '../images/logo.svg';
 
 export default class Header extends Component {
   constructor(props) {
@@ -53,17 +52,14 @@ export default class Header extends Component {
     );
     links.push(
       <li key="podcasts">
-        <Link
-          className={linkStyle}
-          activeClassName="activeLink"
-          to={`/`}
-        >
+        <Link className={linkStyle} activeClassName="activeLink" to={`/`}>
           Podcasts
         </Link>
       </li>
     );
     return <ul className={`${divStyle}`}>{links}</ul>;
   }
+
   render() {
     return (
       <header aria-label="Site Header">
@@ -76,32 +72,17 @@ export default class Header extends Component {
           </div>
         ) : (
           <nav
-            className="navbar navbar-expand-md app-header"
+            className="navbar navbar-expand-sm app-header"
             id="navbar-brand"
             aria-label="Primary Menu"
           >
-            <Link className="navbar-brand" to="/">
-              Navbar
+            <Link to="/">
+              <img src={logo} className="logo" alt="logo" />
             </Link>
-            <button
-              className="navbar-toggler ml-auto hidden-sm-up float-xs-right"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              onClick={this.toggleNavbar}
-            >
-              <span className="navbar-toggler-icon">
-                <FontAwesomeIcon icon={faBars} />
-              </span>
-            </button>
-
             <div className="collapse navbar-collapse" id="navlinks-div">
               {this.getLinks()}
             </div>
-            <Search />
+            <Search toggleNavbar={this.toggleNavbar} />
           </nav>
         )}
       </header>

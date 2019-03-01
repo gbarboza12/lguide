@@ -2,10 +2,7 @@
   width: 100%;
   top: 0;
   background-color: #020101;
-}
-.navbar-brand {
-  margin-left: 15px;
-  font-size: 30px;
+  padding-top: 10px;
 }
 .navbar-toggler {
   color: #fff;
@@ -21,7 +18,7 @@
   text-decoration: none;
 }
 .navbar-nav {
-  padding: 0 20px;
+  padding: 0 10px;
   text-transform: uppercase;
 }
 .nav-link {
@@ -29,6 +26,14 @@
 }
 #navlinks-div a {
   font-size: 22px;
+}
+.logo {
+  height: 2rem;
+}
+@media (max-width: 768px) {
+  .logo {
+    height: 1.75rem;
+  }
 }
 #navlinks-div a:link,
 #navlinks-div a:visited,

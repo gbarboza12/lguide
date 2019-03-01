@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import { Index } from 'elasticlunr';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 
 class Search extends Component {
   constructor(props) {
@@ -9,10 +11,14 @@ class Search extends Component {
       query: ``,
       results: [],
       showResults: false,
-      searchFormCSS: 'search-form',
+      searchFormCSS: 'd-flex',
+      inputCSS: 'form-control',
     };
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleSearchButton = this.handleSearchButton.bind(this);
+    this.handleCloseButton = this.handleCloseButton.bind(this);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
   componentDidMount() {
     document.addEventListener('mousedown', this.handleClick, false);
@@ -22,6 +28,7 @@ class Search extends Component {
   }
   // clicking inside search does nothing, clicking outside prompts search results div to close
   handleClick = e => {
+    console.log("handle")
     if (this.node.contains(e.target)) {
       return;
     }
@@ -30,13 +37,34 @@ class Search extends Component {
   handleFocus() {
     this.setState({
       showResults: true,
-      searchFormCSS: 'search-form search-form-focus',
+      searchFormCSS: 'd-flex active',
+      inputCSS: 'form-control input-active',
     });
   }
   handleBlur() {
     this.setState({
-      searchFormCSS: 'search-form',
+      searchFormCSS: 'd-flex',
+      inputCSS: 'form-control',
     });
+  }
+  handleSearchButton(e) {
+    e.preventDefault();
+    this.setState({
+      searchFormCSS: 'd-flex active',
+      inputCSS: 'form-control input-active',
+    });
+    console.log("search")
+  }
+  handleCloseButton(e) {
+    e.preventDefault();
+    this.setState({
+      searchFormCSS: 'd-flex',
+      inputCSS: 'form-control',
+      showResults: false,
+    });
+  }
+  toggleNavbar() {
+    this.props.toggleNavbar();
   }
   showResultsDiv() {
     const showResults = this.state.showResults;
@@ -66,28 +94,66 @@ class Search extends Component {
 
   render() {
     const showResultsDiv = this.showResultsDiv();
-    const resultsList = this.state.results;
-    const searchFormCSS = this.state.searchFormCSS;
+    const { results, searchFormCSS, inputCSS } = this.state;
+
     return (
-      <div className="col-md-3 search-div" ref={node => (this.node = node)}>
-        <form>
-          <label className={searchFormCSS} htmlFor="search">
+      <div className="search-div" ref={node => (this.node = node)}>
+        <form class={searchFormCSS} role="search">
+          <div class="input-group">
             <input
-              id="search"
-              type="search"
+              type="text"
               autoComplete="off"
-              name="search"
-              aria-label="search"
+              class={inputCSS}
+              placeholder="Search"
               onChange={this.search}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
             />
-          </label>
+            {!showResultsDiv &&  <div class="input-group-append">
+              <button
+                type="reset"
+                className="btn btn-search"
+                onClick={this.handleCloseButton}
+              >
+                <FontAwesomeIcon icon={faTimes} />
+                <span class="sr-only">Close</span>
+              </button>
+            </div>}
+           
+            <div class="input-group-append">
+              <button
+                type="submit"
+                className="btn btn-search"
+                onClick={this.handleSearchButton}
+              >
+                <FontAwesomeIcon icon={faSearch} />
+                <span class="sr-only">Search</span>
+              </button>
+            </div>
+          </div>
         </form>
+
+        <div className="hamburger-div">
+          <button
+            className="btn btn-hamburger"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={this.toggleNavbar}
+          >
+            <span className="navbar-toggler-icon">
+              <FontAwesomeIcon icon={faBars} />
+            </span>
+          </button>
+        </div>
+
         {showResultsDiv && (
           <div className="search-results-div">
             <ul>
-              {resultsList.map(page => (
+              {results.map(page => (
                 <li>
                   <Link to={page.slug}>
                     <h5>{page.title}</h5>
@@ -106,7 +172,7 @@ class Search extends Component {
   }
 }
 
-export default () => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -115,6 +181,8 @@ export default () => (
         }
       }
     `}
-    render={data => <Search searchData={data.siteSearchIndex.index} />}
+    render={data => (
+      <Search searchData={data.siteSearchIndex.index} {...props} />
+    )}
   />
 );
