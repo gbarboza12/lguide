@@ -16,7 +16,7 @@
 }
 @media screen and (max-width: 768px) {
   .filterbtn-div {
-    margin-top: -25px;
+    margin-top: -15px;
   }
   .filter-btn, .display-btn {
     font-size: 0.8rem;

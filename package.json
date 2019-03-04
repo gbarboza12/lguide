@@ -30,6 +30,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.8.1",
+    "react-responsive": "^6.1.1",
     "react-scroll-up-button": "^1.6.4",
     "reactstrap": "^6.5.0",
     "styled-components": "^4.1.3"

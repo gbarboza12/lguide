@@ -12,6 +12,7 @@ ul.topics-list {
   flex-wrap: wrap;
   list-style: none;
   word-break: break-word;
+  padding: 0;
 }
 ul.topics-list li {
   padding-right: 0.5rem;

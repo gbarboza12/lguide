@@ -101,7 +101,7 @@ a:hover {
   background: #fff;
 }
 .page-title-div {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   text-transform: uppercase;
 }
 .page-text-div {
@@ -115,7 +115,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .main-content {
-    padding: 40px 15px 10px 15px;
+    padding: 20px 15px 10px 15px;
   }
   .page-title-div {
     padding-bottom: 10px;

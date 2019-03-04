@@ -1,0 +1,33 @@
+.recent-side-content  a:link {
+   border-bottom: 0 !important;
+}
+.recent-side-content h1, h2 {
+   text-transform: uppercase;
+}
+.recent-side-content ul {
+   list-style: none;
+   word-break: break-word;
+   padding: 0;
+}
+.recent-side-content li {
+   border-bottom: 1px solid rgb(212, 212, 212);
+   padding-left: 5px;
+   padding-top: 10px;
+}
+.recent-side-content li:last-child {
+   border-bottom: 0px;
+}
+.recent-side-content .svg-inline--fa {
+   width: .8rem;
+}
+.top-padding {
+   padding-top: 20px;
+}
+.recent-side-content h3 {
+   font-size: 1rem;
+ }
+@media (min-width: 992px) {
+   .recent-side-content ul {
+      font-size: 1rem;
+   }
+}

@@ -14,6 +14,7 @@ import './styles/post-cover.css';
 import './styles/posts-header.css';
 import './styles/sidebar.css';
 import './styles/topics-list.css';
+import './styles/recent-posts.css';
 
 export default class Layout extends Component {
   constructor(props) {

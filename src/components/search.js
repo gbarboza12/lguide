@@ -119,7 +119,7 @@ class Search extends Component {
                 <span class="sr-only">Close</span>
               </button>
             </div>}
-           
+
             <div class="input-group-append">
               <button
                 type="submit"

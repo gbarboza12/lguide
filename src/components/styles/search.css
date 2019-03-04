@@ -1,7 +1,7 @@
 .search-div form[role='search'] {
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 5px;
   width: 100%;
   padding: 0px;
   margin: 0px;
@@ -31,6 +31,7 @@
 }
 .search-div form[role='search'] {
   width: 38px;
+  transition: all 500ms ease;
 }
 .search-div form[role='search'] input {
   font-size: 15pt;
@@ -103,7 +104,7 @@
   position: relative;
   list-style: none;
   display: block;
-  border-bottom: 1px solid rgb(66, 66, 66);
+  border-bottom: 1px solid rgb(212, 212, 212);
 }
 .search-results-div ul li:last-child {
   border-bottom: 0px;

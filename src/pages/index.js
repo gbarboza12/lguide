@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import TopicsList from '../components/topics-list';
+import RecentPosts from '../components/recent-posts';
 
 export default class IndexPage extends Component {
   getTags() {
@@ -32,9 +33,11 @@ export default class IndexPage extends Component {
         </div>
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container index-container">
-            <div className="main-content row justify-content-center align-items-center h-100">
-                <TopicsList topicsList={topicsList} />
+            <div className="main-content row ">
+              <TopicsList topicsList={topicsList} />
+              <RecentPosts />
             </div>
+            
           </div>
         </main>
       </Layout>
@@ -44,9 +47,6 @@ export default class IndexPage extends Component {
 
 export const query = graphql`
   query {
-    siteSearchIndex {
-      index
-    }
     allMarkdownRemark {
       group(field: frontmatter___tags) {
         fieldValue
