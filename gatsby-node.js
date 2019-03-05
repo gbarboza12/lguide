@@ -1,6 +1,7 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const path = require('path')
 const _ = require('lodash')
+const createPaginatedPages = require('gatsby-paginate')
 
 exports.onCreateNode = ({ node, getNode, getNodes, actions }) => {
   const { createNodeField, createParentChildLink } = actions
@@ -36,12 +37,13 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          allMarkdownRemark {
+          allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
             edges {
               node {
                 frontmatter {
                   tags
                   category
+                  title
                 }
                 fields {
                   slug
@@ -53,6 +55,15 @@ exports.createPages = ({ graphql, actions }) => {
       `).then(result => {
         const tagSet = new Set()
         const categorySet = new Set()
+        createPaginatedPages({
+          edges: result.data.allMarkdownRemark.edges,
+          createPage: createPage,
+          pageTemplate: 'src/templates/recent.js',
+          pageLength: 10,
+          pathPrefix: 'recent',
+          buildPath: (index, pathPrefix) =>
+            index > 1 ? `${pathPrefix}/${index}` : `/${pathPrefix}`, // This is optional and this is the default
+        })
 
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           if (node.frontmatter.tags) {

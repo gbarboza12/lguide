@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
+import Responsive from 'react-responsive';
 
 import Layout from '../components/layout';
 import TopicsList from '../components/topics-list';
@@ -20,6 +21,8 @@ export default class IndexPage extends Component {
 
   render() {
     const topicsList = this.getTags();
+    const Small = props => <Responsive {...props} maxWidth={991} />;
+    const Default = props => <Responsive {...props} minWidth={992} />;
     return (
       <Layout>
         <div className="hero-image">
@@ -32,12 +35,16 @@ export default class IndexPage extends Component {
           </div>
         </div>
         <main id="main-content" aria-label="Main Content">
-          <div className="container-fluid main-container index-container">
+          <div className="container-fluid index-container">
             <div className="main-content row ">
               <TopicsList topicsList={topicsList} />
-              <RecentPosts />
+              <Default>
+                <RecentPosts screenSize={'large'} />
+              </Default>
             </div>
-            
+            <Small>
+              <RecentPosts screenSize={'small'} />
+            </Small>
           </div>
         </main>
       </Layout>

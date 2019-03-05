@@ -8,8 +8,8 @@ import {
   faPodcast,
   faBook,
   faFilm,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
-import Responsive from 'react-responsive';
 
 const StyledLink = styled(Link)`
   font-size: 0.8rem;
@@ -28,7 +28,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
   }
 `;
-const RecentPosts = ({ data }) => {
+const RecentPosts = ({ data, screenSize }) => {
   const getIcon = category => {
     if (category === 'Books') {
       return <FontAwesomeIcon icon={faBook} />;
@@ -40,24 +40,18 @@ const RecentPosts = ({ data }) => {
       return <FontAwesomeIcon icon={faTag} />;
     }
   };
-  const Desktop = props => <Responsive {...props} minWidth={992} />;
-  const Default = props => <Responsive {...props} maxWidth={991} />;
-  return (
-    <div className="recent-side-content col-lg-3 ">
-      <Desktop>
-        <h2 className="text-center">Latest Additions</h2>
-      </Desktop>
-      <Default>
-        <h1 className="text-center top-padding">Latest Additions</h1>
-      </Default>
-
+  const getList = () => {
+    return (
       <ul>
         {data.map(post => (
           <li key={post.node.frontmatter.title}>
-            <Link to={`/${post.node.fields.slug}`}>
+            <Link
+              className="recent-post-title"
+              to={`/${post.node.fields.slug}`}
+            >
               {post.node.frontmatter.title}
             </Link>
-            <div className="">
+            <div>
               <StyledLink
                 key={post.node.frontmatter.category}
                 to={`/categories/${_.kebabCase(
@@ -71,21 +65,37 @@ const RecentPosts = ({ data }) => {
           </li>
         ))}
       </ul>
-      <Desktop>
-        <div className="text-right">
-          <Link to="">More...</Link>
+    );
+  };
+
+  return (
+    <>
+      {screenSize === 'large' ? (
+        <div className="recent-side-content col-lg-3 ">
+          <h2 className="text-center">Recent Additions</h2>
+          {getList()}
+          <div className="text-right">
+            <Link to="/recent">
+              More <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
+          </div>
         </div>
-      </Desktop>
-      <Default>
-      <div className="text-center">
-          <h3><Link to="">See More...</Link></h3>
+      ) : (
+        <div className="recent-expanded-content">
+          <h1 className="text-center">Recent Additions</h1>
+          {getList()}
+          <div className="text-center">
+            <Link className="more-link" to="/recent">
+              See More <FontAwesomeIcon icon={faArrowRight} />
+            </Link>
+          </div>
         </div>
-      </Default>
-    </div>
+      )}
+    </>
   );
 };
 
-export default () => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -108,6 +118,8 @@ export default () => (
         }
       }
     `}
-    render={data => <RecentPosts data={data.allMarkdownRemark.edges} />}
+    render={data => (
+      <RecentPosts data={data.allMarkdownRemark.edges} {...props} />
+    )}
   />
 );

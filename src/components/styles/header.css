@@ -38,7 +38,7 @@
 #navlinks-div a:link,
 #navlinks-div a:visited,
 #navlinks-div a:active {
-  color: #ec644b;
+  color: #dd8787;
   text-decoration: none;
   transition: .2s linear;
 }
@@ -53,7 +53,7 @@
   }
 }
 .activeLink {
-  border-bottom: 1px solid #ec644b;
+  border-bottom: 1px solid #dd8787;
   color: #bdc3c7 !important;
   text-decoration: none !important;
 }

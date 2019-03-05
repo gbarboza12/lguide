@@ -1,33 +1,86 @@
-.recent-side-content  a:link {
-   border-bottom: 0 !important;
+.recent-side-content a:link,
+.recent-expanded-content a:link,
+.recent-page-content a:link {
+  border-bottom: 0 !important;
 }
-.recent-side-content h1, h2 {
-   text-transform: uppercase;
+.recent-expanded-content h1, .recent-side-content h2 {
+  text-transform: uppercase;
 }
-.recent-side-content ul {
-   list-style: none;
-   word-break: break-word;
-   padding: 0;
+.recent-expanded-content h1 {
+  color: #992c2c;
 }
-.recent-side-content li {
-   border-bottom: 1px solid rgb(212, 212, 212);
-   padding-left: 5px;
-   padding-top: 10px;
+.recent-side-content {
+  padding: 0px;
 }
-.recent-side-content li:last-child {
-   border-bottom: 0px;
+.recent-side-content ul,
+.recent-expanded-content ul,
+.recent-page-content ul {
+  list-style: none;
+  word-break: break-word;
+  padding: 0;
+}
+.recent-side-content li,
+.recent-expanded-content li,
+.recent-page-content li {
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding-left: 5px;
+  padding-top: 10px;
+}
+.recent-expanded-content li {
+  border-color: rgb(129, 129, 129);
+  padding-top: 5px;
+}
+.recent-side-content li:last-child,
+.recent-expanded-content li:last-child,
+.recent-page-content li:last-child {
+  border-bottom: 0px;
 }
 .recent-side-content .svg-inline--fa {
-   width: .8rem;
+  width: 0.8rem;
 }
-.top-padding {
-   padding-top: 20px;
-}
-.recent-side-content h3 {
-   font-size: 1rem;
- }
 @media (min-width: 992px) {
-   .recent-side-content ul {
-      font-size: 1rem;
-   }
+  .recent-side-content ul {
+    font-size: 1rem;
+  }
+}
+.recent-expanded-content {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #a3a3a3;
+}
+.recent-expanded-content ul {
+  padding-left: 15px;
+}
+.recent-expanded-content .recent-post-title, .recent-expanded-content .more-link {
+  color: #fff;
+}
+.recent-expanded-content .more-link {
+  font-size: 1.5rem;
+}
+.recent-expanded-content .svg-inline--fa.fa-w-14 {
+  width: 0.7em;
+}
+@media (max-width: 991px) {
+  .recent-expanded-content {
+    padding: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .recent-expanded-content ul {
+    font-size: 1rem;
+  }
+  .recent-expanded-content .more-link {
+    font-size: 1.2rem;
+  }
+  .recent-expanded-content ul {
+    padding-left: 0px;
+    margin-bottom: 0;
+  }
+  .recent-expanded-content .svg-inline--fa.fa-w-14 {
+    width: 0.7em;
+  }
 }

@@ -5,6 +5,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 body {
   font-family: 'Inconsolata', monospace !important;
@@ -60,10 +61,10 @@ a:hover {
   color: #ec644b;
 }
 .hero-image {
-  background-color: #020101;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../../images/cover.jpg');
-  height: 50vh;
+  background: rgb(0, 0, 0)7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(170deg, rgb(0, 0, 0) 40%, rgb(173, 61, 61));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(170deg, rgb(0, 0, 0) 40%, rgb(173, 61, 61));
+  height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -83,14 +84,18 @@ a:hover {
   color: white;
 }
 @media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 576px) {
   .hero-image {
-    height: 40vw;
+    height: 35vh;
   }
 }
 .main-container {
   position: relative;
-  padding: 30px;
-  background-color: #484848;
+  background-color: #fff;
   min-height: 100vh;
 }
 .index-container {
@@ -115,7 +120,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .main-content {
-    padding: 20px 15px 10px 15px;
+    padding: 20px 0px 10px 0px;
   }
   .page-title-div {
     padding-bottom: 10px;
@@ -157,7 +162,7 @@ a:hover {
   text-decoration: none;
   font-size: 16px;
   text-transform: uppercase;
-  color: #ec644b;
+  color: #dd8787;
 }
 .footer a:hover {
   text-decoration: none !important;

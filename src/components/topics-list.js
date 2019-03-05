@@ -17,6 +17,11 @@ const TopicsList = ({ topicsList }) => {
           ))}
         </ul>
       </div>
+      <h2>Heading</h2>
+      <ul className="topics-list">
+        <li>Item #1</li>
+        <li>Item #2</li>
+      </ul>
     </div>
   );
 };
