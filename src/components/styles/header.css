@@ -81,13 +81,14 @@
   list-style: none;
   padding: 0;
 }
-.overlay a:link {
+.overlay a:any-link {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
   display: block;
   transition: 0.3s;
   border: 0px;
+  color: #dd8787;
 }
 .overlay a:hover,
 .overlay a:focus {

@@ -147,12 +147,13 @@ export default class Tag extends React.Component {
                 showModal={showModal}
                 handleOpenModal={this.handleOpenModal}
               />
-              <p className="text-center suggestions-text">
+              <br/><br/>
+              <div className="text-center suggestions-text">
                 <em>
-                  <Link to={`/credits`}>Click here</Link> to send us your
-                  suggestions.
+                  Feel free to{' '}
+                  <Link to={`/credits`}>send your suggestions</Link>.
                 </em>
-              </p>
+              </div>
             </div>
             <Modal
               isOpen={this.state.showModal}

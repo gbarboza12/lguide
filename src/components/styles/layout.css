@@ -116,7 +116,9 @@ a:hover {
   padding-bottom: 40px;
 }
 .suggestions-text {
-  font-size: 1rem;
+  position: absolute;
+  bottom: 15px;
+  font-size: .9rem;
 }
 @media screen and (max-width: 768px) {
   .main-content {
@@ -135,7 +137,7 @@ a:hover {
     padding-bottom: 25px;
   }
   .suggestions-text {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 
