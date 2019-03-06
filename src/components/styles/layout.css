@@ -36,7 +36,7 @@ a:hover {
     font-size: 1.7rem;
   }
   h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     word-wrap: break-word;
   }
   h5 {
@@ -121,6 +121,9 @@ a:hover {
 @media screen and (max-width: 768px) {
   .main-content {
     padding: 20px 0px 10px 0px;
+  }
+  .index-content {
+    padding: 20px 15px 10px 15px;
   }
   .page-title-div {
     padding-bottom: 10px;

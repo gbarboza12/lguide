@@ -5,7 +5,7 @@ import _ from 'lodash';
 const TopicsList = ({ topicsList }) => {
   return (
     <div className="topics-content col col-lg-9">
-      <h1 className="page-title-div text-center">Browse Topics</h1>
+      <h1 className="page-title-div ">Browse Topics</h1>
       <div className="topics-list-div">
         <ul className="topics-list">
           {topicsList.map(tag => (

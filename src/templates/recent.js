@@ -44,16 +44,18 @@ const Recent = ({ data, pageContext }) => {
   };
   const NavLink = props => {
     if (!props.test) {
-      return <Link to={props.url}>{props.text}</Link>;
+      return <Link to={props.url} className="recent-page-link">{props.text}</Link>;
     } else {
-      return <span>{props.text}</span>;
+      return <span className="recent-page-link">{props.text}</span>;
     }
   };
-  const { group, index, first, last, pageCount } = pageContext;
+
+  const { group, index, pageCount } = pageContext;
+  const first = index === 1 ? true : false;
+  const last = index === pageCount ? true : false;
   const previousUrl =
     index - 1 === 1 ? 'recent/' : 'recent/' + (index - 1).toString();
   const nextUrl = 'recent/' + (index + 1).toString();
-  console.log(index);
 
   return (
     <Layout>
@@ -85,15 +87,25 @@ const Recent = ({ data, pageContext }) => {
                     </li>
                   ))}
                 </ul>
-                <div className="previousLink">
+              </div>
+              <div className="row">
+                <div className="col-4">
                   <NavLink
                     test={first}
                     url={previousUrl}
-                    text="Go to Previous Page"
+                    text="‹ Previous"
                   />
                 </div>
-                <div className="nextLink">
-                  <NavLink test={last} url={nextUrl} text="Go to Next Page" />
+                <div className="col-4 text-center">
+                  <span className="recent-page-link">{`Page ${index} of ${pageCount}`} </span>
+                </div>
+                <div className="col-4 text-right">
+                  <NavLink
+                    test={last}
+                    url={nextUrl}
+                    text="Next ›"
+                    
+                  />
                 </div>
               </div>
             </div>

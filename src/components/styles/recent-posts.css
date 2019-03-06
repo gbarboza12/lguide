@@ -3,14 +3,15 @@
 .recent-page-content a:link {
   border-bottom: 0 !important;
 }
-.recent-expanded-content h1, .recent-side-content h2 {
+.recent-expanded-content h1,
+.recent-side-content h2 {
   text-transform: uppercase;
-}
-.recent-expanded-content h1 {
-  color: #992c2c;
 }
 .recent-side-content {
   padding: 0px;
+}
+.recent-side-content ul {
+  font-size: 1rem;
 }
 .recent-side-content ul,
 .recent-expanded-content ul,
@@ -20,14 +21,14 @@
   padding: 0;
 }
 .recent-side-content li,
-.recent-expanded-content li,
 .recent-page-content li {
   border-bottom: 1px solid rgb(212, 212, 212);
   padding-left: 5px;
   padding-top: 10px;
 }
 .recent-expanded-content li {
-  border-color: rgb(129, 129, 129);
+  border-bottom: 1px solid rgb(212, 212, 212);
+  padding-left: 0;
   padding-top: 5px;
 }
 .recent-side-content li:last-child,
@@ -35,46 +36,33 @@
 .recent-page-content li:last-child {
   border-bottom: 0px;
 }
-.recent-side-content .svg-inline--fa {
-  width: 0.8rem;
-}
-@media (min-width: 992px) {
-  .recent-side-content ul {
-    font-size: 1rem;
-  }
-}
 .recent-expanded-content {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background-color: #a3a3a3;
-}
-.recent-expanded-content ul {
-  padding-left: 15px;
-}
-.recent-expanded-content .recent-post-title, .recent-expanded-content .more-link {
-  color: #fff;
+  padding: 0;
+  padding-top: 50px;
 }
 .recent-expanded-content .more-link {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-.recent-expanded-content .svg-inline--fa.fa-w-14 {
-  width: 0.7em;
+.recent-expanded-content .svg-inline--fa,
+.recent-side-content .svg-inline--fa {
+  height: 0.8em;
 }
-@media (max-width: 991px) {
-  .recent-expanded-content {
-    padding: 10px;
+.recent-page-link {
+  font-size: 1rem;
+}
+@media (min-width: 576px) {
+  .recent-page-content ul{
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .recent-page-link {
+    font-size: .8rem;
   }
 }
 @media (max-width: 575px) {
-  .recent-expanded-content ul {
-    font-size: 1rem;
-  }
   .recent-expanded-content .more-link {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .recent-expanded-content ul {
     padding-left: 0px;

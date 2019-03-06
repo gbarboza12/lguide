@@ -13,10 +13,6 @@ const StyledLink = styled(Link)`
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   font-size: 1rem;
-  @media screen and (max-width: 768px) {
-    font-size: 0.7rem;
-    padding: 1px 5px;
-  }
   &:link,
   &:visited,
   &:active {
@@ -28,6 +24,15 @@ const StyledLink = styled(Link)`
     background-color: #d32f2f;
     color: #fff;
     text-decoration: none;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    &:link,
+    &:visited,
+    &:active {
+      border: 1px solid #d32f2f !important;
+    }
   }
 `;
 

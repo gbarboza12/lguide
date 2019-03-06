@@ -36,15 +36,15 @@ export default class IndexPage extends Component {
         </div>
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid index-container">
-            <div className="main-content row ">
+            <div className="main-content index-content row ">
               <TopicsList topicsList={topicsList} />
               <Default>
                 <RecentPosts screenSize={'large'} />
               </Default>
+              <Small>
+                <RecentPosts screenSize={'small'} />
+              </Small>
             </div>
-            <Small>
-              <RecentPosts screenSize={'small'} />
-            </Small>
           </div>
         </main>
       </Layout>

@@ -27,10 +27,7 @@ export default class Credits extends Component {
                   <h2><em>A huge thanks to...</em></h2>
                   <ul>
                     <li>
-                      <a href="https://unsplash.com/@jeremyperkins">
-                        Jeremy Perkins
-                      </a>{' '}
-                      for the cover photo.
+                      
                     </li>
                   </ul>
                 </div>

@@ -15,7 +15,7 @@ const StyledLink = styled(Link)`
   font-size: 0.8rem;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 768px) {
     font-size: 0.7rem;
   }
   &:link,
@@ -81,12 +81,12 @@ const RecentPosts = ({ data, screenSize }) => {
           </div>
         </div>
       ) : (
-        <div className="recent-expanded-content">
-          <h1 className="text-center">Recent Additions</h1>
+        <div className="recent-expanded-content col-lg-3">
+          <h1 className="">Recent Additions</h1>
           {getList()}
           <div className="text-center">
             <Link className="more-link" to="/recent">
-              See More <FontAwesomeIcon icon={faArrowRight} />
+              More <FontAwesomeIcon icon={faArrowRight} />
             </Link>
           </div>
         </div>
