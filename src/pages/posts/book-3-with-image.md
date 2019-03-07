@@ -1,6 +1,7 @@
 ---
 date: 2019-01-10T20:29:25.043Z
 title: Book 3 with image
+author: Test Author
 category: Books
 tags:
   - mystery
