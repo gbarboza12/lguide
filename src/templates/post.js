@@ -3,8 +3,6 @@ import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import _ from 'lodash';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
 
@@ -18,9 +16,6 @@ const StyledLink = styled(Link)`
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   font-size: 1.2rem;
-  @media screen and (max-width: 768px) {
-    font-size: 0.8rem;
-  }
   &:link, &:visited, &:active {
     text-decoration: none;
     color: #d32f2f;
@@ -30,6 +25,15 @@ const StyledLink = styled(Link)`
     background-color: #d32f2f;
     color: #fff;
     text-decoration: none;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    &:link,
+    &:visited,
+    &:active {
+      border: 1px solid #d32f2f !important;
+    }
   }
 `;
 
@@ -42,24 +46,27 @@ export default class Post extends Component {
       <Layout>
         <main id="main-content" aria-label="Main Content">
           <div className="container-fluid main-container">
-            <div className="main-content row justify-content-center align-items-center h-100">
-              <div key={post.id} className="post-div col col-sm-8 col-md-8">
-                <div className="bottom-padding">
-                  <h1 className="post-title">{post.title}</h1>
-                  {post.website && (
-                    <div className="website-div">
-                      <a
-                        href={post.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Website <FontAwesomeIcon icon={faExternalLinkAlt} />
-                      </a>
-                    </div>
-                  )}
-                </div>
+            <div className="main-content row no-gutters justify-content-center h-100">
+              <div key={post.id} className="post-div col col-sm-8 col-md-9">
+                <h1 className="post-title">{post.title}</h1>
+                {post.category === 'Books' && post.author && (
+                  <div className="author-div">
+                    <b>Author:</b> {post.author}
+                  </div>
+                )}
+                {post.website && (
+                  <div className="website-div">
+                    <a
+                      href={post.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Website
+                    </a>
+                  </div>
+                )}
 
-                <div className="row">
+                <div className="row post-description-div">
                   {post.image && (
                     <div className="col-3 col-sm-3 col-md-4 col-lg-3 post-cover">
                       {post.website ? (
@@ -116,6 +123,7 @@ export const pageQuery = graphql`
       id
       frontmatter {
         title
+        author
         category
         tags
         website

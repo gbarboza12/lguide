@@ -191,6 +191,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+            author
             category
             tags
             website

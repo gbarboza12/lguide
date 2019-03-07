@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Link, graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import { Index } from 'elasticlunr';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import SearchResults from './search-results';
 
 class Search extends Component {
   constructor(props) {
@@ -28,7 +29,6 @@ class Search extends Component {
   }
   // clicking inside search does nothing, clicking outside prompts search results div to close
   handleClick = e => {
-    console.log("handle")
     if (this.node.contains(e.target)) {
       return;
     }
@@ -53,7 +53,6 @@ class Search extends Component {
       searchFormCSS: 'd-flex active',
       inputCSS: 'form-control input-active',
     });
-    console.log("search")
   }
   handleCloseButton(e) {
     e.preventDefault();
@@ -109,16 +108,18 @@ class Search extends Component {
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
             />
-            {!showResultsDiv &&  <div class="input-group-append">
-              <button
-                type="reset"
-                className="btn btn-search"
-                onClick={this.handleCloseButton}
-              >
-                <FontAwesomeIcon icon={faTimes} />
-                <span class="sr-only">Close</span>
-              </button>
-            </div>}
+            {!showResultsDiv && (
+              <div class="input-group-append">
+                <button
+                  type="reset"
+                  className="btn btn-search"
+                  onClick={this.handleCloseButton}
+                >
+                  <FontAwesomeIcon icon={faTimes} />
+                  <span class="sr-only">Close</span>
+                </button>
+              </div>
+            )}
 
             <div class="input-group-append">
               <button
@@ -150,23 +151,7 @@ class Search extends Component {
           </button>
         </div>
 
-        {showResultsDiv && (
-          <div className="search-results-div">
-            <ul>
-              {results.map(page => (
-                <li>
-                  <Link to={page.slug}>
-                    <h5>{page.title}</h5>
-                    <p className="results-text">Category: {page.category}</p>
-                    <p className="results-text">
-                      Related topics: {page.tags.join(`, `)}
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {showResultsDiv && <SearchResults results={results} />}
       </div>
     );
   }

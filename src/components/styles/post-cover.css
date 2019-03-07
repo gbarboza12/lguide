@@ -78,11 +78,15 @@
 .modal-closebtn:hover {
   color: #5e5e5e;
 }
-.bottom-padding {
-  padding-bottom: 15px;
+#modal h2 {
+  margin-bottom: 0;
 }
 #modal .tag-list {
   padding: 0;
+}
+.modal-post-content {
+  padding-top: 7px;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 768px) {
   .post-cover-node img {

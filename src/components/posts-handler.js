@@ -41,6 +41,7 @@ export default class PostsHandler extends Component {
       }
       posts.push({
         title: postEdge.node.frontmatter.title,
+        author: postEdge.node.frontmatter.author,
         category: postEdge.node.frontmatter.category,
         tags: postEdge.node.frontmatter.tags,
         website: postEdge.node.frontmatter.website,

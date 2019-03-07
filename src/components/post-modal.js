@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import _ from 'lodash';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import ShowMore from 'react-show-more';
 
 const StyledLink = styled(Link)`
   background-color: transparent;
@@ -52,17 +51,25 @@ const PostModal = props => {
       >
         &times;
       </button>
-      {post.website ? (
-        <>
-        <h2 className="post-title">{post.title}</h2>
-        <div className="website-div">
+
+      <h2 className="post-title">{post.title}</h2>
+      {post.category === 'Books' && post.author && (
+        <div className="author-div">
+          <b>Author:</b> {post.author}
+        </div>
+      )}
+      {post.website && (
+        <div className="website-div bottom-padding">
           <a href={post.website} target="_blank" rel="noopener noreferrer">
-            Website <FontAwesomeIcon icon={faExternalLinkAlt} />
+            Website
           </a>
         </div>
-        </>
-      ) : <h2 className="bottom-padding">{post.title}</h2>}
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      )}
+      <div className="modal-post-content">
+        <ShowMore lines={8} more="Show more" less="Show less" anchorClass="">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </ShowMore>
+      </div>
       <div className="text-right">
         <ul className="tag-list">
           {post.tags &&

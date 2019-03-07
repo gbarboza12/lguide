@@ -15,9 +15,10 @@ collections:
     fields:
       - {name: date, label: Date, widget: date }
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", hint: "For books", name: "author", widget: "string", required: false}
       - {label: "Category", name: "category", widget: "select", 
           options: ["Books", "Films", "Social Media", "Podcasts"]}
       - {label: "Tags", hint: "Separate each tag with a comma", name: "tags", widget: "list"}
-      - {label: "Website", name: "website", widget: "string"}
+      - {label: "Website", name: "website", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Featured image", name: "image", widget: "image", required: false}
+      - {label: "Cover Image", name: "image", widget: "image", required: false}

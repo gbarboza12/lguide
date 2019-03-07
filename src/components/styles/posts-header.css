@@ -19,12 +19,12 @@
     margin-top: -10px;
   }
   .filter-btn, .display-btn {
-    font-size: 0.8rem;
+    font-size: 0.7rem !important;
   }
 }
 @media screen and (max-width: 576px) {
   .display-btn {
-    font-size: 0;
+    font-size: 0 !important;
   }
   .display-btn .svg-inline--fa {
     font-size: 0.8rem;
