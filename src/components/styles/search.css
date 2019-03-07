@@ -142,9 +142,9 @@
 }
 @media (max-width: 768px) {
   .search-results-div h5 {
-    font-size: 1rem;
+    font-size: .9rem;
   }
   .results-text {
-    font-size: 0.8rem;
+    font-size: .7rem;
   }
 }
