@@ -47,15 +47,17 @@
   opacity: 1;
   background: #000;
 }
-.btn-search,
-.btn-hamburger {
+.btn-search {
   background: transparent;
   color: #dd8787 !important;
   border-radius: 0 !important;
   font-size: 1.2rem;
 }
 .btn-hamburger {
-  color: #fff;
+  background: transparent;
+  color: #fff !important;
+  border-radius: 0 !important;
+  font-size: 1.2rem;
   padding: 0 !important;
 }
 .input-active {
