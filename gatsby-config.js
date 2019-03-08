@@ -42,6 +42,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
@@ -65,4 +71,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
