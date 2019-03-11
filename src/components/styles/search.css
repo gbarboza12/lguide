@@ -24,7 +24,6 @@
 .search-div form[role='search'] button[type='reset'] {
   display: none;
 }
-
 .search-div {
   padding-top: 0px !important;
   padding-right: 38px !important;
@@ -50,15 +49,18 @@
 .btn-search {
   background: transparent;
   color: #dd8787;
-  border-radius: 0 !important;
+  border-radius: 0;
   font-size: 1.2rem;
 }
 .btn-hamburger {
   background: transparent;
-  color: #fff !important;
-  border-radius: 0 !important;
+  color: #fff;
+  border-radius: 0;
   font-size: 1.2rem;
-  padding: 0 !important;
+  padding: 0;
+}
+.btn-search:hover, .btn-hamburger:hover {
+  color: #fff;
 }
 .input-active {
   background: #000;

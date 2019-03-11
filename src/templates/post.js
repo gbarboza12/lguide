@@ -41,6 +41,11 @@ export default class Post extends Component {
   render() {
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
+    const worldcatLink =
+      post.category === 'Books'
+        ? 'http://www.worldcat.org/search?qt=affiliate&ai=none_gbarboza&q=ti%3A' +
+          post.title.replace(/ /g, '+')
+        : null;
 
     return (
       <Layout>
@@ -108,6 +113,13 @@ export default class Post extends Component {
                       ))}
                   </ul>
                 </div>
+                {worldcatLink && (
+          <div className="text-right">
+            <a href={worldcatLink} target="_blank" rel="noopener noreferrer" className="library-link">
+              Find at a nearby library
+            </a>
+          </div>
+        )}
               </div>
             </div>
           </div>

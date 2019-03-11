@@ -13,7 +13,7 @@ import {
 import Layout from '../components/layout';
 
 const StyledLink = styled(Link)`
-  font-size: 1rem;
+  font-size: .9rem;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   @media screen and (max-width: 576px) {

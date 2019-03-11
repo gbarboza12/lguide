@@ -97,38 +97,38 @@ class Search extends Component {
 
     return (
       <div className="search-div" ref={node => (this.node = node)}>
-        <form class={searchFormCSS} role="search">
-          <div class="input-group">
+        <form className={searchFormCSS} role="search">
+          <div className="input-group">
             <input
               type="text"
               autoComplete="off"
-              class={inputCSS}
+              className={inputCSS}
               placeholder="Search"
               onChange={this.search}
               onFocus={this.handleFocus}
               onBlur={this.handleBlur}
             />
             {!showResultsDiv && (
-              <div class="input-group-append">
+              <div className="input-group-append">
                 <button
                   type="reset"
                   className="btn btn-search"
                   onClick={this.handleCloseButton}
                 >
                   <FontAwesomeIcon icon={faTimes} />
-                  <span class="sr-only">Close</span>
+                  <span className="sr-only">Close</span>
                 </button>
               </div>
             )}
 
-            <div class="input-group-append">
+            <div className="input-group-append">
               <button
                 type="submit"
                 className="btn btn-search"
                 onClick={this.handleSearchButton}
               >
                 <FontAwesomeIcon icon={faSearch} />
-                <span class="sr-only">Search</span>
+                <span className="sr-only">Search</span>
               </button>
             </div>
           </div>

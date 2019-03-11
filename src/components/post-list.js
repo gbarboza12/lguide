@@ -59,6 +59,11 @@ export default class PostList extends Component {
     const { tagsCSS, expandTags } = this.state;
     const Mobile = props => <Responsive {...props} maxWidth={575} />;
     const Default = props => <Responsive {...props} minWidth={576} />;
+    const worldcatLink =
+      post.category === 'Books'
+        ? 'http://www.worldcat.org/search?qt=affiliate&ai=none_gbarboza&q=ti%3A' +
+          post.title.replace(/ /g, '+')
+        : null;
 
     return (
       <div key={post.id} className="post-div col-xl-10 m-auto">
@@ -151,6 +156,13 @@ export default class PostList extends Component {
             </div>
           )}
         </Mobile>
+        {worldcatLink && (
+          <div className="text-right">
+            <a href={worldcatLink} target="_blank" rel="noopener noreferrer" className="library-link">
+              Find at a nearby library
+            </a>
+          </div>
+        )}
         <hr className="post-divider" />
       </div>
     );

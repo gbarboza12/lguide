@@ -40,6 +40,11 @@ const PostModal = props => {
     props.handleCloseModal();
   };
   const post = props.post;
+  const worldcatLink =
+      post.category === 'Books'
+        ? 'http://www.worldcat.org/search?qt=affiliate&ai=none_gbarboza&q=ti%3A' +
+          post.title.replace(/ /g, '+')
+        : null;
 
   return (
     <div id="modal">
@@ -82,6 +87,13 @@ const PostModal = props => {
             ))}
         </ul>
       </div>
+      {worldcatLink && (
+          <div className="text-right">
+            <a href={worldcatLink} target="_blank" rel="noopener noreferrer" className="library-link">
+              Find at a nearby library
+            </a>
+          </div>
+        )}
     </div>
   );
 };

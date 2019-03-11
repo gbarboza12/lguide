@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSlidersH,
-  faGripHorizontal,
-  faBars,
+  faTh,
+  faListUl,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default class PostsHeader extends Component {
@@ -46,7 +46,7 @@ export default class PostsHeader extends Component {
                 aria-label="display list"
                 onClick={() => this.toggleListMode(true)}
               >
-                <FontAwesomeIcon icon={faBars} /> List
+                <FontAwesomeIcon icon={faListUl} /> List
               </button>
               {'  '}
               <button
@@ -55,7 +55,7 @@ export default class PostsHeader extends Component {
                 aria-label="display covers"
                 onClick={() => this.toggleListMode(false)}
               >
-                <FontAwesomeIcon icon={faGripHorizontal} /> Covers
+                <FontAwesomeIcon icon={faTh} /> Covers
               </button>
             </span>
           </div>

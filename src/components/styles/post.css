@@ -43,6 +43,9 @@
   background-color: transparent;
   font-size: 1rem;
 }
+.library-link{
+  font-size: 1rem;
+}
 hr.post-divider {
   height: 4px;
   background-image: linear-gradient(90deg, transparent, transparent 50%, 
@@ -61,7 +64,7 @@ hr.post-divider {
     font-size: .8rem;
     /* font-weight: 600; */
   }
-  .tagsbtn {
+  .tagsbtn, .library-link {
     font-size: .7rem;
   }
 

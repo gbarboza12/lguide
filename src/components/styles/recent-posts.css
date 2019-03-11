@@ -43,10 +43,10 @@
 .recent-expanded-content .more-link {
   font-size: 1.2rem;
 }
-.recent-expanded-content .svg-inline--fa,
+/* .recent-expanded-content .svg-inline--fa,
 .recent-side-content .svg-inline--fa {
   height: 0.8em;
-}
+} */
 .recent-page-link {
   font-size: 1rem;
 }
@@ -57,7 +57,7 @@
 }
 @media (max-width: 768px) {
   .recent-page-link {
-    font-size: .8rem;
+    font-size: .7rem;
   }
 }
 @media (max-width: 575px) {
